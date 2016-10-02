@@ -1,12 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import * as d3 from 'd3';
 import moment from 'moment';
-import './timepicker.css';
+import './timespanpicker.css';
 const config = {
     labelsPAdding: 13
 };
 
-class CircularTimepicker extends Component {
+class CircularTimespanpicker extends Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -49,7 +49,7 @@ class CircularTimepicker extends Component {
     }
     handleClick(segment) {
         const {index, value} = segment;
-        const { boundaryHour,  getResults } = this.props;
+        const { boundaryHour,  onClick } = this.props;
         const presavedSegment = this.state[index];
         const id = Math.floor(value[1] / 60); //TODO : change id according to boundary
         const choosedPeriod = {
@@ -57,7 +57,7 @@ class CircularTimepicker extends Component {
                 : [ moment().set('hour', 0).set('minute', 0).minute(value[0]), moment().set('hour', 0).set('minute', 0).minute(value[1]) ]
         };
         this.setState(choosedPeriod);
-        getResults({ ...this.state, ...choosedPeriod})
+        onClick({ ...this.state, ...choosedPeriod})
     }
    
     calculateHours(boundary, index, noDoubleHour) {
@@ -151,9 +151,6 @@ class CircularTimepicker extends Component {
     }
 }
 
-CircularTimepicker.propTypes = {
-
-};
 
 function TimeResults(props) {
     const { results } = props;
@@ -191,4 +188,4 @@ function Segment(props) {
     )
 }
 
-export default CircularTimepicker;
+export default CircularTimespanpicker;
