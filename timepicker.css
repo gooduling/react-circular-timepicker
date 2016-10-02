@@ -1,0 +1,58 @@
+.timepickerwrapper {
+  vertical-align: top;
+  display: inline-block;
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  min-height: 355px;
+}
+.timepickerwrapper .results {
+  /*border: 1px solid #ddd;*/
+  /*border-radius: 5px;*/
+  padding: 5px;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.8em;
+  border-left: 1px solid #ddd;
+}
+.results p {
+  margin: 5px;
+}
+.timepickerwrapper svg {
+  display: inline-block;
+  vertical-align: middle;
+
+}
+.segment text {
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+.segment path {
+  stroke: #fff;
+  cursor: pointer;
+}
+ .segment.active path {
+  cursor: pointer;
+  stroke: #fff;
+  fill: #ff5070 !important;
+}
+.segment:hover path {
+  opacity: 0.5
+}
+.segment text {
+  cursor: pointer;
+}
+.hourLabel {
+  fill: #ff5070;
+  font-size: 1.2em;
+}
+.hourLabel.boundary {
+  //fill: #5a5
+}
+.minuteLabel {
+  fill: grey;
+  text-anchor: middle;
+  font-size: 0.6em
+}
