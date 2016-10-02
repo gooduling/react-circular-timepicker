@@ -22014,13 +22014,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _ModalContainer = __webpack_require__(/*! ../../../containers/modal/Modal.container.jsx */ 176);
-	
-	var _ModalContainer2 = _interopRequireDefault(_ModalContainer);
-	
-	__webpack_require__(/*! ../../../assets/boot_scss/bootstrap.scss */ 177);
-	
-	var _Timepicker = __webpack_require__(/*! ../../Timepicker.jsx */ 181);
+	var _Timepicker = __webpack_require__(/*! ../../Timepicker.jsx */ 176);
 	
 	var _Timepicker2 = _interopRequireDefault(_Timepicker);
 	
@@ -22065,7 +22059,26 @@
 	                        _react2.default.createElement(
 	                            'h2',
 	                            { style: headerStyle },
-	                            'Timepicker with clear d3/React'
+	                            'Circular timespan picker with clear d3/React'
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'row' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'col-xs-12 col-sm-12 col-md-12' },
+	                        _react2.default.createElement(
+	                            'h6',
+	                            {
+	                                style: headerStyle },
+	                            'Github: ',
+	                            _react2.default.createElement(
+	                                'a',
+	                                { href: 'https://github.com/gooduling/react-timespan-picker' },
+	                                'https://github.com/gooduling/react-timespan-picker'
+	                            )
 	                        )
 	                    )
 	                ),
@@ -22086,22 +22099,22 @@
 	                }),
 	                _react2.default.createElement(_Timepicker2.default, {
 	                    outerRadius: '130',
-	                    interval: '20',
-	                    boundaryHour: '13',
+	                    interval: '30',
+	                    boundaryHour: '8',
 	                    getResults: this.handleTimepicker,
 	                    showResults: true
 	                }),
 	                _react2.default.createElement(_Timepicker2.default, {
 	                    outerRadius: '130',
 	                    interval: '15',
-	                    boundaryHour: '13',
+	                    boundaryHour: '8',
 	                    getResults: this.handleTimepicker,
 	                    showResults: true
 	                }),
 	                _react2.default.createElement(_Timepicker2.default, {
 	                    outerRadius: '180',
 	                    interval: '10',
-	                    boundaryHour: '7',
+	                    boundaryHour: '13',
 	                    getResults: this.handleTimepicker,
 	                    showResults: true
 	                })
@@ -22114,480 +22127,10 @@
 	
 	exports.default = LayoutPage;
 	
-	
-	LayoutPage.propTypes = {
-	    children: _react.PropTypes.element,
-	    windowWidth: _react.PropTypes.number,
-	    handleKeyDown: _react.PropTypes.func,
-	    containerModalData: _react.PropTypes.object,
-	    isModalOpen: _react.PropTypes.bool
-	};
-	
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\aul.KYIV\\job\\Laboratory\\redux-react-skeleton\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Layout.page.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
 /* 176 */
-/*!******************************************************!*\
-  !*** ./develop/containers/modal/Modal.container.jsx ***!
-  \******************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\Users\\aul.KYIV\\job\\Laboratory\\redux-react-skeleton\\node_modules\\react-hot-loader\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\Users\\aul.KYIV\\job\\Laboratory\\redux-react-skeleton\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-	
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var ModalContainer = function (_Component) {
-	    _inherits(ModalContainer, _Component);
-	
-	    function ModalContainer() {
-	        _classCallCheck(this, ModalContainer);
-	
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ModalContainer).apply(this, arguments));
-	    }
-	
-	    _createClass(ModalContainer, [{
-	        key: 'getContainer',
-	        value: function getContainer(key) {
-	            return containers[key];
-	        }
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            var _props = this.props;
-	            var _props$containerModal = _props.containerModalData;
-	            var type = _props$containerModal.type;
-	
-	            var args = _objectWithoutProperties(_props$containerModal, ['type']);
-	
-	            var windowWidth = _props.windowWidth;
-	
-	            var _getContainer = this.getContainer(type);
-	
-	            var component = _getContainer.component;
-	            var className = _getContainer.className;
-	
-	
-	            var container = _react2.default.cloneElement(component, _extends({}, args, { windowWidth: windowWidth }));
-	
-	            return _react2.default.createElement(
-	                'div',
-	                { className: className },
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'container-modal', onClick: function onClick(e) {
-	                            return e.stopPropagation();
-	                        } },
-	                    container
-	                )
-	            );
-	        }
-	    }]);
-	
-	    return ModalContainer;
-	}(_react.Component);
-	
-	ModalContainer.propTypes = {
-	    onKeyDown: _react.PropTypes.func,
-	    windowWidth: _react.PropTypes.number,
-	    containerModalData: _react.PropTypes.object
-	};
-	
-	exports.default = ModalContainer;
-	
-	
-	var containers = {
-	    'AUTH': {
-	        component: _react2.default.createElement('div', null),
-	        className: 'modal authorization'
-	    }
-	};
-	
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\aul.KYIV\\job\\Laboratory\\redux-react-skeleton\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Modal.container.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-
-/***/ },
-/* 177 */
-/*!*************************************************!*\
-  !*** ./develop/assets/boot_scss/bootstrap.scss ***!
-  \*************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/resolve-url-loader!./../../../~/sass-loader?sourceMap!./bootstrap.scss */ 178);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 180)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/resolve-url-loader/index.js!./../../../node_modules/sass-loader/index.js?sourceMap!./bootstrap.scss", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/resolve-url-loader/index.js!./../../../node_modules/sass-loader/index.js?sourceMap!./bootstrap.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 178 */
-/*!*****************************************************************************************************************!*\
-  !*** ./~/css-loader!./~/resolve-url-loader!./~/sass-loader?sourceMap!./develop/assets/boot_scss/bootstrap.scss ***!
-  \*****************************************************************************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 179)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "/*!\r\n * Bootstrap v4.0.0-alpha.2 (http://getbootstrap.com)\r\n * Copyright 2011-2015 Twitter, Inc.\r\n * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)\r\n */\n\n/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */\n\nhtml {\n  font-family: sans-serif;\n  -ms-text-size-adjust: 100%;\n  -webkit-text-size-adjust: 100%;\n}\n\nbody {\n  margin: 0;\n}\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block;\n}\n\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block;\n  vertical-align: baseline;\n}\n\naudio:not([controls]) {\n  display: none;\n  height: 0;\n}\n\n[hidden],\ntemplate {\n  display: none;\n}\n\na {\n  background-color: transparent;\n}\n\na:active {\n  outline: 0;\n}\n\na:hover {\n  outline: 0;\n}\n\nabbr[title] {\n  border-bottom: 1px dotted;\n}\n\nb,\nstrong {\n  font-weight: bold;\n}\n\ndfn {\n  font-style: italic;\n}\n\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0;\n}\n\nmark {\n  background: #ff0;\n  color: #000;\n}\n\nsmall {\n  font-size: 80%;\n}\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\n\nsup {\n  top: -0.5em;\n}\n\nsub {\n  bottom: -0.25em;\n}\n\nimg {\n  border: 0;\n}\n\nsvg:not(:root) {\n  overflow: hidden;\n}\n\nfigure {\n  margin: 1em 40px;\n}\n\nhr {\n  box-sizing: content-box;\n  height: 0;\n}\n\npre {\n  overflow: auto;\n}\n\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace;\n  font-size: 1em;\n}\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  color: inherit;\n  font: inherit;\n  margin: 0;\n}\n\nbutton {\n  overflow: visible;\n}\n\nbutton,\nselect {\n  text-transform: none;\n}\n\nbutton,\nhtml input[type=\"button\"],\ninput[type=\"reset\"],\ninput[type=\"submit\"] {\n  -webkit-appearance: button;\n  cursor: pointer;\n}\n\nbutton[disabled],\nhtml input[disabled] {\n  cursor: default;\n}\n\nbutton::-moz-focus-inner,\ninput::-moz-focus-inner {\n  border: 0;\n  padding: 0;\n}\n\ninput {\n  line-height: normal;\n}\n\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  box-sizing: border-box;\n  padding: 0;\n}\n\ninput[type=\"number\"]::-webkit-inner-spin-button,\ninput[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto;\n}\n\ninput[type=\"search\"] {\n  -webkit-appearance: textfield;\n  box-sizing: content-box;\n}\n\ninput[type=\"search\"]::-webkit-search-cancel-button,\ninput[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n\nfieldset {\n  border: 1px solid #c0c0c0;\n  margin: 0 2px;\n  padding: 0.35em 0.625em 0.75em;\n}\n\nlegend {\n  border: 0;\n  padding: 0;\n}\n\ntextarea {\n  overflow: auto;\n}\n\noptgroup {\n  font-weight: bold;\n}\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\n\ntd,\nth {\n  padding: 0;\n}\n\n@media print {\n  *,\n  *::before,\n  *::after {\n    text-shadow: none !important;\n    box-shadow: none !important;\n  }\n\n  a,\n  a:visited {\n    text-decoration: underline;\n  }\n\n  abbr[title]::after {\n    content: \" (\" attr(title) \")\";\n  }\n\n  pre,\n  blockquote {\n    border: 1px solid #999;\n    page-break-inside: avoid;\n  }\n\n  thead {\n    display: table-header-group;\n  }\n\n  tr,\n  img {\n    page-break-inside: avoid;\n  }\n\n  img {\n    max-width: 100% !important;\n  }\n\n  p,\n  h2,\n  h3 {\n    orphans: 3;\n    widows: 3;\n  }\n\n  h2,\n  h3 {\n    page-break-after: avoid;\n  }\n\n  .navbar {\n    display: none;\n  }\n\n  .btn > .caret,\n  .dropup > .btn > .caret {\n    border-top-color: #000 !important;\n  }\n\n  .label {\n    border: 1px solid #000;\n  }\n\n  .table {\n    border-collapse: collapse !important;\n  }\n\n  .table td,\n  .table th {\n    background-color: #fff !important;\n  }\n\n  .table-bordered th,\n  .table-bordered td {\n    border: 1px solid #ddd !important;\n  }\n}\n\nhtml {\n  box-sizing: border-box;\n}\n\n*,\n*::before,\n*::after {\n  box-sizing: inherit;\n}\n\n@-moz-viewport {\n  width: device-width;\n}\n\n@-ms-viewport {\n  width: device-width;\n}\n\n@-o-viewport {\n  width: device-width;\n}\n\n@-webkit-viewport {\n  width: device-width;\n}\n\n@viewport {\n  width: device-width;\n}\n\nhtml {\n  font-size: 16px;\n  -webkit-tap-highlight-color: transparent;\n}\n\nbody {\n  font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-size: 1rem;\n  line-height: 1.5;\n  color: #373a3c;\n  background-color: #fff;\n}\n\n[tabindex=\"-1\"]:focus {\n  outline: none !important;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin-top: 0;\n  margin-bottom: .5rem;\n}\n\np {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\n\nabbr[title],\nabbr[data-original-title] {\n  cursor: help;\n  border-bottom: 1px dotted #818a91;\n}\n\naddress {\n  margin-bottom: 1rem;\n  font-style: normal;\n  line-height: inherit;\n}\n\nol,\nul,\ndl {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\n\nol ol,\nul ul,\nol ul,\nul ol {\n  margin-bottom: 0;\n}\n\ndt {\n  font-weight: bold;\n}\n\ndd {\n  margin-bottom: .5rem;\n  margin-left: 0;\n}\n\nblockquote {\n  margin: 0 0 1rem;\n}\n\na {\n  color: #0275d8;\n  text-decoration: none;\n}\n\na:focus,\na:hover {\n  color: #014c8c;\n  text-decoration: underline;\n}\n\na:focus {\n  outline: thin dotted;\n  outline: 5px auto -webkit-focus-ring-color;\n  outline-offset: -2px;\n}\n\npre {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\n\nfigure {\n  margin: 0 0 1rem;\n}\n\nimg {\n  vertical-align: middle;\n}\n\n[role=\"button\"] {\n  cursor: pointer;\n}\n\na,\narea,\nbutton,\n[role=\"button\"],\ninput,\nlabel,\nselect,\nsummary,\ntextarea {\n  touch-action: manipulation;\n}\n\ntable {\n  background-color: transparent;\n}\n\ncaption {\n  padding-top: 0.75rem;\n  padding-bottom: 0.75rem;\n  color: #818a91;\n  text-align: left;\n  caption-side: bottom;\n}\n\nth {\n  text-align: left;\n}\n\nlabel {\n  display: inline-block;\n  margin-bottom: .5rem;\n}\n\nbutton:focus {\n  outline: 1px dotted;\n  outline: 5px auto -webkit-focus-ring-color;\n}\n\ninput,\nbutton,\nselect,\ntextarea {\n  margin: 0;\n  line-height: inherit;\n  border-radius: 0;\n}\n\ntextarea {\n  resize: vertical;\n}\n\nfieldset {\n  min-width: 0;\n  padding: 0;\n  margin: 0;\n  border: 0;\n}\n\nlegend {\n  display: block;\n  width: 100%;\n  padding: 0;\n  margin-bottom: .5rem;\n  font-size: 1.5rem;\n  line-height: inherit;\n}\n\ninput[type=\"search\"] {\n  box-sizing: inherit;\n  -webkit-appearance: none;\n}\n\noutput {\n  display: inline-block;\n}\n\n[hidden] {\n  display: none !important;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\n.h1,\n.h2,\n.h3,\n.h4,\n.h5,\n.h6 {\n  margin-bottom: 0.5rem;\n  font-family: inherit;\n  font-weight: 500;\n  line-height: 1.1;\n  color: inherit;\n}\n\nh1 {\n  font-size: 2.5rem;\n}\n\nh2 {\n  font-size: 2rem;\n}\n\nh3 {\n  font-size: 1.75rem;\n}\n\nh4 {\n  font-size: 1.5rem;\n}\n\nh5 {\n  font-size: 1.25rem;\n}\n\nh6 {\n  font-size: 1rem;\n}\n\n.h1 {\n  font-size: 2.5rem;\n}\n\n.h2 {\n  font-size: 2rem;\n}\n\n.h3 {\n  font-size: 1.75rem;\n}\n\n.h4 {\n  font-size: 1.5rem;\n}\n\n.h5 {\n  font-size: 1.25rem;\n}\n\n.h6 {\n  font-size: 1rem;\n}\n\n.lead {\n  font-size: 1.25rem;\n  font-weight: 300;\n}\n\n.display-1 {\n  font-size: 6rem;\n  font-weight: 300;\n}\n\n.display-2 {\n  font-size: 5.5rem;\n  font-weight: 300;\n}\n\n.display-3 {\n  font-size: 4.5rem;\n  font-weight: 300;\n}\n\n.display-4 {\n  font-size: 3.5rem;\n  font-weight: 300;\n}\n\nhr {\n  margin-top: 1rem;\n  margin-bottom: 1rem;\n  border: 0;\n  border-top: 1px solid rgba(0, 0, 0, 0.1);\n}\n\nsmall,\n.small {\n  font-size: 80%;\n  font-weight: normal;\n}\n\nmark,\n.mark {\n  padding: .2em;\n  background-color: #fcf8e3;\n}\n\n.list-unstyled {\n  padding-left: 0;\n  list-style: none;\n}\n\n.list-inline {\n  padding-left: 0;\n  list-style: none;\n}\n\n.list-inline-item {\n  display: inline-block;\n}\n\n.list-inline-item:not(:last-child) {\n  margin-right: 5px;\n}\n\n.dl-horizontal {\n  margin-right: -1.875rem;\n  margin-left: -1.875rem;\n}\n\n.dl-horizontal::after {\n  content: \"\";\n  display: table;\n  clear: both;\n}\n\n.initialism {\n  font-size: 90%;\n  text-transform: uppercase;\n}\n\n.blockquote {\n  padding: 0.5rem 1rem;\n  margin-bottom: 1rem;\n  font-size: 1.25rem;\n  border-left: 0.25rem solid #eceeef;\n}\n\n.blockquote-footer {\n  display: block;\n  font-size: 80%;\n  line-height: 1.5;\n  color: #818a91;\n}\n\n.blockquote-footer::before {\n  content: \"\\2014   \\A0\";\n}\n\n.blockquote-reverse {\n  padding-right: 1rem;\n  padding-left: 0;\n  text-align: right;\n  border-right: 0.25rem solid #eceeef;\n  border-left: 0;\n}\n\n.blockquote-reverse .blockquote-footer::before {\n  content: \"\";\n}\n\n.blockquote-reverse .blockquote-footer::after {\n  content: \"\\A0   \\2014\";\n}\n\n.img-fluid,\n.carousel-inner > .carousel-item > img,\n.carousel-inner > .carousel-item > a > img {\n  display: block;\n  max-width: 100%;\n  height: auto;\n}\n\n.img-rounded {\n  border-radius: 0.3rem;\n}\n\n.img-thumbnail {\n  padding: 0.25rem;\n  line-height: 1.5;\n  background-color: #fff;\n  border: 1px solid #ddd;\n  border-radius: 0.25rem;\n  transition: all .2s ease-in-out;\n  display: inline-block;\n  max-width: 100%;\n  height: auto;\n}\n\n.img-circle {\n  border-radius: 50%;\n}\n\n.figure {\n  display: inline-block;\n}\n\n.figure-img {\n  margin-bottom: 0.5rem;\n  line-height: 1;\n}\n\n.figure-caption {\n  font-size: 90%;\n  color: #818a91;\n}\n\ncode,\nkbd,\npre,\nsamp {\n  font-family: Menlo, Monaco, Consolas, \"Courier New\", monospace;\n}\n\ncode {\n  padding: .2rem .4rem;\n  font-size: 90%;\n  color: #bd4147;\n  background-color: #f7f7f9;\n  border-radius: 0.25rem;\n}\n\nkbd {\n  padding: .2rem .4rem;\n  font-size: 90%;\n  color: #fff;\n  background-color: #333;\n  border-radius: 0.2rem;\n}\n\nkbd kbd {\n  padding: 0;\n  font-size: 100%;\n  font-weight: bold;\n}\n\npre {\n  display: block;\n  margin-top: 0;\n  margin-bottom: 1rem;\n  font-size: 90%;\n  line-height: 1.5;\n  color: #373a3c;\n}\n\npre code {\n  padding: 0;\n  font-size: inherit;\n  color: inherit;\n  background-color: transparent;\n  border-radius: 0;\n}\n\n.pre-scrollable {\n  max-height: 340px;\n  overflow-y: scroll;\n}\n\n.container {\n  margin-left: auto;\n  margin-right: auto;\n  padding-left: 0.9375rem;\n  padding-right: 0.9375rem;\n}\n\n.container::after {\n  content: \"\";\n  display: table;\n  clear: both;\n}\n\n@media (min-width: 544px) {\n  .container {\n    max-width: 576px;\n  }\n}\n\n@media (min-width: 768px) {\n  .container {\n    max-width: 720px;\n  }\n}\n\n@media (min-width: 992px) {\n  .container {\n    max-width: 940px;\n  }\n}\n\n@media (min-width: 1200px) {\n  .container {\n    max-width: 1140px;\n  }\n}\n\n.container-fluid {\n  margin-left: auto;\n  margin-right: auto;\n  padding-left: 0.9375rem;\n  padding-right: 0.9375rem;\n}\n\n.container-fluid::after {\n  content: \"\";\n  display: table;\n  clear: both;\n}\n\n.row {\n  margin-left: -0.9375rem;\n  margin-right: -0.9375rem;\n}\n\n.row::after {\n  content: \"\";\n  display: table;\n  clear: both;\n}\n\n.col-xs-1,\n.col-xs-2,\n.col-xs-3,\n.col-xs-4,\n.col-xs-5,\n.col-xs-6,\n.col-xs-7,\n.col-xs-8,\n.col-xs-9,\n.col-xs-10,\n.col-xs-11,\n.col-xs-12,\n.col-sm-1,\n.col-sm-2,\n.col-sm-3,\n.col-sm-4,\n.col-sm-5,\n.col-sm-6,\n.col-sm-7,\n.col-sm-8,\n.col-sm-9,\n.col-sm-10,\n.col-sm-11,\n.col-sm-12,\n.col-md-1,\n.col-md-2,\n.col-md-3,\n.col-md-4,\n.col-md-5,\n.col-md-6,\n.col-md-7,\n.col-md-8,\n.col-md-9,\n.col-md-10,\n.col-md-11,\n.col-md-12,\n.col-lg-1,\n.col-lg-2,\n.col-lg-3,\n.col-lg-4,\n.col-lg-5,\n.col-lg-6,\n.col-lg-7,\n.col-lg-8,\n.col-lg-9,\n.col-lg-10,\n.col-lg-11,\n.col-lg-12,\n.col-xl-1,\n.col-xl-2,\n.col-xl-3,\n.col-xl-4,\n.col-xl-5,\n.col-xl-6,\n.col-xl-7,\n.col-xl-8,\n.col-xl-9,\n.col-xl-10,\n.col-xl-11,\n.col-xl-12 {\n  position: relative;\n  min-height: 1px;\n  padding-left: 0.9375rem;\n  padding-right: 0.9375rem;\n}\n\n.col-xs-1,\n.col-xs-2,\n.col-xs-3,\n.col-xs-4,\n.col-xs-5,\n.col-xs-6,\n.col-xs-7,\n.col-xs-8,\n.col-xs-9,\n.col-xs-10,\n.col-xs-11,\n.col-xs-12 {\n  float: left;\n}\n\n.col-xs-1 {\n  width: 8.33333%;\n}\n\n.col-xs-2 {\n  width: 16.66667%;\n}\n\n.col-xs-3 {\n  width: 25%;\n}\n\n.col-xs-4 {\n  width: 33.33333%;\n}\n\n.col-xs-5 {\n  width: 41.66667%;\n}\n\n.col-xs-6 {\n  width: 50%;\n}\n\n.col-xs-7 {\n  width: 58.33333%;\n}\n\n.col-xs-8 {\n  width: 66.66667%;\n}\n\n.col-xs-9 {\n  width: 75%;\n}\n\n.col-xs-10 {\n  width: 83.33333%;\n}\n\n.col-xs-11 {\n  width: 91.66667%;\n}\n\n.col-xs-12 {\n  width: 100%;\n}\n\n.col-xs-pull-0 {\n  right: auto;\n}\n\n.col-xs-pull-1 {\n  right: 8.33333%;\n}\n\n.col-xs-pull-2 {\n  right: 16.66667%;\n}\n\n.col-xs-pull-3 {\n  right: 25%;\n}\n\n.col-xs-pull-4 {\n  right: 33.33333%;\n}\n\n.col-xs-pull-5 {\n  right: 41.66667%;\n}\n\n.col-xs-pull-6 {\n  right: 50%;\n}\n\n.col-xs-pull-7 {\n  right: 58.33333%;\n}\n\n.col-xs-pull-8 {\n  right: 66.66667%;\n}\n\n.col-xs-pull-9 {\n  right: 75%;\n}\n\n.col-xs-pull-10 {\n  right: 83.33333%;\n}\n\n.col-xs-pull-11 {\n  right: 91.66667%;\n}\n\n.col-xs-pull-12 {\n  right: 100%;\n}\n\n.col-xs-push-0 {\n  left: auto;\n}\n\n.col-xs-push-1 {\n  left: 8.33333%;\n}\n\n.col-xs-push-2 {\n  left: 16.66667%;\n}\n\n.col-xs-push-3 {\n  left: 25%;\n}\n\n.col-xs-push-4 {\n  left: 33.33333%;\n}\n\n.col-xs-push-5 {\n  left: 41.66667%;\n}\n\n.col-xs-push-6 {\n  left: 50%;\n}\n\n.col-xs-push-7 {\n  left: 58.33333%;\n}\n\n.col-xs-push-8 {\n  left: 66.66667%;\n}\n\n.col-xs-push-9 {\n  left: 75%;\n}\n\n.col-xs-push-10 {\n  left: 83.33333%;\n}\n\n.col-xs-push-11 {\n  left: 91.66667%;\n}\n\n.col-xs-push-12 {\n  left: 100%;\n}\n\n.col-xs-offset-0 {\n  margin-left: 0%;\n}\n\n.col-xs-offset-1 {\n  margin-left: 8.33333%;\n}\n\n.col-xs-offset-2 {\n  margin-left: 16.66667%;\n}\n\n.col-xs-offset-3 {\n  margin-left: 25%;\n}\n\n.col-xs-offset-4 {\n  margin-left: 33.33333%;\n}\n\n.col-xs-offset-5 {\n  margin-left: 41.66667%;\n}\n\n.col-xs-offset-6 {\n  margin-left: 50%;\n}\n\n.col-xs-offset-7 {\n  margin-left: 58.33333%;\n}\n\n.col-xs-offset-8 {\n  margin-left: 66.66667%;\n}\n\n.col-xs-offset-9 {\n  margin-left: 75%;\n}\n\n.col-xs-offset-10 {\n  margin-left: 83.33333%;\n}\n\n.col-xs-offset-11 {\n  margin-left: 91.66667%;\n}\n\n.col-xs-offset-12 {\n  margin-left: 100%;\n}\n\n@media (min-width: 544px) {\n  .col-sm-1,\n  .col-sm-2,\n  .col-sm-3,\n  .col-sm-4,\n  .col-sm-5,\n  .col-sm-6,\n  .col-sm-7,\n  .col-sm-8,\n  .col-sm-9,\n  .col-sm-10,\n  .col-sm-11,\n  .col-sm-12 {\n    float: left;\n  }\n\n  .col-sm-1 {\n    width: 8.33333%;\n  }\n\n  .col-sm-2 {\n    width: 16.66667%;\n  }\n\n  .col-sm-3 {\n    width: 25%;\n  }\n\n  .col-sm-4 {\n    width: 33.33333%;\n  }\n\n  .col-sm-5 {\n    width: 41.66667%;\n  }\n\n  .col-sm-6 {\n    width: 50%;\n  }\n\n  .col-sm-7 {\n    width: 58.33333%;\n  }\n\n  .col-sm-8 {\n    width: 66.66667%;\n  }\n\n  .col-sm-9 {\n    width: 75%;\n  }\n\n  .col-sm-10 {\n    width: 83.33333%;\n  }\n\n  .col-sm-11 {\n    width: 91.66667%;\n  }\n\n  .col-sm-12 {\n    width: 100%;\n  }\n\n  .col-sm-pull-0 {\n    right: auto;\n  }\n\n  .col-sm-pull-1 {\n    right: 8.33333%;\n  }\n\n  .col-sm-pull-2 {\n    right: 16.66667%;\n  }\n\n  .col-sm-pull-3 {\n    right: 25%;\n  }\n\n  .col-sm-pull-4 {\n    right: 33.33333%;\n  }\n\n  .col-sm-pull-5 {\n    right: 41.66667%;\n  }\n\n  .col-sm-pull-6 {\n    right: 50%;\n  }\n\n  .col-sm-pull-7 {\n    right: 58.33333%;\n  }\n\n  .col-sm-pull-8 {\n    right: 66.66667%;\n  }\n\n  .col-sm-pull-9 {\n    right: 75%;\n  }\n\n  .col-sm-pull-10 {\n    right: 83.33333%;\n  }\n\n  .col-sm-pull-11 {\n    right: 91.66667%;\n  }\n\n  .col-sm-pull-12 {\n    right: 100%;\n  }\n\n  .col-sm-push-0 {\n    left: auto;\n  }\n\n  .col-sm-push-1 {\n    left: 8.33333%;\n  }\n\n  .col-sm-push-2 {\n    left: 16.66667%;\n  }\n\n  .col-sm-push-3 {\n    left: 25%;\n  }\n\n  .col-sm-push-4 {\n    left: 33.33333%;\n  }\n\n  .col-sm-push-5 {\n    left: 41.66667%;\n  }\n\n  .col-sm-push-6 {\n    left: 50%;\n  }\n\n  .col-sm-push-7 {\n    left: 58.33333%;\n  }\n\n  .col-sm-push-8 {\n    left: 66.66667%;\n  }\n\n  .col-sm-push-9 {\n    left: 75%;\n  }\n\n  .col-sm-push-10 {\n    left: 83.33333%;\n  }\n\n  .col-sm-push-11 {\n    left: 91.66667%;\n  }\n\n  .col-sm-push-12 {\n    left: 100%;\n  }\n\n  .col-sm-offset-0 {\n    margin-left: 0%;\n  }\n\n  .col-sm-offset-1 {\n    margin-left: 8.33333%;\n  }\n\n  .col-sm-offset-2 {\n    margin-left: 16.66667%;\n  }\n\n  .col-sm-offset-3 {\n    margin-left: 25%;\n  }\n\n  .col-sm-offset-4 {\n    margin-left: 33.33333%;\n  }\n\n  .col-sm-offset-5 {\n    margin-left: 41.66667%;\n  }\n\n  .col-sm-offset-6 {\n    margin-left: 50%;\n  }\n\n  .col-sm-offset-7 {\n    margin-left: 58.33333%;\n  }\n\n  .col-sm-offset-8 {\n    margin-left: 66.66667%;\n  }\n\n  .col-sm-offset-9 {\n    margin-left: 75%;\n  }\n\n  .col-sm-offset-10 {\n    margin-left: 83.33333%;\n  }\n\n  .col-sm-offset-11 {\n    margin-left: 91.66667%;\n  }\n\n  .col-sm-offset-12 {\n    margin-left: 100%;\n  }\n}\n\n@media (min-width: 768px) {\n  .col-md-1,\n  .col-md-2,\n  .col-md-3,\n  .col-md-4,\n  .col-md-5,\n  .col-md-6,\n  .col-md-7,\n  .col-md-8,\n  .col-md-9,\n  .col-md-10,\n  .col-md-11,\n  .col-md-12 {\n    float: left;\n  }\n\n  .col-md-1 {\n    width: 8.33333%;\n  }\n\n  .col-md-2 {\n    width: 16.66667%;\n  }\n\n  .col-md-3 {\n    width: 25%;\n  }\n\n  .col-md-4 {\n    width: 33.33333%;\n  }\n\n  .col-md-5 {\n    width: 41.66667%;\n  }\n\n  .col-md-6 {\n    width: 50%;\n  }\n\n  .col-md-7 {\n    width: 58.33333%;\n  }\n\n  .col-md-8 {\n    width: 66.66667%;\n  }\n\n  .col-md-9 {\n    width: 75%;\n  }\n\n  .col-md-10 {\n    width: 83.33333%;\n  }\n\n  .col-md-11 {\n    width: 91.66667%;\n  }\n\n  .col-md-12 {\n    width: 100%;\n  }\n\n  .col-md-pull-0 {\n    right: auto;\n  }\n\n  .col-md-pull-1 {\n    right: 8.33333%;\n  }\n\n  .col-md-pull-2 {\n    right: 16.66667%;\n  }\n\n  .col-md-pull-3 {\n    right: 25%;\n  }\n\n  .col-md-pull-4 {\n    right: 33.33333%;\n  }\n\n  .col-md-pull-5 {\n    right: 41.66667%;\n  }\n\n  .col-md-pull-6 {\n    right: 50%;\n  }\n\n  .col-md-pull-7 {\n    right: 58.33333%;\n  }\n\n  .col-md-pull-8 {\n    right: 66.66667%;\n  }\n\n  .col-md-pull-9 {\n    right: 75%;\n  }\n\n  .col-md-pull-10 {\n    right: 83.33333%;\n  }\n\n  .col-md-pull-11 {\n    right: 91.66667%;\n  }\n\n  .col-md-pull-12 {\n    right: 100%;\n  }\n\n  .col-md-push-0 {\n    left: auto;\n  }\n\n  .col-md-push-1 {\n    left: 8.33333%;\n  }\n\n  .col-md-push-2 {\n    left: 16.66667%;\n  }\n\n  .col-md-push-3 {\n    left: 25%;\n  }\n\n  .col-md-push-4 {\n    left: 33.33333%;\n  }\n\n  .col-md-push-5 {\n    left: 41.66667%;\n  }\n\n  .col-md-push-6 {\n    left: 50%;\n  }\n\n  .col-md-push-7 {\n    left: 58.33333%;\n  }\n\n  .col-md-push-8 {\n    left: 66.66667%;\n  }\n\n  .col-md-push-9 {\n    left: 75%;\n  }\n\n  .col-md-push-10 {\n    left: 83.33333%;\n  }\n\n  .col-md-push-11 {\n    left: 91.66667%;\n  }\n\n  .col-md-push-12 {\n    left: 100%;\n  }\n\n  .col-md-offset-0 {\n    margin-left: 0%;\n  }\n\n  .col-md-offset-1 {\n    margin-left: 8.33333%;\n  }\n\n  .col-md-offset-2 {\n    margin-left: 16.66667%;\n  }\n\n  .col-md-offset-3 {\n    margin-left: 25%;\n  }\n\n  .col-md-offset-4 {\n    margin-left: 33.33333%;\n  }\n\n  .col-md-offset-5 {\n    margin-left: 41.66667%;\n  }\n\n  .col-md-offset-6 {\n    margin-left: 50%;\n  }\n\n  .col-md-offset-7 {\n    margin-left: 58.33333%;\n  }\n\n  .col-md-offset-8 {\n    margin-left: 66.66667%;\n  }\n\n  .col-md-offset-9 {\n    margin-left: 75%;\n  }\n\n  .col-md-offset-10 {\n    margin-left: 83.33333%;\n  }\n\n  .col-md-offset-11 {\n    margin-left: 91.66667%;\n  }\n\n  .col-md-offset-12 {\n    margin-left: 100%;\n  }\n}\n\n@media (min-width: 992px) {\n  .col-lg-1,\n  .col-lg-2,\n  .col-lg-3,\n  .col-lg-4,\n  .col-lg-5,\n  .col-lg-6,\n  .col-lg-7,\n  .col-lg-8,\n  .col-lg-9,\n  .col-lg-10,\n  .col-lg-11,\n  .col-lg-12 {\n    float: left;\n  }\n\n  .col-lg-1 {\n    width: 8.33333%;\n  }\n\n  .col-lg-2 {\n    width: 16.66667%;\n  }\n\n  .col-lg-3 {\n    width: 25%;\n  }\n\n  .col-lg-4 {\n    width: 33.33333%;\n  }\n\n  .col-lg-5 {\n    width: 41.66667%;\n  }\n\n  .col-lg-6 {\n    width: 50%;\n  }\n\n  .col-lg-7 {\n    width: 58.33333%;\n  }\n\n  .col-lg-8 {\n    width: 66.66667%;\n  }\n\n  .col-lg-9 {\n    width: 75%;\n  }\n\n  .col-lg-10 {\n    width: 83.33333%;\n  }\n\n  .col-lg-11 {\n    width: 91.66667%;\n  }\n\n  .col-lg-12 {\n    width: 100%;\n  }\n\n  .col-lg-pull-0 {\n    right: auto;\n  }\n\n  .col-lg-pull-1 {\n    right: 8.33333%;\n  }\n\n  .col-lg-pull-2 {\n    right: 16.66667%;\n  }\n\n  .col-lg-pull-3 {\n    right: 25%;\n  }\n\n  .col-lg-pull-4 {\n    right: 33.33333%;\n  }\n\n  .col-lg-pull-5 {\n    right: 41.66667%;\n  }\n\n  .col-lg-pull-6 {\n    right: 50%;\n  }\n\n  .col-lg-pull-7 {\n    right: 58.33333%;\n  }\n\n  .col-lg-pull-8 {\n    right: 66.66667%;\n  }\n\n  .col-lg-pull-9 {\n    right: 75%;\n  }\n\n  .col-lg-pull-10 {\n    right: 83.33333%;\n  }\n\n  .col-lg-pull-11 {\n    right: 91.66667%;\n  }\n\n  .col-lg-pull-12 {\n    right: 100%;\n  }\n\n  .col-lg-push-0 {\n    left: auto;\n  }\n\n  .col-lg-push-1 {\n    left: 8.33333%;\n  }\n\n  .col-lg-push-2 {\n    left: 16.66667%;\n  }\n\n  .col-lg-push-3 {\n    left: 25%;\n  }\n\n  .col-lg-push-4 {\n    left: 33.33333%;\n  }\n\n  .col-lg-push-5 {\n    left: 41.66667%;\n  }\n\n  .col-lg-push-6 {\n    left: 50%;\n  }\n\n  .col-lg-push-7 {\n    left: 58.33333%;\n  }\n\n  .col-lg-push-8 {\n    left: 66.66667%;\n  }\n\n  .col-lg-push-9 {\n    left: 75%;\n  }\n\n  .col-lg-push-10 {\n    left: 83.33333%;\n  }\n\n  .col-lg-push-11 {\n    left: 91.66667%;\n  }\n\n  .col-lg-push-12 {\n    left: 100%;\n  }\n\n  .col-lg-offset-0 {\n    margin-left: 0%;\n  }\n\n  .col-lg-offset-1 {\n    margin-left: 8.33333%;\n  }\n\n  .col-lg-offset-2 {\n    margin-left: 16.66667%;\n  }\n\n  .col-lg-offset-3 {\n    margin-left: 25%;\n  }\n\n  .col-lg-offset-4 {\n    margin-left: 33.33333%;\n  }\n\n  .col-lg-offset-5 {\n    margin-left: 41.66667%;\n  }\n\n  .col-lg-offset-6 {\n    margin-left: 50%;\n  }\n\n  .col-lg-offset-7 {\n    margin-left: 58.33333%;\n  }\n\n  .col-lg-offset-8 {\n    margin-left: 66.66667%;\n  }\n\n  .col-lg-offset-9 {\n    margin-left: 75%;\n  }\n\n  .col-lg-offset-10 {\n    margin-left: 83.33333%;\n  }\n\n  .col-lg-offset-11 {\n    margin-left: 91.66667%;\n  }\n\n  .col-lg-offset-12 {\n    margin-left: 100%;\n  }\n}\n\n@media (min-width: 1200px) {\n  .col-xl-1,\n  .col-xl-2,\n  .col-xl-3,\n  .col-xl-4,\n  .col-xl-5,\n  .col-xl-6,\n  .col-xl-7,\n  .col-xl-8,\n  .col-xl-9,\n  .col-xl-10,\n  .col-xl-11,\n  .col-xl-12 {\n    float: left;\n  }\n\n  .col-xl-1 {\n    width: 8.33333%;\n  }\n\n  .col-xl-2 {\n    width: 16.66667%;\n  }\n\n  .col-xl-3 {\n    width: 25%;\n  }\n\n  .col-xl-4 {\n    width: 33.33333%;\n  }\n\n  .col-xl-5 {\n    width: 41.66667%;\n  }\n\n  .col-xl-6 {\n    width: 50%;\n  }\n\n  .col-xl-7 {\n    width: 58.33333%;\n  }\n\n  .col-xl-8 {\n    width: 66.66667%;\n  }\n\n  .col-xl-9 {\n    width: 75%;\n  }\n\n  .col-xl-10 {\n    width: 83.33333%;\n  }\n\n  .col-xl-11 {\n    width: 91.66667%;\n  }\n\n  .col-xl-12 {\n    width: 100%;\n  }\n\n  .col-xl-pull-0 {\n    right: auto;\n  }\n\n  .col-xl-pull-1 {\n    right: 8.33333%;\n  }\n\n  .col-xl-pull-2 {\n    right: 16.66667%;\n  }\n\n  .col-xl-pull-3 {\n    right: 25%;\n  }\n\n  .col-xl-pull-4 {\n    right: 33.33333%;\n  }\n\n  .col-xl-pull-5 {\n    right: 41.66667%;\n  }\n\n  .col-xl-pull-6 {\n    right: 50%;\n  }\n\n  .col-xl-pull-7 {\n    right: 58.33333%;\n  }\n\n  .col-xl-pull-8 {\n    right: 66.66667%;\n  }\n\n  .col-xl-pull-9 {\n    right: 75%;\n  }\n\n  .col-xl-pull-10 {\n    right: 83.33333%;\n  }\n\n  .col-xl-pull-11 {\n    right: 91.66667%;\n  }\n\n  .col-xl-pull-12 {\n    right: 100%;\n  }\n\n  .col-xl-push-0 {\n    left: auto;\n  }\n\n  .col-xl-push-1 {\n    left: 8.33333%;\n  }\n\n  .col-xl-push-2 {\n    left: 16.66667%;\n  }\n\n  .col-xl-push-3 {\n    left: 25%;\n  }\n\n  .col-xl-push-4 {\n    left: 33.33333%;\n  }\n\n  .col-xl-push-5 {\n    left: 41.66667%;\n  }\n\n  .col-xl-push-6 {\n    left: 50%;\n  }\n\n  .col-xl-push-7 {\n    left: 58.33333%;\n  }\n\n  .col-xl-push-8 {\n    left: 66.66667%;\n  }\n\n  .col-xl-push-9 {\n    left: 75%;\n  }\n\n  .col-xl-push-10 {\n    left: 83.33333%;\n  }\n\n  .col-xl-push-11 {\n    left: 91.66667%;\n  }\n\n  .col-xl-push-12 {\n    left: 100%;\n  }\n\n  .col-xl-offset-0 {\n    margin-left: 0%;\n  }\n\n  .col-xl-offset-1 {\n    margin-left: 8.33333%;\n  }\n\n  .col-xl-offset-2 {\n    margin-left: 16.66667%;\n  }\n\n  .col-xl-offset-3 {\n    margin-left: 25%;\n  }\n\n  .col-xl-offset-4 {\n    margin-left: 33.33333%;\n  }\n\n  .col-xl-offset-5 {\n    margin-left: 41.66667%;\n  }\n\n  .col-xl-offset-6 {\n    margin-left: 50%;\n  }\n\n  .col-xl-offset-7 {\n    margin-left: 58.33333%;\n  }\n\n  .col-xl-offset-8 {\n    margin-left: 66.66667%;\n  }\n\n  .col-xl-offset-9 {\n    margin-left: 75%;\n  }\n\n  .col-xl-offset-10 {\n    margin-left: 83.33333%;\n  }\n\n  .col-xl-offset-11 {\n    margin-left: 91.66667%;\n  }\n\n  .col-xl-offset-12 {\n    margin-left: 100%;\n  }\n}\n\n.table {\n  width: 100%;\n  max-width: 100%;\n  margin-bottom: 1rem;\n}\n\n.table th,\n.table td {\n  padding: 0.75rem;\n  line-height: 1.5;\n  vertical-align: top;\n  border-top: 1px solid #eceeef;\n}\n\n.table thead th {\n  vertical-align: bottom;\n  border-bottom: 2px solid #eceeef;\n}\n\n.table tbody + tbody {\n  border-top: 2px solid #eceeef;\n}\n\n.table .table {\n  background-color: #fff;\n}\n\n.table-sm th,\n.table-sm td {\n  padding: 0.3rem;\n}\n\n.table-bordered {\n  border: 1px solid #eceeef;\n}\n\n.table-bordered th,\n.table-bordered td {\n  border: 1px solid #eceeef;\n}\n\n.table-bordered thead th,\n.table-bordered thead td {\n  border-bottom-width: 2px;\n}\n\n.table-striped tbody tr:nth-of-type(odd) {\n  background-color: #f9f9f9;\n}\n\n.table-hover tbody tr:hover {\n  background-color: #f5f5f5;\n}\n\n.table-active,\n.table-active > th,\n.table-active > td {\n  background-color: #f5f5f5;\n}\n\n.table-hover .table-active:hover {\n  background-color: #e8e8e8;\n}\n\n.table-hover .table-active:hover > td,\n.table-hover .table-active:hover > th {\n  background-color: #e8e8e8;\n}\n\n.table-success,\n.table-success > th,\n.table-success > td {\n  background-color: #dff0d8;\n}\n\n.table-hover .table-success:hover {\n  background-color: #d0e9c6;\n}\n\n.table-hover .table-success:hover > td,\n.table-hover .table-success:hover > th {\n  background-color: #d0e9c6;\n}\n\n.table-info,\n.table-info > th,\n.table-info > td {\n  background-color: #d9edf7;\n}\n\n.table-hover .table-info:hover {\n  background-color: #c4e3f3;\n}\n\n.table-hover .table-info:hover > td,\n.table-hover .table-info:hover > th {\n  background-color: #c4e3f3;\n}\n\n.table-warning,\n.table-warning > th,\n.table-warning > td {\n  background-color: #fcf8e3;\n}\n\n.table-hover .table-warning:hover {\n  background-color: #faf2cc;\n}\n\n.table-hover .table-warning:hover > td,\n.table-hover .table-warning:hover > th {\n  background-color: #faf2cc;\n}\n\n.table-danger,\n.table-danger > th,\n.table-danger > td {\n  background-color: #f2dede;\n}\n\n.table-hover .table-danger:hover {\n  background-color: #ebcccc;\n}\n\n.table-hover .table-danger:hover > td,\n.table-hover .table-danger:hover > th {\n  background-color: #ebcccc;\n}\n\n.table-responsive {\n  display: block;\n  width: 100%;\n  min-height: 0.01%;\n  overflow-x: auto;\n}\n\n.thead-inverse th {\n  color: #fff;\n  background-color: #373a3c;\n}\n\n.thead-default th {\n  color: #55595c;\n  background-color: #eceeef;\n}\n\n.table-inverse {\n  color: #eceeef;\n  background-color: #373a3c;\n}\n\n.table-inverse.table-bordered {\n  border: 0;\n}\n\n.table-inverse th,\n.table-inverse td,\n.table-inverse thead th {\n  border-color: #55595c;\n}\n\n.table-reflow thead {\n  float: left;\n}\n\n.table-reflow tbody {\n  display: block;\n  white-space: nowrap;\n}\n\n.table-reflow th,\n.table-reflow td {\n  border-top: 1px solid #eceeef;\n  border-left: 1px solid #eceeef;\n}\n\n.table-reflow th:last-child,\n.table-reflow td:last-child {\n  border-right: 1px solid #eceeef;\n}\n\n.table-reflow thead:last-child tr:last-child th,\n.table-reflow thead:last-child tr:last-child td,\n.table-reflow tbody:last-child tr:last-child th,\n.table-reflow tbody:last-child tr:last-child td,\n.table-reflow tfoot:last-child tr:last-child th,\n.table-reflow tfoot:last-child tr:last-child td {\n  border-bottom: 1px solid #eceeef;\n}\n\n.table-reflow tr {\n  float: left;\n}\n\n.table-reflow tr th,\n.table-reflow tr td {\n  display: block !important;\n  border: 1px solid #eceeef;\n}\n\n.form-control {\n  display: block;\n  width: 100%;\n  padding: 0.375rem 0.75rem;\n  font-size: 1rem;\n  line-height: 1.5;\n  color: #55595c;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #ccc;\n  border-radius: 0.25rem;\n}\n\n.form-control::-ms-expand {\n  background-color: transparent;\n  border: 0;\n}\n\n.form-control:focus {\n  border-color: #66afe9;\n  outline: none;\n}\n\n.form-control::placeholder {\n  color: #999;\n  opacity: 1;\n}\n\n.form-control:disabled,\n.form-control[readonly] {\n  background-color: #eceeef;\n  opacity: 1;\n}\n\n.form-control:disabled {\n  cursor: not-allowed;\n}\n\n.form-control-file,\n.form-control-range {\n  display: block;\n}\n\n.form-control-label {\n  padding: 0.375rem 0.75rem;\n  margin-bottom: 0;\n}\n\n@media screen and (-webkit-min-device-pixel-ratio: 0) {\n  input[type=\"date\"].form-control,\n  input[type=\"time\"].form-control,\n  input[type=\"datetime-local\"].form-control,\n  input[type=\"month\"].form-control {\n    line-height: 2.25rem;\n  }\n\n  input[type=\"date\"].input-sm,\n  .input-group-sm input[type=\"date\"].form-control,\n  input[type=\"time\"].input-sm,\n  .input-group-sm\n  input[type=\"time\"].form-control,\n  input[type=\"datetime-local\"].input-sm,\n  .input-group-sm\n  input[type=\"datetime-local\"].form-control,\n  input[type=\"month\"].input-sm,\n  .input-group-sm\n  input[type=\"month\"].form-control {\n    line-height: 1.8625rem;\n  }\n\n  input[type=\"date\"].input-lg,\n  .input-group-lg input[type=\"date\"].form-control,\n  input[type=\"time\"].input-lg,\n  .input-group-lg\n  input[type=\"time\"].form-control,\n  input[type=\"datetime-local\"].input-lg,\n  .input-group-lg\n  input[type=\"datetime-local\"].form-control,\n  input[type=\"month\"].input-lg,\n  .input-group-lg\n  input[type=\"month\"].form-control {\n    line-height: 3.16667rem;\n  }\n}\n\n.form-control-static {\n  min-height: 2.25rem;\n  padding-top: 0.375rem;\n  padding-bottom: 0.375rem;\n  margin-bottom: 0;\n}\n\n.form-control-static.form-control-sm,\n.input-group-sm > .form-control-static.form-control,\n.input-group-sm > .form-control-static.input-group-addon,\n.input-group-sm > .input-group-btn > .form-control-static.btn,\n.form-control-static.form-control-lg,\n.input-group-lg > .form-control-static.form-control,\n.input-group-lg > .form-control-static.input-group-addon,\n.input-group-lg > .input-group-btn > .form-control-static.btn {\n  padding-right: 0;\n  padding-left: 0;\n}\n\n.form-control-sm,\n.input-group-sm > .form-control,\n.input-group-sm > .input-group-addon,\n.input-group-sm > .input-group-btn > .btn {\n  padding: 0.275rem 0.75rem;\n  font-size: 0.875rem;\n  line-height: 1.5;\n  border-radius: 0.2rem;\n}\n\n.form-control-lg,\n.input-group-lg > .form-control,\n.input-group-lg > .input-group-addon,\n.input-group-lg > .input-group-btn > .btn {\n  padding: 0.75rem 1.25rem;\n  font-size: 1.25rem;\n  line-height: 1.33333;\n  border-radius: 0.3rem;\n}\n\n.form-group {\n  margin-bottom: 1rem;\n}\n\n.radio,\n.checkbox {\n  position: relative;\n  display: block;\n  margin-bottom: 0.75rem;\n}\n\n.radio label,\n.checkbox label {\n  padding-left: 1.25rem;\n  margin-bottom: 0;\n  font-weight: normal;\n  cursor: pointer;\n}\n\n.radio label input:only-child,\n.checkbox label input:only-child {\n  position: static;\n}\n\n.radio input[type=\"radio\"],\n.radio-inline input[type=\"radio\"],\n.checkbox input[type=\"checkbox\"],\n.checkbox-inline input[type=\"checkbox\"] {\n  position: absolute;\n  margin-top: .25rem;\n  margin-left: -1.25rem;\n}\n\n.radio + .radio,\n.checkbox + .checkbox {\n  margin-top: -.25rem;\n}\n\n.radio-inline,\n.checkbox-inline {\n  position: relative;\n  display: inline-block;\n  padding-left: 1.25rem;\n  margin-bottom: 0;\n  font-weight: normal;\n  vertical-align: middle;\n  cursor: pointer;\n}\n\n.radio-inline + .radio-inline,\n.checkbox-inline + .checkbox-inline {\n  margin-top: 0;\n  margin-left: .75rem;\n}\n\ninput[type=\"radio\"]:disabled,\ninput[type=\"radio\"].disabled,\ninput[type=\"checkbox\"]:disabled,\ninput[type=\"checkbox\"].disabled {\n  cursor: not-allowed;\n}\n\n.radio-inline.disabled,\n.checkbox-inline.disabled {\n  cursor: not-allowed;\n}\n\n.radio.disabled label,\n.checkbox.disabled label {\n  cursor: not-allowed;\n}\n\n.form-control-success,\n.form-control-warning,\n.form-control-danger {\n  padding-right: 2.25rem;\n  background-repeat: no-repeat;\n  background-position: center right 0.5625rem;\n  background-size: 1.4625rem 1.4625rem;\n}\n\n.has-success .text-help,\n.has-success .form-control-label,\n.has-success .radio,\n.has-success .checkbox,\n.has-success .radio-inline,\n.has-success .checkbox-inline,\n.has-success.radio label,\n.has-success.checkbox label,\n.has-success.radio-inline label,\n.has-success.checkbox-inline label {\n  color: #5cb85c;\n}\n\n.has-success .form-control {\n  border-color: #5cb85c;\n}\n\n.has-success .input-group-addon {\n  color: #5cb85c;\n  border-color: #5cb85c;\n  background-color: #eaf6ea;\n}\n\n.has-success .form-control-feedback {\n  color: #5cb85c;\n}\n\n.has-success .form-control-success {\n  background-image: url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MTIgNzkyIj48cGF0aCBmaWxsPSIjNWNiODVjIiBkPSJNMjMzLjggNjEwYy0xMy4zIDAtMjYtNi0zNC0xNi44TDkwLjUgNDQ4LjhDNzYuMyA0MzAgODAgNDAzLjMgOTguOCAzODljMTguOC0xNC4yIDQ1LjUtMTAuNCA1OS44IDguNGw3MiA5NUw0NTEuMyAyNDJjMTIuNS0yMCAzOC44LTI2LjIgNTguOC0xMy43IDIwIDEyLjQgMjYgMzguNyAxMy43IDU4LjhMMjcwIDU5MGMtNy40IDEyLTIwLjIgMTkuNC0zNC4zIDIwaC0yeiIvPjwvc3ZnPg==\");\n}\n\n.has-warning .text-help,\n.has-warning .form-control-label,\n.has-warning .radio,\n.has-warning .checkbox,\n.has-warning .radio-inline,\n.has-warning .checkbox-inline,\n.has-warning.radio label,\n.has-warning.checkbox label,\n.has-warning.radio-inline label,\n.has-warning.checkbox-inline label {\n  color: #f0ad4e;\n}\n\n.has-warning .form-control {\n  border-color: #f0ad4e;\n}\n\n.has-warning .input-group-addon {\n  color: #f0ad4e;\n  border-color: #f0ad4e;\n  background-color: white;\n}\n\n.has-warning .form-control-feedback {\n  color: #f0ad4e;\n}\n\n.has-warning .form-control-warning {\n  background-image: url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MTIgNzkyIj48cGF0aCBmaWxsPSIjZjBhZDRlIiBkPSJNNjAzIDY0MC4ybC0yNzguNS01MDljLTMuOC02LjYtMTAuOC0xMC42LTE4LjUtMTAuNnMtMTQuNyA0LTE4LjUgMTAuNkw5IDY0MC4yYy0zLjcgNi41LTMuNiAxNC40LjIgMjAuOCAzLjggNi41IDEwLjggMTAuNCAxOC4zIDEwLjRoNTU3YzcuNiAwIDE0LjYtNCAxOC40LTEwLjQgMy41LTYuNCAzLjYtMTQuNCAwLTIwLjh6bS0yNjYuNC0zMGgtNjEuMlY1NDloNjEuMnY2MS4yem0wLTEwN2gtNjEuMlYzMDRoNjEuMnYxOTl6Ii8+PC9zdmc+\");\n}\n\n.has-danger .text-help,\n.has-danger .form-control-label,\n.has-danger .radio,\n.has-danger .checkbox,\n.has-danger .radio-inline,\n.has-danger .checkbox-inline,\n.has-danger.radio label,\n.has-danger.checkbox label,\n.has-danger.radio-inline label,\n.has-danger.checkbox-inline label {\n  color: #d9534f;\n}\n\n.has-danger .form-control {\n  border-color: #d9534f;\n}\n\n.has-danger .input-group-addon {\n  color: #d9534f;\n  border-color: #d9534f;\n  background-color: #fdf7f7;\n}\n\n.has-danger .form-control-feedback {\n  color: #d9534f;\n}\n\n.has-danger .form-control-danger {\n  background-image: url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MTIgNzkyIj48cGF0aCBmaWxsPSIjZDk1MzRmIiBkPSJNNDQ3IDU0NC40Yy0xNC40IDE0LjQtMzcuNiAxNC40LTUyIDBsLTg5LTkyLjctODkgOTIuN2MtMTQuNSAxNC40LTM3LjcgMTQuNC01MiAwLTE0LjQtMTQuNC0xNC40LTM3LjYgMC01Mmw5Mi40LTk2LjMtOTIuNC05Ni4zYy0xNC40LTE0LjQtMTQuNC0zNy42IDAtNTJzMzcuNi0xNC4zIDUyIDBsODkgOTIuOCA4OS4yLTkyLjdjMTQuNC0xNC40IDM3LjYtMTQuNCA1MiAwIDE0LjMgMTQuNCAxNC4zIDM3LjYgMCA1MkwzNTQuNiAzOTZsOTIuNCA5Ni40YzE0LjQgMTQuNCAxNC40IDM3LjYgMCA1MnoiLz48L3N2Zz4=\");\n}\n\n@media (min-width: 544px) {\n  .form-inline .form-group {\n    display: inline-block;\n    margin-bottom: 0;\n    vertical-align: middle;\n  }\n\n  .form-inline .form-control {\n    display: inline-block;\n    width: auto;\n    vertical-align: middle;\n  }\n\n  .form-inline .form-control-static {\n    display: inline-block;\n  }\n\n  .form-inline .input-group {\n    display: inline-table;\n    vertical-align: middle;\n  }\n\n  .form-inline .input-group .input-group-addon,\n  .form-inline .input-group .input-group-btn,\n  .form-inline .input-group .form-control {\n    width: auto;\n  }\n\n  .form-inline .input-group > .form-control {\n    width: 100%;\n  }\n\n  .form-inline .form-control-label {\n    margin-bottom: 0;\n    vertical-align: middle;\n  }\n\n  .form-inline .radio,\n  .form-inline .checkbox {\n    display: inline-block;\n    margin-top: 0;\n    margin-bottom: 0;\n    vertical-align: middle;\n  }\n\n  .form-inline .radio label,\n  .form-inline .checkbox label {\n    padding-left: 0;\n  }\n\n  .form-inline .radio input[type=\"radio\"],\n  .form-inline .checkbox input[type=\"checkbox\"] {\n    position: relative;\n    margin-left: 0;\n  }\n\n  .form-inline .has-feedback .form-control-feedback {\n    top: 0;\n  }\n}\n\n.btn {\n  display: inline-block;\n  font-weight: normal;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: middle;\n  cursor: pointer;\n  user-select: none;\n  border: 1px solid transparent;\n  padding: 0.375rem 1rem;\n  font-size: 1rem;\n  line-height: 1.5;\n  border-radius: 0.25rem;\n}\n\n.btn:focus,\n.btn.focus,\n.btn:active:focus,\n.btn:active.focus,\n.btn.active:focus,\n.btn.active.focus {\n  outline: thin dotted;\n  outline: 5px auto -webkit-focus-ring-color;\n  outline-offset: -2px;\n}\n\n.btn:focus,\n.btn:hover {\n  text-decoration: none;\n}\n\n.btn.focus {\n  text-decoration: none;\n}\n\n.btn:active,\n.btn.active {\n  background-image: none;\n  outline: 0;\n}\n\n.btn.disabled,\n.btn:disabled {\n  cursor: not-allowed;\n  opacity: .65;\n}\n\na.btn.disabled,\nfieldset[disabled] a.btn {\n  pointer-events: none;\n}\n\n.btn-primary {\n  color: #fff;\n  background-color: #0275d8;\n  border-color: #0275d8;\n}\n\n.btn-primary:hover {\n  color: #fff;\n  background-color: #025aa5;\n  border-color: #01549b;\n}\n\n.btn-primary:focus,\n.btn-primary.focus {\n  color: #fff;\n  background-color: #025aa5;\n  border-color: #01549b;\n}\n\n.btn-primary:active,\n.btn-primary.active,\n.open > .btn-primary.dropdown-toggle {\n  color: #fff;\n  background-color: #025aa5;\n  border-color: #01549b;\n  background-image: none;\n}\n\n.btn-primary:active:hover,\n.btn-primary:active:focus,\n.btn-primary:active.focus,\n.btn-primary.active:hover,\n.btn-primary.active:focus,\n.btn-primary.active.focus,\n.open > .btn-primary.dropdown-toggle:hover,\n.open > .btn-primary.dropdown-toggle:focus,\n.open > .btn-primary.dropdown-toggle.focus {\n  color: #fff;\n  background-color: #014682;\n  border-color: #01315a;\n}\n\n.btn-primary.disabled:focus,\n.btn-primary.disabled.focus,\n.btn-primary:disabled:focus,\n.btn-primary:disabled.focus {\n  background-color: #0275d8;\n  border-color: #0275d8;\n}\n\n.btn-primary.disabled:hover,\n.btn-primary:disabled:hover {\n  background-color: #0275d8;\n  border-color: #0275d8;\n}\n\n.btn-secondary {\n  color: #373a3c;\n  background-color: #fff;\n  border-color: #ccc;\n}\n\n.btn-secondary:hover {\n  color: #373a3c;\n  background-color: #e6e6e6;\n  border-color: #adadad;\n}\n\n.btn-secondary:focus,\n.btn-secondary.focus {\n  color: #373a3c;\n  background-color: #e6e6e6;\n  border-color: #adadad;\n}\n\n.btn-secondary:active,\n.btn-secondary.active,\n.open > .btn-secondary.dropdown-toggle {\n  color: #373a3c;\n  background-color: #e6e6e6;\n  border-color: #adadad;\n  background-image: none;\n}\n\n.btn-secondary:active:hover,\n.btn-secondary:active:focus,\n.btn-secondary:active.focus,\n.btn-secondary.active:hover,\n.btn-secondary.active:focus,\n.btn-secondary.active.focus,\n.open > .btn-secondary.dropdown-toggle:hover,\n.open > .btn-secondary.dropdown-toggle:focus,\n.open > .btn-secondary.dropdown-toggle.focus {\n  color: #373a3c;\n  background-color: #d4d4d4;\n  border-color: #8c8c8c;\n}\n\n.btn-secondary.disabled:focus,\n.btn-secondary.disabled.focus,\n.btn-secondary:disabled:focus,\n.btn-secondary:disabled.focus {\n  background-color: #fff;\n  border-color: #ccc;\n}\n\n.btn-secondary.disabled:hover,\n.btn-secondary:disabled:hover {\n  background-color: #fff;\n  border-color: #ccc;\n}\n\n.btn-info {\n  color: #fff;\n  background-color: #5bc0de;\n  border-color: #5bc0de;\n}\n\n.btn-info:hover {\n  color: #fff;\n  background-color: #31b0d5;\n  border-color: #2aabd2;\n}\n\n.btn-info:focus,\n.btn-info.focus {\n  color: #fff;\n  background-color: #31b0d5;\n  border-color: #2aabd2;\n}\n\n.btn-info:active,\n.btn-info.active,\n.open > .btn-info.dropdown-toggle {\n  color: #fff;\n  background-color: #31b0d5;\n  border-color: #2aabd2;\n  background-image: none;\n}\n\n.btn-info:active:hover,\n.btn-info:active:focus,\n.btn-info:active.focus,\n.btn-info.active:hover,\n.btn-info.active:focus,\n.btn-info.active.focus,\n.open > .btn-info.dropdown-toggle:hover,\n.open > .btn-info.dropdown-toggle:focus,\n.open > .btn-info.dropdown-toggle.focus {\n  color: #fff;\n  background-color: #269abc;\n  border-color: #1f7e9a;\n}\n\n.btn-info.disabled:focus,\n.btn-info.disabled.focus,\n.btn-info:disabled:focus,\n.btn-info:disabled.focus {\n  background-color: #5bc0de;\n  border-color: #5bc0de;\n}\n\n.btn-info.disabled:hover,\n.btn-info:disabled:hover {\n  background-color: #5bc0de;\n  border-color: #5bc0de;\n}\n\n.btn-success {\n  color: #fff;\n  background-color: #5cb85c;\n  border-color: #5cb85c;\n}\n\n.btn-success:hover {\n  color: #fff;\n  background-color: #449d44;\n  border-color: #419641;\n}\n\n.btn-success:focus,\n.btn-success.focus {\n  color: #fff;\n  background-color: #449d44;\n  border-color: #419641;\n}\n\n.btn-success:active,\n.btn-success.active,\n.open > .btn-success.dropdown-toggle {\n  color: #fff;\n  background-color: #449d44;\n  border-color: #419641;\n  background-image: none;\n}\n\n.btn-success:active:hover,\n.btn-success:active:focus,\n.btn-success:active.focus,\n.btn-success.active:hover,\n.btn-success.active:focus,\n.btn-success.active.focus,\n.open > .btn-success.dropdown-toggle:hover,\n.open > .btn-success.dropdown-toggle:focus,\n.open > .btn-success.dropdown-toggle.focus {\n  color: #fff;\n  background-color: #398439;\n  border-color: #2d672d;\n}\n\n.btn-success.disabled:focus,\n.btn-success.disabled.focus,\n.btn-success:disabled:focus,\n.btn-success:disabled.focus {\n  background-color: #5cb85c;\n  border-color: #5cb85c;\n}\n\n.btn-success.disabled:hover,\n.btn-success:disabled:hover {\n  background-color: #5cb85c;\n  border-color: #5cb85c;\n}\n\n.btn-warning {\n  color: #fff;\n  background-color: #f0ad4e;\n  border-color: #f0ad4e;\n}\n\n.btn-warning:hover {\n  color: #fff;\n  background-color: #ec971f;\n  border-color: #eb9316;\n}\n\n.btn-warning:focus,\n.btn-warning.focus {\n  color: #fff;\n  background-color: #ec971f;\n  border-color: #eb9316;\n}\n\n.btn-warning:active,\n.btn-warning.active,\n.open > .btn-warning.dropdown-toggle {\n  color: #fff;\n  background-color: #ec971f;\n  border-color: #eb9316;\n  background-image: none;\n}\n\n.btn-warning:active:hover,\n.btn-warning:active:focus,\n.btn-warning:active.focus,\n.btn-warning.active:hover,\n.btn-warning.active:focus,\n.btn-warning.active.focus,\n.open > .btn-warning.dropdown-toggle:hover,\n.open > .btn-warning.dropdown-toggle:focus,\n.open > .btn-warning.dropdown-toggle.focus {\n  color: #fff;\n  background-color: #d58512;\n  border-color: #b06d0f;\n}\n\n.btn-warning.disabled:focus,\n.btn-warning.disabled.focus,\n.btn-warning:disabled:focus,\n.btn-warning:disabled.focus {\n  background-color: #f0ad4e;\n  border-color: #f0ad4e;\n}\n\n.btn-warning.disabled:hover,\n.btn-warning:disabled:hover {\n  background-color: #f0ad4e;\n  border-color: #f0ad4e;\n}\n\n.btn-danger {\n  color: #fff;\n  background-color: #d9534f;\n  border-color: #d9534f;\n}\n\n.btn-danger:hover {\n  color: #fff;\n  background-color: #c9302c;\n  border-color: #c12e2a;\n}\n\n.btn-danger:focus,\n.btn-danger.focus {\n  color: #fff;\n  background-color: #c9302c;\n  border-color: #c12e2a;\n}\n\n.btn-danger:active,\n.btn-danger.active,\n.open > .btn-danger.dropdown-toggle {\n  color: #fff;\n  background-color: #c9302c;\n  border-color: #c12e2a;\n  background-image: none;\n}\n\n.btn-danger:active:hover,\n.btn-danger:active:focus,\n.btn-danger:active.focus,\n.btn-danger.active:hover,\n.btn-danger.active:focus,\n.btn-danger.active.focus,\n.open > .btn-danger.dropdown-toggle:hover,\n.open > .btn-danger.dropdown-toggle:focus,\n.open > .btn-danger.dropdown-toggle.focus {\n  color: #fff;\n  background-color: #ac2925;\n  border-color: #8b211e;\n}\n\n.btn-danger.disabled:focus,\n.btn-danger.disabled.focus,\n.btn-danger:disabled:focus,\n.btn-danger:disabled.focus {\n  background-color: #d9534f;\n  border-color: #d9534f;\n}\n\n.btn-danger.disabled:hover,\n.btn-danger:disabled:hover {\n  background-color: #d9534f;\n  border-color: #d9534f;\n}\n\n.btn-primary-outline {\n  color: #0275d8;\n  background-image: none;\n  background-color: transparent;\n  border-color: #0275d8;\n}\n\n.btn-primary-outline:focus,\n.btn-primary-outline.focus,\n.btn-primary-outline:active,\n.btn-primary-outline.active,\n.open > .btn-primary-outline.dropdown-toggle {\n  color: #fff;\n  background-color: #0275d8;\n  border-color: #0275d8;\n}\n\n.btn-primary-outline:hover {\n  color: #fff;\n  background-color: #0275d8;\n  border-color: #0275d8;\n}\n\n.btn-primary-outline.disabled:focus,\n.btn-primary-outline.disabled.focus,\n.btn-primary-outline:disabled:focus,\n.btn-primary-outline:disabled.focus {\n  border-color: #43a7fd;\n}\n\n.btn-primary-outline.disabled:hover,\n.btn-primary-outline:disabled:hover {\n  border-color: #43a7fd;\n}\n\n.btn-secondary-outline {\n  color: #ccc;\n  background-image: none;\n  background-color: transparent;\n  border-color: #ccc;\n}\n\n.btn-secondary-outline:focus,\n.btn-secondary-outline.focus,\n.btn-secondary-outline:active,\n.btn-secondary-outline.active,\n.open > .btn-secondary-outline.dropdown-toggle {\n  color: #fff;\n  background-color: #ccc;\n  border-color: #ccc;\n}\n\n.btn-secondary-outline:hover {\n  color: #fff;\n  background-color: #ccc;\n  border-color: #ccc;\n}\n\n.btn-secondary-outline.disabled:focus,\n.btn-secondary-outline.disabled.focus,\n.btn-secondary-outline:disabled:focus,\n.btn-secondary-outline:disabled.focus {\n  border-color: white;\n}\n\n.btn-secondary-outline.disabled:hover,\n.btn-secondary-outline:disabled:hover {\n  border-color: white;\n}\n\n.btn-info-outline {\n  color: #5bc0de;\n  background-image: none;\n  background-color: transparent;\n  border-color: #5bc0de;\n}\n\n.btn-info-outline:focus,\n.btn-info-outline.focus,\n.btn-info-outline:active,\n.btn-info-outline.active,\n.open > .btn-info-outline.dropdown-toggle {\n  color: #fff;\n  background-color: #5bc0de;\n  border-color: #5bc0de;\n}\n\n.btn-info-outline:hover {\n  color: #fff;\n  background-color: #5bc0de;\n  border-color: #5bc0de;\n}\n\n.btn-info-outline.disabled:focus,\n.btn-info-outline.disabled.focus,\n.btn-info-outline:disabled:focus,\n.btn-info-outline:disabled.focus {\n  border-color: #b0e1ef;\n}\n\n.btn-info-outline.disabled:hover,\n.btn-info-outline:disabled:hover {\n  border-color: #b0e1ef;\n}\n\n.btn-success-outline {\n  color: #5cb85c;\n  background-image: none;\n  background-color: transparent;\n  border-color: #5cb85c;\n}\n\n.btn-success-outline:focus,\n.btn-success-outline.focus,\n.btn-success-outline:active,\n.btn-success-outline.active,\n.open > .btn-success-outline.dropdown-toggle {\n  color: #fff;\n  background-color: #5cb85c;\n  border-color: #5cb85c;\n}\n\n.btn-success-outline:hover {\n  color: #fff;\n  background-color: #5cb85c;\n  border-color: #5cb85c;\n}\n\n.btn-success-outline.disabled:focus,\n.btn-success-outline.disabled.focus,\n.btn-success-outline:disabled:focus,\n.btn-success-outline:disabled.focus {\n  border-color: #a3d7a3;\n}\n\n.btn-success-outline.disabled:hover,\n.btn-success-outline:disabled:hover {\n  border-color: #a3d7a3;\n}\n\n.btn-warning-outline {\n  color: #f0ad4e;\n  background-image: none;\n  background-color: transparent;\n  border-color: #f0ad4e;\n}\n\n.btn-warning-outline:focus,\n.btn-warning-outline.focus,\n.btn-warning-outline:active,\n.btn-warning-outline.active,\n.open > .btn-warning-outline.dropdown-toggle {\n  color: #fff;\n  background-color: #f0ad4e;\n  border-color: #f0ad4e;\n}\n\n.btn-warning-outline:hover {\n  color: #fff;\n  background-color: #f0ad4e;\n  border-color: #f0ad4e;\n}\n\n.btn-warning-outline.disabled:focus,\n.btn-warning-outline.disabled.focus,\n.btn-warning-outline:disabled:focus,\n.btn-warning-outline:disabled.focus {\n  border-color: #f8d9ac;\n}\n\n.btn-warning-outline.disabled:hover,\n.btn-warning-outline:disabled:hover {\n  border-color: #f8d9ac;\n}\n\n.btn-danger-outline {\n  color: #d9534f;\n  background-image: none;\n  background-color: transparent;\n  border-color: #d9534f;\n}\n\n.btn-danger-outline:focus,\n.btn-danger-outline.focus,\n.btn-danger-outline:active,\n.btn-danger-outline.active,\n.open > .btn-danger-outline.dropdown-toggle {\n  color: #fff;\n  background-color: #d9534f;\n  border-color: #d9534f;\n}\n\n.btn-danger-outline:hover {\n  color: #fff;\n  background-color: #d9534f;\n  border-color: #d9534f;\n}\n\n.btn-danger-outline.disabled:focus,\n.btn-danger-outline.disabled.focus,\n.btn-danger-outline:disabled:focus,\n.btn-danger-outline:disabled.focus {\n  border-color: #eba5a3;\n}\n\n.btn-danger-outline.disabled:hover,\n.btn-danger-outline:disabled:hover {\n  border-color: #eba5a3;\n}\n\n.btn-link {\n  font-weight: normal;\n  color: #0275d8;\n  border-radius: 0;\n}\n\n.btn-link,\n.btn-link:active,\n.btn-link.active,\n.btn-link:disabled {\n  background-color: transparent;\n}\n\n.btn-link,\n.btn-link:focus,\n.btn-link:active {\n  border-color: transparent;\n}\n\n.btn-link:hover {\n  border-color: transparent;\n}\n\n.btn-link:focus,\n.btn-link:hover {\n  color: #014c8c;\n  text-decoration: underline;\n  background-color: transparent;\n}\n\n.btn-link:disabled:focus,\n.btn-link:disabled:hover {\n  color: #818a91;\n  text-decoration: none;\n}\n\n.btn-lg,\n.btn-group-lg > .btn {\n  padding: 0.75rem 1.25rem;\n  font-size: 1.25rem;\n  line-height: 1.33333;\n  border-radius: 0.3rem;\n}\n\n.btn-sm,\n.btn-group-sm > .btn {\n  padding: 0.25rem 0.75rem;\n  font-size: 0.875rem;\n  line-height: 1.5;\n  border-radius: 0.2rem;\n}\n\n.btn-block {\n  display: block;\n  width: 100%;\n}\n\n.btn-block + .btn-block {\n  margin-top: 5px;\n}\n\ninput[type=\"submit\"].btn-block,\ninput[type=\"reset\"].btn-block,\ninput[type=\"button\"].btn-block {\n  width: 100%;\n}\n\n.fade {\n  opacity: 0;\n  transition: opacity .15s linear;\n}\n\n.fade.in {\n  opacity: 1;\n}\n\n.collapse {\n  display: none;\n}\n\n.collapse.in {\n  display: block;\n}\n\n.collapsing {\n  position: relative;\n  height: 0;\n  overflow: hidden;\n  transition-timing-function: ease;\n  transition-duration: .35s;\n  transition-property: height;\n}\n\n.dropup,\n.dropdown {\n  position: relative;\n}\n\n.dropdown-toggle::after {\n  display: inline-block;\n  width: 0;\n  height: 0;\n  margin-right: .25rem;\n  margin-left: .25rem;\n  vertical-align: middle;\n  content: \"\";\n  border-top: 0.3em solid;\n  border-right: 0.3em solid transparent;\n  border-left: 0.3em solid transparent;\n}\n\n.dropdown-toggle:focus {\n  outline: 0;\n}\n\n.dropup .dropdown-toggle::after {\n  border-top: 0;\n  border-bottom: 0.3em solid;\n}\n\n.dropdown-menu {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  z-index: 1000;\n  display: none;\n  float: left;\n  min-width: 160px;\n  padding: 5px 0;\n  margin: 2px 0 0;\n  font-size: 1rem;\n  color: #373a3c;\n  text-align: left;\n  list-style: none;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid rgba(0, 0, 0, 0.15);\n  border-radius: 0.25rem;\n}\n\n.dropdown-divider {\n  height: 1px;\n  margin: 0.5rem 0;\n  overflow: hidden;\n  background-color: #e5e5e5;\n}\n\n.dropdown-item {\n  display: block;\n  width: 100%;\n  padding: 3px 20px;\n  clear: both;\n  font-weight: normal;\n  line-height: 1.5;\n  color: #373a3c;\n  text-align: inherit;\n  white-space: nowrap;\n  background: none;\n  border: 0;\n}\n\n.dropdown-item:focus,\n.dropdown-item:hover {\n  color: #2b2d2f;\n  text-decoration: none;\n  background-color: #f5f5f5;\n}\n\n.dropdown-item.active,\n.dropdown-item.active:focus,\n.dropdown-item.active:hover {\n  color: #fff;\n  text-decoration: none;\n  background-color: #0275d8;\n  outline: 0;\n}\n\n.dropdown-item.disabled,\n.dropdown-item.disabled:focus,\n.dropdown-item.disabled:hover {\n  color: #818a91;\n}\n\n.dropdown-item.disabled:focus,\n.dropdown-item.disabled:hover {\n  text-decoration: none;\n  cursor: not-allowed;\n  background-color: transparent;\n  background-image: none;\n  filter: \"progid:DXImageTransform.Microsoft.gradient(enabled = false)\";\n}\n\n.open > .dropdown-menu {\n  display: block;\n}\n\n.open > a {\n  outline: 0;\n}\n\n.dropdown-menu-right {\n  right: 0;\n  left: auto;\n}\n\n.dropdown-menu-left {\n  right: auto;\n  left: 0;\n}\n\n.dropdown-header {\n  display: block;\n  padding: 3px 20px;\n  font-size: 0.875rem;\n  line-height: 1.5;\n  color: #818a91;\n  white-space: nowrap;\n}\n\n.dropdown-backdrop {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 990;\n}\n\n.pull-right > .dropdown-menu {\n  right: 0;\n  left: auto;\n}\n\n.dropup .caret,\n.navbar-fixed-bottom .dropdown .caret {\n  content: \"\";\n  border-top: 0;\n  border-bottom: 0.3em solid;\n}\n\n.dropup .dropdown-menu,\n.navbar-fixed-bottom .dropdown .dropdown-menu {\n  top: auto;\n  bottom: 100%;\n  margin-bottom: 2px;\n}\n\n.btn-group,\n.btn-group-vertical {\n  position: relative;\n  display: inline-block;\n  vertical-align: middle;\n}\n\n.btn-group > .btn,\n.btn-group-vertical > .btn {\n  position: relative;\n  float: left;\n}\n\n.btn-group > .btn:focus,\n.btn-group > .btn:active,\n.btn-group > .btn.active,\n.btn-group-vertical > .btn:focus,\n.btn-group-vertical > .btn:active,\n.btn-group-vertical > .btn.active {\n  z-index: 2;\n}\n\n.btn-group > .btn:hover,\n.btn-group-vertical > .btn:hover {\n  z-index: 2;\n}\n\n.btn-group .btn + .btn,\n.btn-group .btn + .btn-group,\n.btn-group .btn-group + .btn,\n.btn-group .btn-group + .btn-group {\n  margin-left: -1px;\n}\n\n.btn-toolbar {\n  margin-left: -5px;\n}\n\n.btn-toolbar::after {\n  content: \"\";\n  display: table;\n  clear: both;\n}\n\n.btn-toolbar .btn-group,\n.btn-toolbar .input-group {\n  float: left;\n}\n\n.btn-toolbar > .btn,\n.btn-toolbar > .btn-group,\n.btn-toolbar > .input-group {\n  margin-left: 5px;\n}\n\n.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {\n  border-radius: 0;\n}\n\n.btn-group > .btn:first-child {\n  margin-left: 0;\n}\n\n.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-right-radius: 0;\n  border-top-right-radius: 0;\n}\n\n.btn-group > .btn:last-child:not(:first-child),\n.btn-group > .dropdown-toggle:not(:first-child) {\n  border-bottom-left-radius: 0;\n  border-top-left-radius: 0;\n}\n\n.btn-group > .btn-group {\n  float: left;\n}\n\n.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {\n  border-radius: 0;\n}\n\n.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,\n.btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {\n  border-bottom-right-radius: 0;\n  border-top-right-radius: 0;\n}\n\n.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {\n  border-bottom-left-radius: 0;\n  border-top-left-radius: 0;\n}\n\n.btn-group .dropdown-toggle:active,\n.btn-group.open .dropdown-toggle {\n  outline: 0;\n}\n\n.btn-group > .btn + .dropdown-toggle {\n  padding-right: 8px;\n  padding-left: 8px;\n}\n\n.btn-group > .btn-lg + .dropdown-toggle,\n.btn-group-lg.btn-group > .btn + .dropdown-toggle {\n  padding-right: 12px;\n  padding-left: 12px;\n}\n\n.btn .caret {\n  margin-left: 0;\n}\n\n.btn-lg .caret,\n.btn-group-lg > .btn .caret {\n  border-width: 0.3em 0.3em 0;\n  border-bottom-width: 0;\n}\n\n.dropup .btn-lg .caret,\n.dropup .btn-group-lg > .btn .caret {\n  border-width: 0 0.3em 0.3em;\n}\n\n.btn-group-vertical > .btn,\n.btn-group-vertical > .btn-group,\n.btn-group-vertical > .btn-group > .btn {\n  display: block;\n  float: none;\n  width: 100%;\n  max-width: 100%;\n}\n\n.btn-group-vertical > .btn-group::after {\n  content: \"\";\n  display: table;\n  clear: both;\n}\n\n.btn-group-vertical > .btn-group > .btn {\n  float: none;\n}\n\n.btn-group-vertical > .btn + .btn,\n.btn-group-vertical > .btn + .btn-group,\n.btn-group-vertical > .btn-group + .btn,\n.btn-group-vertical > .btn-group + .btn-group {\n  margin-top: -1px;\n  margin-left: 0;\n}\n\n.btn-group-vertical > .btn:not(:first-child):not(:last-child) {\n  border-radius: 0;\n}\n\n.btn-group-vertical > .btn:first-child:not(:last-child) {\n  border-top-right-radius: 0.25rem;\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n}\n\n.btn-group-vertical > .btn:last-child:not(:first-child) {\n  border-bottom-left-radius: 0.25rem;\n  border-top-right-radius: 0;\n  border-top-left-radius: 0;\n}\n\n.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {\n  border-radius: 0;\n}\n\n.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,\n.btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n}\n\n.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {\n  border-top-right-radius: 0;\n  border-top-left-radius: 0;\n}\n\n[data-toggle=\"buttons\"] > .btn input[type=\"radio\"],\n[data-toggle=\"buttons\"] > .btn input[type=\"checkbox\"],\n[data-toggle=\"buttons\"] > .btn-group > .btn input[type=\"radio\"],\n[data-toggle=\"buttons\"] > .btn-group > .btn input[type=\"checkbox\"] {\n  position: absolute;\n  clip: rect(0, 0, 0, 0);\n  pointer-events: none;\n}\n\n.input-group {\n  position: relative;\n  display: table;\n  border-collapse: separate;\n}\n\n.input-group .form-control {\n  position: relative;\n  z-index: 2;\n  float: left;\n  width: 100%;\n  margin-bottom: 0;\n}\n\n.input-group .form-control:focus,\n.input-group .form-control:active,\n.input-group .form-control:hover {\n  z-index: 3;\n}\n\n.input-group-addon,\n.input-group-btn,\n.input-group .form-control {\n  display: table-cell;\n}\n\n.input-group-addon:not(:first-child):not(:last-child),\n.input-group-btn:not(:first-child):not(:last-child),\n.input-group .form-control:not(:first-child):not(:last-child) {\n  border-radius: 0;\n}\n\n.input-group-addon,\n.input-group-btn {\n  width: 1%;\n  white-space: nowrap;\n  vertical-align: middle;\n}\n\n.input-group-addon {\n  padding: 0.375rem 0.75rem;\n  font-size: 1rem;\n  font-weight: normal;\n  line-height: 1;\n  color: #55595c;\n  text-align: center;\n  background-color: #eceeef;\n  border: 1px solid #ccc;\n  border-radius: 0.25rem;\n}\n\n.input-group-addon.form-control-sm,\n.input-group-sm > .input-group-addon,\n.input-group-sm > .input-group-btn > .input-group-addon.btn {\n  padding: 0.275rem 0.75rem;\n  font-size: 0.875rem;\n  border-radius: 0.2rem;\n}\n\n.input-group-addon.form-control-lg,\n.input-group-lg > .input-group-addon,\n.input-group-lg > .input-group-btn > .input-group-addon.btn {\n  padding: 0.75rem 1.25rem;\n  font-size: 1.25rem;\n  border-radius: 0.3rem;\n}\n\n.input-group-addon input[type=\"radio\"],\n.input-group-addon input[type=\"checkbox\"] {\n  margin-top: 0;\n}\n\n.input-group .form-control:first-child,\n.input-group-addon:first-child,\n.input-group-btn:first-child > .btn,\n.input-group-btn:first-child > .btn-group > .btn,\n.input-group-btn:first-child > .dropdown-toggle,\n.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),\n.input-group-btn:last-child > .btn-group:not(:last-child) > .btn {\n  border-bottom-right-radius: 0;\n  border-top-right-radius: 0;\n}\n\n.input-group-addon:first-child {\n  border-right: 0;\n}\n\n.input-group .form-control:last-child,\n.input-group-addon:last-child,\n.input-group-btn:last-child > .btn,\n.input-group-btn:last-child > .btn-group > .btn,\n.input-group-btn:last-child > .dropdown-toggle,\n.input-group-btn:first-child > .btn:not(:first-child),\n.input-group-btn:first-child > .btn-group:not(:first-child) > .btn {\n  border-bottom-left-radius: 0;\n  border-top-left-radius: 0;\n}\n\n.input-group-addon:last-child {\n  border-left: 0;\n}\n\n.input-group-btn {\n  position: relative;\n  font-size: 0;\n  white-space: nowrap;\n}\n\n.input-group-btn > .btn {\n  position: relative;\n}\n\n.input-group-btn > .btn + .btn {\n  margin-left: -1px;\n}\n\n.input-group-btn > .btn:focus,\n.input-group-btn > .btn:active,\n.input-group-btn > .btn:hover {\n  z-index: 3;\n}\n\n.input-group-btn:first-child > .btn,\n.input-group-btn:first-child > .btn-group {\n  margin-right: -1px;\n}\n\n.input-group-btn:last-child > .btn,\n.input-group-btn:last-child > .btn-group {\n  z-index: 2;\n  margin-left: -1px;\n}\n\n.input-group-btn:last-child > .btn:focus,\n.input-group-btn:last-child > .btn:active,\n.input-group-btn:last-child > .btn:hover,\n.input-group-btn:last-child > .btn-group:focus,\n.input-group-btn:last-child > .btn-group:active,\n.input-group-btn:last-child > .btn-group:hover {\n  z-index: 3;\n}\n\n.c-input {\n  position: relative;\n  display: inline;\n  padding-left: 1.5rem;\n  color: #555;\n  cursor: pointer;\n}\n\n.c-input > input {\n  position: absolute;\n  z-index: -1;\n  opacity: 0;\n}\n\n.c-input > input:checked ~ .c-indicator {\n  color: #fff;\n  background-color: #0074d9;\n}\n\n.c-input > input:focus ~ .c-indicator {\n  box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem #0074d9;\n}\n\n.c-input > input:active ~ .c-indicator {\n  color: #fff;\n  background-color: #84c6ff;\n}\n\n.c-input + .c-input {\n  margin-left: 1rem;\n}\n\n.c-indicator {\n  position: absolute;\n  top: 0;\n  left: 0;\n  display: block;\n  width: 1rem;\n  height: 1rem;\n  font-size: 65%;\n  line-height: 1rem;\n  color: #eee;\n  text-align: center;\n  user-select: none;\n  background-color: #eee;\n  background-repeat: no-repeat;\n  background-position: center center;\n  background-size: 50% 50%;\n}\n\n.c-checkbox .c-indicator {\n  border-radius: .25rem;\n}\n\n.c-checkbox input:checked ~ .c-indicator {\n  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTYuNCwxTDUuNywxLjdMMi45LDQuNUwyLjEsMy43TDEuNCwzTDAsNC40bDAuNywwLjdsMS41LDEuNWwwLjcsMC43bDAuNy0wLjdsMy41LTMuNWwwLjctMC43TDYuNCwxTDYuNCwxeiINCgkvPg0KPC9zdmc+DQo=);\n}\n\n.c-checkbox input:indeterminate ~ .c-indicator {\n  background-color: #0074d9;\n  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iOHB4IiBoZWlnaHQ9IjhweCIgdmlld0JveD0iMCAwIDggOCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgOCA4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0wLDN2Mmg4VjNIMHoiLz4NCjwvc3ZnPg0K);\n}\n\n.c-radio .c-indicator {\n  border-radius: 50%;\n}\n\n.c-radio input:checked ~ .c-indicator {\n  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTQsMUMyLjMsMSwxLDIuMywxLDRzMS4zLDMsMywzczMtMS4zLDMtM1M1LjcsMSw0LDF6Ii8+DQo8L3N2Zz4NCg==);\n}\n\n.c-inputs-stacked .c-input {\n  display: inline;\n}\n\n.c-inputs-stacked .c-input::after {\n  display: block;\n  margin-bottom: .25rem;\n  content: \"\";\n}\n\n.c-inputs-stacked .c-input + .c-input {\n  margin-left: 0;\n}\n\n.c-select {\n  display: inline-block;\n  max-width: 100%;\n  padding: .375rem 1.75rem .375rem .75rem;\n  padding-right: .75rem \\9;\n  color: #55595c;\n  vertical-align: middle;\n  background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAMAAACzvE1FAAAADFBMVEUzMzMzMzMzMzMzMzMKAG/3AAAAA3RSTlMAf4C/aSLHAAAAPElEQVR42q3NMQ4AIAgEQTn//2cLdRKppSGzBYwzVXvznNWs8C58CiussPJj8h6NwgorrKRdTvuV9v16Afn0AYFOB7aYAAAAAElFTkSuQmCC) no-repeat right 0.75rem center;\n  background-image: none \\9;\n  background-size: 8px 10px;\n  border: 1px solid #ccc;\n  -moz-appearance: none;\n  -webkit-appearance: none;\n}\n\n.c-select:focus {\n  border-color: #51a7e8;\n  outline: none;\n}\n\n.c-select::-ms-expand {\n  opacity: 0;\n}\n\n.c-select-sm {\n  padding-top: 3px;\n  padding-bottom: 3px;\n  font-size: 12px;\n}\n\n.c-select-sm:not([multiple]) {\n  height: 26px;\n  min-height: 26px;\n}\n\n.file {\n  position: relative;\n  display: inline-block;\n  height: 2.5rem;\n  cursor: pointer;\n}\n\n.file input {\n  min-width: 14rem;\n  margin: 0;\n  filter: alpha(opacity=0);\n  opacity: 0;\n}\n\n.file-custom {\n  position: absolute;\n  top: 0;\n  right: 0;\n  left: 0;\n  z-index: 5;\n  height: 2.5rem;\n  padding: .5rem 1rem;\n  line-height: 1.5;\n  color: #555;\n  user-select: none;\n  background-color: #fff;\n  border: 1px solid #ddd;\n  border-radius: .25rem;\n}\n\n.file-custom::after {\n  content: \"Choose file...\";\n}\n\n.file-custom::before {\n  position: absolute;\n  top: -.075rem;\n  right: -.075rem;\n  bottom: -.075rem;\n  z-index: 6;\n  display: block;\n  height: 2.5rem;\n  padding: .5rem 1rem;\n  line-height: 1.5;\n  color: #555;\n  content: \"Browse\";\n  background-color: #eee;\n  border: 1px solid #ddd;\n  border-radius: 0 .25rem .25rem 0;\n}\n\n.nav {\n  padding-left: 0;\n  margin-bottom: 0;\n  list-style: none;\n}\n\n.nav-link {\n  display: inline-block;\n}\n\n.nav-link:focus,\n.nav-link:hover {\n  text-decoration: none;\n}\n\n.nav-link.disabled {\n  color: #818a91;\n}\n\n.nav-link.disabled,\n.nav-link.disabled:focus,\n.nav-link.disabled:hover {\n  color: #818a91;\n  cursor: not-allowed;\n  background-color: transparent;\n}\n\n.nav-inline .nav-item {\n  display: inline-block;\n}\n\n.nav-inline .nav-item + .nav-item,\n.nav-inline .nav-link + .nav-link {\n  margin-left: 1rem;\n}\n\n.nav-tabs {\n  border-bottom: 1px solid #ddd;\n}\n\n.nav-tabs::after {\n  content: \"\";\n  display: table;\n  clear: both;\n}\n\n.nav-tabs .nav-item {\n  float: left;\n  margin-bottom: -1px;\n}\n\n.nav-tabs .nav-item + .nav-item {\n  margin-left: .2rem;\n}\n\n.nav-tabs .nav-link {\n  display: block;\n  padding: 0.5em 1em;\n  border: 1px solid transparent;\n  border-radius: 0.25rem 0.25rem 0 0;\n}\n\n.nav-tabs .nav-link:focus,\n.nav-tabs .nav-link:hover {\n  border-color: #eceeef #eceeef #ddd;\n}\n\n.nav-tabs .nav-link.disabled,\n.nav-tabs .nav-link.disabled:focus,\n.nav-tabs .nav-link.disabled:hover {\n  color: #818a91;\n  background-color: transparent;\n  border-color: transparent;\n}\n\n.nav-tabs .nav-link.active,\n.nav-tabs .nav-link.active:focus,\n.nav-tabs .nav-link.active:hover,\n.nav-tabs .nav-item.open .nav-link,\n.nav-tabs .nav-item.open .nav-link:focus,\n.nav-tabs .nav-item.open .nav-link:hover {\n  color: #55595c;\n  background-color: #fff;\n  border-color: #ddd #ddd transparent;\n}\n\n.nav-pills::after {\n  content: \"\";\n  display: table;\n  clear: both;\n}\n\n.nav-pills .nav-item {\n  float: left;\n}\n\n.nav-pills .nav-item + .nav-item {\n  margin-left: .2rem;\n}\n\n.nav-pills .nav-link {\n  display: block;\n  padding: 0.5em 1em;\n  border-radius: 0.25rem;\n}\n\n.nav-pills .nav-link.active,\n.nav-pills .nav-link.active:focus,\n.nav-pills .nav-link.active:hover,\n.nav-pills .nav-item.open .nav-link,\n.nav-pills .nav-item.open .nav-link:focus,\n.nav-pills .nav-item.open .nav-link:hover {\n  color: #fff;\n  cursor: default;\n  background-color: #0275d8;\n}\n\n.nav-stacked .nav-item {\n  display: block;\n  float: none;\n}\n\n.nav-stacked .nav-item + .nav-item {\n  margin-top: .2rem;\n  margin-left: 0;\n}\n\n.tab-content > .tab-pane {\n  display: none;\n}\n\n.tab-content > .active {\n  display: block;\n}\n\n.nav-tabs .dropdown-menu {\n  margin-top: -1px;\n  border-top-right-radius: 0;\n  border-top-left-radius: 0;\n}\n\n.navbar {\n  position: relative;\n  padding: 0.5rem 1rem;\n}\n\n.navbar::after {\n  content: \"\";\n  display: table;\n  clear: both;\n}\n\n@media (min-width: 544px) {\n  .navbar {\n    border-radius: 0.25rem;\n  }\n}\n\n.navbar-full {\n  z-index: 1000;\n}\n\n@media (min-width: 544px) {\n  .navbar-full {\n    border-radius: 0;\n  }\n}\n\n.navbar-fixed-top,\n.navbar-fixed-bottom {\n  position: fixed;\n  right: 0;\n  left: 0;\n  z-index: 1030;\n}\n\n@media (min-width: 544px) {\n  .navbar-fixed-top,\n  .navbar-fixed-bottom {\n    border-radius: 0;\n  }\n}\n\n.navbar-fixed-top {\n  top: 0;\n}\n\n.navbar-fixed-bottom {\n  bottom: 0;\n}\n\n.navbar-sticky-top {\n  position: sticky;\n  top: 0;\n  z-index: 1030;\n  width: 100%;\n}\n\n@media (min-width: 544px) {\n  .navbar-sticky-top {\n    border-radius: 0;\n  }\n}\n\n.navbar-brand {\n  float: left;\n  padding-top: .25rem;\n  padding-bottom: .25rem;\n  margin-right: 1rem;\n  font-size: 1.25rem;\n}\n\n.navbar-brand:focus,\n.navbar-brand:hover {\n  text-decoration: none;\n}\n\n.navbar-brand > img {\n  display: block;\n}\n\n.navbar-divider {\n  float: left;\n  width: 1px;\n  padding-top: .425rem;\n  padding-bottom: .425rem;\n  margin-right: 1rem;\n  margin-left: 1rem;\n  overflow: hidden;\n}\n\n.navbar-divider::before {\n  content: \"\\A0\";\n}\n\n.navbar-toggler {\n  padding: .5rem .75rem;\n  font-size: 1.25rem;\n  line-height: 1;\n  background: none;\n  border: 1px solid transparent;\n  border-radius: 0.25rem;\n}\n\n.navbar-toggler:focus,\n.navbar-toggler:hover {\n  text-decoration: none;\n}\n\n@media (min-width: 544px) {\n  .navbar-toggleable-xs {\n    display: block !important;\n  }\n}\n\n@media (min-width: 768px) {\n  .navbar-toggleable-sm {\n    display: block !important;\n  }\n}\n\n@media (min-width: 992px) {\n  .navbar-toggleable-md {\n    display: block !important;\n  }\n}\n\n.navbar-nav .nav-item {\n  float: left;\n}\n\n.navbar-nav .nav-link {\n  display: block;\n  padding-top: .425rem;\n  padding-bottom: .425rem;\n}\n\n.navbar-nav .nav-link + .nav-link {\n  margin-left: 1rem;\n}\n\n.navbar-nav .nav-item + .nav-item {\n  margin-left: 1rem;\n}\n\n.navbar-light .navbar-brand {\n  color: rgba(0, 0, 0, 0.8);\n}\n\n.navbar-light .navbar-brand:focus,\n.navbar-light .navbar-brand:hover {\n  color: rgba(0, 0, 0, 0.8);\n}\n\n.navbar-light .navbar-nav .nav-link {\n  color: rgba(0, 0, 0, 0.3);\n}\n\n.navbar-light .navbar-nav .nav-link:focus,\n.navbar-light .navbar-nav .nav-link:hover {\n  color: rgba(0, 0, 0, 0.6);\n}\n\n.navbar-light .navbar-nav .open > .nav-link,\n.navbar-light .navbar-nav .open > .nav-link:focus,\n.navbar-light .navbar-nav .open > .nav-link:hover,\n.navbar-light .navbar-nav .active > .nav-link,\n.navbar-light .navbar-nav .active > .nav-link:focus,\n.navbar-light .navbar-nav .active > .nav-link:hover,\n.navbar-light .navbar-nav .nav-link.open,\n.navbar-light .navbar-nav .nav-link.open:focus,\n.navbar-light .navbar-nav .nav-link.open:hover,\n.navbar-light .navbar-nav .nav-link.active,\n.navbar-light .navbar-nav .nav-link.active:focus,\n.navbar-light .navbar-nav .nav-link.active:hover {\n  color: rgba(0, 0, 0, 0.8);\n}\n\n.navbar-light .navbar-divider {\n  background-color: rgba(0, 0, 0, 0.075);\n}\n\n.navbar-dark .navbar-brand {\n  color: white;\n}\n\n.navbar-dark .navbar-brand:focus,\n.navbar-dark .navbar-brand:hover {\n  color: white;\n}\n\n.navbar-dark .navbar-nav .nav-link {\n  color: rgba(255, 255, 255, 0.5);\n}\n\n.navbar-dark .navbar-nav .nav-link:focus,\n.navbar-dark .navbar-nav .nav-link:hover {\n  color: rgba(255, 255, 255, 0.75);\n}\n\n.navbar-dark .navbar-nav .open > .nav-link,\n.navbar-dark .navbar-nav .open > .nav-link:focus,\n.navbar-dark .navbar-nav .open > .nav-link:hover,\n.navbar-dark .navbar-nav .active > .nav-link,\n.navbar-dark .navbar-nav .active > .nav-link:focus,\n.navbar-dark .navbar-nav .active > .nav-link:hover,\n.navbar-dark .navbar-nav .nav-link.open,\n.navbar-dark .navbar-nav .nav-link.open:focus,\n.navbar-dark .navbar-nav .nav-link.open:hover,\n.navbar-dark .navbar-nav .nav-link.active,\n.navbar-dark .navbar-nav .nav-link.active:focus,\n.navbar-dark .navbar-nav .nav-link.active:hover {\n  color: white;\n}\n\n.navbar-dark .navbar-divider {\n  background-color: rgba(255, 255, 255, 0.075);\n}\n\n.card {\n  position: relative;\n  display: block;\n  margin-bottom: 0.75rem;\n  background-color: #fff;\n  border: 1px solid #e5e5e5;\n  border-radius: 0.25rem;\n}\n\n.card-block {\n  padding: 1.25rem;\n}\n\n.card-title {\n  margin-bottom: 0.75rem;\n}\n\n.card-subtitle {\n  margin-top: -0.375rem;\n  margin-bottom: 0;\n}\n\n.card-text:last-child {\n  margin-bottom: 0;\n}\n\n.card-link:hover {\n  text-decoration: none;\n}\n\n.card-link + .card-link {\n  margin-left: 1.25rem;\n}\n\n.card > .list-group:first-child .list-group-item:first-child {\n  border-radius: 0.25rem 0.25rem 0 0;\n}\n\n.card > .list-group:last-child .list-group-item:last-child {\n  border-radius: 0 0 0.25rem 0.25rem;\n}\n\n.card-header {\n  padding: 0.75rem 1.25rem;\n  background-color: #f5f5f5;\n  border-bottom: 1px solid #e5e5e5;\n}\n\n.card-header:first-child {\n  border-radius: 0.25rem 0.25rem 0 0;\n}\n\n.card-footer {\n  padding: 0.75rem 1.25rem;\n  background-color: #f5f5f5;\n  border-top: 1px solid #e5e5e5;\n}\n\n.card-footer:last-child {\n  border-radius: 0 0 0.25rem 0.25rem;\n}\n\n.card-primary {\n  background-color: #0275d8;\n  border-color: #0275d8;\n}\n\n.card-success {\n  background-color: #5cb85c;\n  border-color: #5cb85c;\n}\n\n.card-info {\n  background-color: #5bc0de;\n  border-color: #5bc0de;\n}\n\n.card-warning {\n  background-color: #f0ad4e;\n  border-color: #f0ad4e;\n}\n\n.card-danger {\n  background-color: #d9534f;\n  border-color: #d9534f;\n}\n\n.card-primary-outline {\n  background-color: transparent;\n  border-color: #0275d8;\n}\n\n.card-secondary-outline {\n  background-color: transparent;\n  border-color: #ccc;\n}\n\n.card-info-outline {\n  background-color: transparent;\n  border-color: #5bc0de;\n}\n\n.card-success-outline {\n  background-color: transparent;\n  border-color: #5cb85c;\n}\n\n.card-warning-outline {\n  background-color: transparent;\n  border-color: #f0ad4e;\n}\n\n.card-danger-outline {\n  background-color: transparent;\n  border-color: #d9534f;\n}\n\n.card-inverse .card-header,\n.card-inverse .card-footer {\n  border-bottom: 1px solid rgba(255, 255, 255, 0.2);\n}\n\n.card-inverse .card-header,\n.card-inverse .card-footer,\n.card-inverse .card-title,\n.card-inverse .card-blockquote {\n  color: #fff;\n}\n\n.card-inverse .card-link,\n.card-inverse .card-text,\n.card-inverse .card-blockquote > footer {\n  color: rgba(255, 255, 255, 0.65);\n}\n\n.card-inverse .card-link:focus,\n.card-inverse .card-link:hover {\n  color: #fff;\n}\n\n.card-blockquote {\n  padding: 0;\n  margin-bottom: 0;\n  border-left: 0;\n}\n\n.card-img {\n  border-radius: 0.25rem;\n}\n\n.card-img-overlay {\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  padding: 1.25rem;\n}\n\n.card-img-top {\n  border-radius: 0.25rem 0.25rem 0 0;\n}\n\n.card-img-bottom {\n  border-radius: 0 0 0.25rem 0.25rem;\n}\n\n@media (min-width: 544px) {\n  .card-deck {\n    display: table;\n    table-layout: fixed;\n    border-spacing: 1.25rem 0;\n  }\n\n  .card-deck .card {\n    display: table-cell;\n    width: 1%;\n    vertical-align: top;\n  }\n\n  .card-deck-wrapper {\n    margin-right: -1.25rem;\n    margin-left: -1.25rem;\n  }\n}\n\n@media (min-width: 544px) {\n  .card-group {\n    display: table;\n    width: 100%;\n    table-layout: fixed;\n  }\n\n  .card-group .card {\n    display: table-cell;\n    vertical-align: top;\n  }\n\n  .card-group .card + .card {\n    margin-left: 0;\n    border-left: 0;\n  }\n\n  .card-group .card:first-child {\n    border-bottom-right-radius: 0;\n    border-top-right-radius: 0;\n  }\n\n  .card-group .card:first-child .card-img-top {\n    border-top-right-radius: 0;\n  }\n\n  .card-group .card:first-child .card-img-bottom {\n    border-bottom-right-radius: 0;\n  }\n\n  .card-group .card:last-child {\n    border-bottom-left-radius: 0;\n    border-top-left-radius: 0;\n  }\n\n  .card-group .card:last-child .card-img-top {\n    border-top-left-radius: 0;\n  }\n\n  .card-group .card:last-child .card-img-bottom {\n    border-bottom-left-radius: 0;\n  }\n\n  .card-group .card:not(:first-child):not(:last-child) {\n    border-radius: 0;\n  }\n\n  .card-group .card:not(:first-child):not(:last-child) .card-img-top,\n  .card-group .card:not(:first-child):not(:last-child) .card-img-bottom {\n    border-radius: 0;\n  }\n}\n\n@media (min-width: 544px) {\n  .card-columns {\n    column-count: 3;\n    column-gap: 1.25rem;\n  }\n\n  .card-columns .card {\n    display: inline-block;\n    width: 100%;\n  }\n}\n\n.breadcrumb {\n  padding: 0.75rem 1rem;\n  margin-bottom: 1rem;\n  list-style: none;\n  background-color: #eceeef;\n  border-radius: 0.25rem;\n}\n\n.breadcrumb::after {\n  content: \"\";\n  display: table;\n  clear: both;\n}\n\n.breadcrumb > li {\n  float: left;\n}\n\n.breadcrumb > li + li::before {\n  padding-right: .5rem;\n  padding-left: .5rem;\n  color: #818a91;\n  content: \"/\";\n}\n\n.breadcrumb > .active {\n  color: #818a91;\n}\n\n.pagination {\n  display: inline-block;\n  padding-left: 0;\n  margin-top: 1rem;\n  margin-bottom: 1rem;\n  border-radius: 0.25rem;\n}\n\n.page-item {\n  display: inline;\n}\n\n.page-item:first-child .page-link {\n  margin-left: 0;\n  border-bottom-left-radius: 0.25rem;\n  border-top-left-radius: 0.25rem;\n}\n\n.page-item:last-child .page-link {\n  border-bottom-right-radius: 0.25rem;\n  border-top-right-radius: 0.25rem;\n}\n\n.page-item.active .page-link,\n.page-item.active .page-link:focus,\n.page-item.active .page-link:hover {\n  z-index: 2;\n  color: #fff;\n  cursor: default;\n  background-color: #0275d8;\n  border-color: #0275d8;\n}\n\n.page-item.disabled .page-link,\n.page-item.disabled .page-link:focus,\n.page-item.disabled .page-link:hover {\n  color: #818a91;\n  cursor: not-allowed;\n  background-color: #fff;\n  border-color: #ddd;\n}\n\n.page-link {\n  position: relative;\n  float: left;\n  padding: 0.5rem 0.75rem;\n  margin-left: -1px;\n  line-height: 1.5;\n  color: #0275d8;\n  text-decoration: none;\n  background-color: #fff;\n  border: 1px solid #ddd;\n}\n\n.page-link:focus,\n.page-link:hover {\n  color: #014c8c;\n  background-color: #eceeef;\n  border-color: #ddd;\n}\n\n.pagination-lg .page-link {\n  padding: 0.75rem 1.5rem;\n  font-size: 1.25rem;\n  line-height: 1.33333;\n}\n\n.pagination-lg .page-item:first-child .page-link {\n  border-bottom-left-radius: 0.3rem;\n  border-top-left-radius: 0.3rem;\n}\n\n.pagination-lg .page-item:last-child .page-link {\n  border-bottom-right-radius: 0.3rem;\n  border-top-right-radius: 0.3rem;\n}\n\n.pagination-sm .page-link {\n  padding: 0.275rem 0.75rem;\n  font-size: 0.875rem;\n  line-height: 1.5;\n}\n\n.pagination-sm .page-item:first-child .page-link {\n  border-bottom-left-radius: 0.2rem;\n  border-top-left-radius: 0.2rem;\n}\n\n.pagination-sm .page-item:last-child .page-link {\n  border-bottom-right-radius: 0.2rem;\n  border-top-right-radius: 0.2rem;\n}\n\n.pager {\n  padding-left: 0;\n  margin-top: 1rem;\n  margin-bottom: 1rem;\n  text-align: center;\n  list-style: none;\n}\n\n.pager::after {\n  content: \"\";\n  display: table;\n  clear: both;\n}\n\n.pager li {\n  display: inline;\n}\n\n.pager li > a,\n.pager li > span {\n  display: inline-block;\n  padding: 5px 14px;\n  background-color: #fff;\n  border: 1px solid #ddd;\n  border-radius: 15px;\n}\n\n.pager li > a:focus,\n.pager li > a:hover {\n  text-decoration: none;\n  background-color: #eceeef;\n}\n\n.pager .disabled > a,\n.pager .disabled > a:focus,\n.pager .disabled > a:hover {\n  color: #818a91;\n  cursor: not-allowed;\n  background-color: #fff;\n}\n\n.pager .disabled > span {\n  color: #818a91;\n  cursor: not-allowed;\n  background-color: #fff;\n}\n\n.pager-next > a,\n.pager-next > span {\n  float: right;\n}\n\n.pager-prev > a,\n.pager-prev > span {\n  float: left;\n}\n\n.label {\n  display: inline-block;\n  padding: .25em .4em;\n  font-size: 75%;\n  font-weight: bold;\n  line-height: 1;\n  color: #fff;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: baseline;\n  border-radius: 0.25rem;\n}\n\n.label:empty {\n  display: none;\n}\n\n.btn .label {\n  position: relative;\n  top: -1px;\n}\n\na.label:focus,\na.label:hover {\n  color: #fff;\n  text-decoration: none;\n  cursor: pointer;\n}\n\n.label-pill {\n  padding-right: .6em;\n  padding-left: .6em;\n  border-radius: 10rem;\n}\n\n.label-default {\n  background-color: #818a91;\n}\n\n.label-default[href]:focus,\n.label-default[href]:hover {\n  background-color: #687077;\n}\n\n.label-primary {\n  background-color: #0275d8;\n}\n\n.label-primary[href]:focus,\n.label-primary[href]:hover {\n  background-color: #025aa5;\n}\n\n.label-success {\n  background-color: #5cb85c;\n}\n\n.label-success[href]:focus,\n.label-success[href]:hover {\n  background-color: #449d44;\n}\n\n.label-info {\n  background-color: #5bc0de;\n}\n\n.label-info[href]:focus,\n.label-info[href]:hover {\n  background-color: #31b0d5;\n}\n\n.label-warning {\n  background-color: #f0ad4e;\n}\n\n.label-warning[href]:focus,\n.label-warning[href]:hover {\n  background-color: #ec971f;\n}\n\n.label-danger {\n  background-color: #d9534f;\n}\n\n.label-danger[href]:focus,\n.label-danger[href]:hover {\n  background-color: #c9302c;\n}\n\n.jumbotron {\n  padding: 2rem 1rem;\n  margin-bottom: 2rem;\n  background-color: #eceeef;\n  border-radius: 0.3rem;\n}\n\n@media (min-width: 544px) {\n  .jumbotron {\n    padding: 4rem 2rem;\n  }\n}\n\n.jumbotron-hr {\n  border-top-color: #d0d5d8;\n}\n\n.jumbotron-fluid {\n  padding-right: 0;\n  padding-left: 0;\n  border-radius: 0;\n}\n\n.alert {\n  padding: 15px;\n  margin-bottom: 1rem;\n  border: 1px solid transparent;\n  border-radius: 0.25rem;\n}\n\n.alert > p,\n.alert > ul {\n  margin-bottom: 0;\n}\n\n.alert > p + p {\n  margin-top: 5px;\n}\n\n.alert-heading {\n  color: inherit;\n}\n\n.alert-link {\n  font-weight: bold;\n}\n\n.alert-dismissible {\n  padding-right: 35px;\n}\n\n.alert-dismissible .close {\n  position: relative;\n  top: -2px;\n  right: -21px;\n  color: inherit;\n}\n\n.alert-success {\n  background-color: #dff0d8;\n  border-color: #d0e9c6;\n  color: #3c763d;\n}\n\n.alert-success hr {\n  border-top-color: #c1e2b3;\n}\n\n.alert-success .alert-link {\n  color: #2b542c;\n}\n\n.alert-info {\n  background-color: #d9edf7;\n  border-color: #bcdff1;\n  color: #31708f;\n}\n\n.alert-info hr {\n  border-top-color: #a6d5ec;\n}\n\n.alert-info .alert-link {\n  color: #245269;\n}\n\n.alert-warning {\n  background-color: #fcf8e3;\n  border-color: #faf2cc;\n  color: #8a6d3b;\n}\n\n.alert-warning hr {\n  border-top-color: #f7ecb5;\n}\n\n.alert-warning .alert-link {\n  color: #66512c;\n}\n\n.alert-danger {\n  background-color: #f2dede;\n  border-color: #ebcccc;\n  color: #a94442;\n}\n\n.alert-danger hr {\n  border-top-color: #e4b9b9;\n}\n\n.alert-danger .alert-link {\n  color: #843534;\n}\n\n@keyframes progress-bar-stripes {\n  from {\n    background-position: 1rem 0;\n  }\n\n  to {\n    background-position: 0 0;\n  }\n}\n\n.progress {\n  display: block;\n  width: 100%;\n  height: 1rem;\n  margin-bottom: 1rem;\n}\n\n.progress[value] {\n  color: #0074d9;\n  border: 0;\n  appearance: none;\n}\n\n.progress[value]::-webkit-progress-bar {\n  background-color: #eee;\n  border-radius: 0.25rem;\n}\n\n.progress[value]::-webkit-progress-value::before {\n  content: attr(value);\n}\n\n.progress[value]::-webkit-progress-value {\n  background-color: #0074d9;\n  border-top-left-radius: 0.25rem;\n  border-bottom-left-radius: 0.25rem;\n}\n\n.progress[value=\"100\"]::-webkit-progress-value {\n  border-top-right-radius: 0.25rem;\n  border-bottom-right-radius: 0.25rem;\n}\n\n@media screen and (min-width: 0\\0) {\n  .progress {\n    background-color: #eee;\n    border-radius: 0.25rem;\n  }\n\n  .progress-bar {\n    display: inline-block;\n    height: 1rem;\n    text-indent: -999rem;\n    background-color: #0074d9;\n    border-top-left-radius: 0.25rem;\n    border-bottom-left-radius: 0.25rem;\n  }\n\n  .progress[width^=\"0\"] {\n    min-width: 2rem;\n    color: #818a91;\n    background-color: transparent;\n    background-image: none;\n  }\n\n  .progress[width=\"100%\"] {\n    border-top-right-radius: 0.25rem;\n    border-bottom-right-radius: 0.25rem;\n  }\n}\n\n.progress-striped[value]::-webkit-progress-value {\n  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-size: 1rem 1rem;\n}\n\n.progress-striped[value]::-moz-progress-bar {\n  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-size: 1rem 1rem;\n}\n\n@media screen and (min-width: 0\\0) {\n  .progress-bar-striped {\n    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n    background-size: 1rem 1rem;\n  }\n}\n\n.progress-animated[value]::-webkit-progress-value {\n  animation: progress-bar-stripes 2s linear infinite;\n}\n\n.progress-animated[value]::-moz-progress-bar {\n  animation: progress-bar-stripes 2s linear infinite;\n}\n\n@media screen and (min-width: 0\\0) {\n  .progress-animated .progress-bar-striped {\n    animation: progress-bar-stripes 2s linear infinite;\n  }\n}\n\n.progress-success[value]::-webkit-progress-value {\n  background-color: #5cb85c;\n}\n\n.progress-success[value]::-moz-progress-bar {\n  background-color: #5cb85c;\n}\n\n@media screen and (min-width: 0\\0) {\n  .progress-success .progress-bar {\n    background-color: #5cb85c;\n  }\n}\n\n.progress-info[value]::-webkit-progress-value {\n  background-color: #5bc0de;\n}\n\n.progress-info[value]::-moz-progress-bar {\n  background-color: #5bc0de;\n}\n\n@media screen and (min-width: 0\\0) {\n  .progress-info .progress-bar {\n    background-color: #5bc0de;\n  }\n}\n\n.progress-warning[value]::-webkit-progress-value {\n  background-color: #f0ad4e;\n}\n\n.progress-warning[value]::-moz-progress-bar {\n  background-color: #f0ad4e;\n}\n\n@media screen and (min-width: 0\\0) {\n  .progress-warning .progress-bar {\n    background-color: #f0ad4e;\n  }\n}\n\n.progress-danger[value]::-webkit-progress-value {\n  background-color: #d9534f;\n}\n\n.progress-danger[value]::-moz-progress-bar {\n  background-color: #d9534f;\n}\n\n@media screen and (min-width: 0\\0) {\n  .progress-danger .progress-bar {\n    background-color: #d9534f;\n  }\n}\n\n.media {\n  margin-top: 15px;\n}\n\n.media:first-child {\n  margin-top: 0;\n}\n\n.media,\n.media-body {\n  overflow: hidden;\n  zoom: 1;\n}\n\n.media-body {\n  width: 10000px;\n}\n\n.media-left,\n.media-right,\n.media-body {\n  display: table-cell;\n  vertical-align: top;\n}\n\n.media-middle {\n  vertical-align: middle;\n}\n\n.media-bottom {\n  vertical-align: bottom;\n}\n\n.media-object {\n  display: block;\n}\n\n.media-object.img-thumbnail {\n  max-width: none;\n}\n\n.media-right {\n  padding-left: 10px;\n}\n\n.media-left {\n  padding-right: 10px;\n}\n\n.media-heading {\n  margin-top: 0;\n  margin-bottom: 5px;\n}\n\n.media-list {\n  padding-left: 0;\n  list-style: none;\n}\n\n.list-group {\n  padding-left: 0;\n  margin-bottom: 0;\n}\n\n.list-group-item {\n  position: relative;\n  display: block;\n  padding: .75rem 1.25rem;\n  margin-bottom: -1px;\n  background-color: #fff;\n  border: 1px solid #ddd;\n}\n\n.list-group-item:first-child {\n  border-top-right-radius: 0.25rem;\n  border-top-left-radius: 0.25rem;\n}\n\n.list-group-item:last-child {\n  margin-bottom: 0;\n  border-bottom-right-radius: 0.25rem;\n  border-bottom-left-radius: 0.25rem;\n}\n\n.list-group-flush .list-group-item {\n  border-width: 1px 0;\n  border-radius: 0;\n}\n\n.list-group-flush:first-child .list-group-item:first-child {\n  border-top: 0;\n}\n\n.list-group-flush:last-child .list-group-item:last-child {\n  border-bottom: 0;\n}\n\na.list-group-item,\nbutton.list-group-item {\n  width: 100%;\n  color: #555;\n  text-align: inherit;\n}\n\na.list-group-item .list-group-item-heading,\nbutton.list-group-item .list-group-item-heading {\n  color: #333;\n}\n\na.list-group-item:focus,\na.list-group-item:hover,\nbutton.list-group-item:focus,\nbutton.list-group-item:hover {\n  color: #555;\n  text-decoration: none;\n  background-color: #f5f5f5;\n}\n\n.list-group-item.disabled,\n.list-group-item.disabled:focus,\n.list-group-item.disabled:hover {\n  color: #818a91;\n  cursor: not-allowed;\n  background-color: #eceeef;\n}\n\n.list-group-item.disabled .list-group-item-heading,\n.list-group-item.disabled:focus .list-group-item-heading,\n.list-group-item.disabled:hover .list-group-item-heading {\n  color: inherit;\n}\n\n.list-group-item.disabled .list-group-item-text,\n.list-group-item.disabled:focus .list-group-item-text,\n.list-group-item.disabled:hover .list-group-item-text {\n  color: #818a91;\n}\n\n.list-group-item.active,\n.list-group-item.active:focus,\n.list-group-item.active:hover {\n  z-index: 2;\n  color: #fff;\n  background-color: #0275d8;\n  border-color: #0275d8;\n}\n\n.list-group-item.active .list-group-item-heading,\n.list-group-item.active .list-group-item-heading > small,\n.list-group-item.active .list-group-item-heading > .small,\n.list-group-item.active:focus .list-group-item-heading,\n.list-group-item.active:focus .list-group-item-heading > small,\n.list-group-item.active:focus .list-group-item-heading > .small,\n.list-group-item.active:hover .list-group-item-heading,\n.list-group-item.active:hover .list-group-item-heading > small,\n.list-group-item.active:hover .list-group-item-heading > .small {\n  color: inherit;\n}\n\n.list-group-item.active .list-group-item-text,\n.list-group-item.active:focus .list-group-item-text,\n.list-group-item.active:hover .list-group-item-text {\n  color: #a8d6fe;\n}\n\n.list-group-item-success {\n  color: #3c763d;\n  background-color: #dff0d8;\n}\n\na.list-group-item-success,\nbutton.list-group-item-success {\n  color: #3c763d;\n}\n\na.list-group-item-success .list-group-item-heading,\nbutton.list-group-item-success .list-group-item-heading {\n  color: inherit;\n}\n\na.list-group-item-success:focus,\na.list-group-item-success:hover,\nbutton.list-group-item-success:focus,\nbutton.list-group-item-success:hover {\n  color: #3c763d;\n  background-color: #d0e9c6;\n}\n\na.list-group-item-success.active,\na.list-group-item-success.active:focus,\na.list-group-item-success.active:hover,\nbutton.list-group-item-success.active,\nbutton.list-group-item-success.active:focus,\nbutton.list-group-item-success.active:hover {\n  color: #fff;\n  background-color: #3c763d;\n  border-color: #3c763d;\n}\n\n.list-group-item-info {\n  color: #31708f;\n  background-color: #d9edf7;\n}\n\na.list-group-item-info,\nbutton.list-group-item-info {\n  color: #31708f;\n}\n\na.list-group-item-info .list-group-item-heading,\nbutton.list-group-item-info .list-group-item-heading {\n  color: inherit;\n}\n\na.list-group-item-info:focus,\na.list-group-item-info:hover,\nbutton.list-group-item-info:focus,\nbutton.list-group-item-info:hover {\n  color: #31708f;\n  background-color: #c4e3f3;\n}\n\na.list-group-item-info.active,\na.list-group-item-info.active:focus,\na.list-group-item-info.active:hover,\nbutton.list-group-item-info.active,\nbutton.list-group-item-info.active:focus,\nbutton.list-group-item-info.active:hover {\n  color: #fff;\n  background-color: #31708f;\n  border-color: #31708f;\n}\n\n.list-group-item-warning {\n  color: #8a6d3b;\n  background-color: #fcf8e3;\n}\n\na.list-group-item-warning,\nbutton.list-group-item-warning {\n  color: #8a6d3b;\n}\n\na.list-group-item-warning .list-group-item-heading,\nbutton.list-group-item-warning .list-group-item-heading {\n  color: inherit;\n}\n\na.list-group-item-warning:focus,\na.list-group-item-warning:hover,\nbutton.list-group-item-warning:focus,\nbutton.list-group-item-warning:hover {\n  color: #8a6d3b;\n  background-color: #faf2cc;\n}\n\na.list-group-item-warning.active,\na.list-group-item-warning.active:focus,\na.list-group-item-warning.active:hover,\nbutton.list-group-item-warning.active,\nbutton.list-group-item-warning.active:focus,\nbutton.list-group-item-warning.active:hover {\n  color: #fff;\n  background-color: #8a6d3b;\n  border-color: #8a6d3b;\n}\n\n.list-group-item-danger {\n  color: #a94442;\n  background-color: #f2dede;\n}\n\na.list-group-item-danger,\nbutton.list-group-item-danger {\n  color: #a94442;\n}\n\na.list-group-item-danger .list-group-item-heading,\nbutton.list-group-item-danger .list-group-item-heading {\n  color: inherit;\n}\n\na.list-group-item-danger:focus,\na.list-group-item-danger:hover,\nbutton.list-group-item-danger:focus,\nbutton.list-group-item-danger:hover {\n  color: #a94442;\n  background-color: #ebcccc;\n}\n\na.list-group-item-danger.active,\na.list-group-item-danger.active:focus,\na.list-group-item-danger.active:hover,\nbutton.list-group-item-danger.active,\nbutton.list-group-item-danger.active:focus,\nbutton.list-group-item-danger.active:hover {\n  color: #fff;\n  background-color: #a94442;\n  border-color: #a94442;\n}\n\n.list-group-item-heading {\n  margin-top: 0;\n  margin-bottom: 5px;\n}\n\n.list-group-item-text {\n  margin-bottom: 0;\n  line-height: 1.3;\n}\n\n.embed-responsive {\n  position: relative;\n  display: block;\n  height: 0;\n  padding: 0;\n  overflow: hidden;\n}\n\n.embed-responsive .embed-responsive-item,\n.embed-responsive iframe,\n.embed-responsive embed,\n.embed-responsive object,\n.embed-responsive video {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  border: 0;\n}\n\n.embed-responsive-21by9 {\n  padding-bottom: 42.85714%;\n}\n\n.embed-responsive-16by9 {\n  padding-bottom: 56.25%;\n}\n\n.embed-responsive-4by3 {\n  padding-bottom: 75%;\n}\n\n.embed-responsive-1by1 {\n  padding-bottom: 100%;\n}\n\n.close {\n  float: right;\n  font-size: 1.5rem;\n  font-weight: bold;\n  line-height: 1;\n  color: #000;\n  text-shadow: 0 1px 0 #fff;\n  opacity: .2;\n}\n\n.close:focus,\n.close:hover {\n  color: #000;\n  text-decoration: none;\n  cursor: pointer;\n  opacity: .5;\n}\n\nbutton.close {\n  padding: 0;\n  cursor: pointer;\n  background: transparent;\n  border: 0;\n  -webkit-appearance: none;\n}\n\n.modal-open {\n  overflow: hidden;\n}\n\n.modal {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 1050;\n  display: none;\n  overflow: hidden;\n  outline: 0;\n  -webkit-overflow-scrolling: touch;\n}\n\n.modal.fade .modal-dialog {\n  transition: transform .3s ease-out;\n  transform: translate(0, -25%);\n}\n\n.modal.in .modal-dialog {\n  transform: translate(0, 0);\n}\n\n.modal-open .modal {\n  overflow-x: hidden;\n  overflow-y: auto;\n}\n\n.modal-dialog {\n  position: relative;\n  width: auto;\n  margin: 10px;\n}\n\n.modal-content {\n  position: relative;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid rgba(0, 0, 0, 0.2);\n  border-radius: 0.3rem;\n  outline: 0;\n}\n\n.modal-backdrop {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 1040;\n  background-color: #000;\n}\n\n.modal-backdrop.fade {\n  opacity: 0;\n}\n\n.modal-backdrop.in {\n  opacity: 0.5;\n}\n\n.modal-header {\n  padding: 15px;\n  border-bottom: 1px solid #e5e5e5;\n}\n\n.modal-header::after {\n  content: \"\";\n  display: table;\n  clear: both;\n}\n\n.modal-header .close {\n  margin-top: -2px;\n}\n\n.modal-title {\n  margin: 0;\n  line-height: 1.5;\n}\n\n.modal-body {\n  position: relative;\n  padding: 15px;\n}\n\n.modal-footer {\n  padding: 15px;\n  text-align: right;\n  border-top: 1px solid #e5e5e5;\n}\n\n.modal-footer::after {\n  content: \"\";\n  display: table;\n  clear: both;\n}\n\n.modal-footer .btn + .btn {\n  margin-bottom: 0;\n  margin-left: 5px;\n}\n\n.modal-footer .btn-group .btn + .btn {\n  margin-left: -1px;\n}\n\n.modal-footer .btn-block + .btn-block {\n  margin-left: 0;\n}\n\n.modal-scrollbar-measure {\n  position: absolute;\n  top: -9999px;\n  width: 50px;\n  height: 50px;\n  overflow: scroll;\n}\n\n@media (min-width: 544px) {\n  .modal-dialog {\n    width: 600px;\n    margin: 30px auto;\n  }\n\n  .modal-sm {\n    width: 300px;\n  }\n}\n\n@media (min-width: 768px) {\n  .modal-lg {\n    width: 900px;\n  }\n}\n\n.tooltip {\n  position: absolute;\n  z-index: 1070;\n  display: block;\n  font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-style: normal;\n  font-weight: normal;\n  letter-spacing: normal;\n  line-break: auto;\n  line-height: 1.5;\n  text-align: left;\n  text-align: start;\n  text-decoration: none;\n  text-shadow: none;\n  text-transform: none;\n  white-space: normal;\n  word-break: normal;\n  word-spacing: normal;\n  word-wrap: normal;\n  font-size: 0.875rem;\n  opacity: 0;\n}\n\n.tooltip.in {\n  opacity: 0.9;\n}\n\n.tooltip.tooltip-top,\n.tooltip.bs-tether-element-attached-bottom {\n  padding: 5px 0;\n  margin-top: -3px;\n}\n\n.tooltip.tooltip-top .tooltip-arrow,\n.tooltip.bs-tether-element-attached-bottom .tooltip-arrow {\n  bottom: 0;\n  left: 50%;\n  margin-left: -5px;\n  border-width: 5px 5px 0;\n  border-top-color: #000;\n}\n\n.tooltip.tooltip-right,\n.tooltip.bs-tether-element-attached-left {\n  padding: 0 5px;\n  margin-left: 3px;\n}\n\n.tooltip.tooltip-right .tooltip-arrow,\n.tooltip.bs-tether-element-attached-left .tooltip-arrow {\n  top: 50%;\n  left: 0;\n  margin-top: -5px;\n  border-width: 5px 5px 5px 0;\n  border-right-color: #000;\n}\n\n.tooltip.tooltip-bottom,\n.tooltip.bs-tether-element-attached-top {\n  padding: 5px 0;\n  margin-top: 3px;\n}\n\n.tooltip.tooltip-bottom .tooltip-arrow,\n.tooltip.bs-tether-element-attached-top .tooltip-arrow {\n  top: 0;\n  left: 50%;\n  margin-left: -5px;\n  border-width: 0 5px 5px;\n  border-bottom-color: #000;\n}\n\n.tooltip.tooltip-left,\n.tooltip.bs-tether-element-attached-right {\n  padding: 0 5px;\n  margin-left: -3px;\n}\n\n.tooltip.tooltip-left .tooltip-arrow,\n.tooltip.bs-tether-element-attached-right .tooltip-arrow {\n  top: 50%;\n  right: 0;\n  margin-top: -5px;\n  border-width: 5px 0 5px 5px;\n  border-left-color: #000;\n}\n\n.tooltip-inner {\n  max-width: 200px;\n  padding: 3px 8px;\n  color: #fff;\n  text-align: center;\n  background-color: #000;\n  border-radius: 0.25rem;\n}\n\n.tooltip-arrow {\n  position: absolute;\n  width: 0;\n  height: 0;\n  border-color: transparent;\n  border-style: solid;\n}\n\n.popover {\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 1060;\n  display: block;\n  max-width: 276px;\n  padding: 1px;\n  font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-style: normal;\n  font-weight: normal;\n  letter-spacing: normal;\n  line-break: auto;\n  line-height: 1.5;\n  text-align: left;\n  text-align: start;\n  text-decoration: none;\n  text-shadow: none;\n  text-transform: none;\n  white-space: normal;\n  word-break: normal;\n  word-spacing: normal;\n  word-wrap: normal;\n  font-size: 0.875rem;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid rgba(0, 0, 0, 0.2);\n  border-radius: 0.3rem;\n}\n\n.popover.popover-top,\n.popover.bs-tether-element-attached-bottom {\n  margin-top: -10px;\n}\n\n.popover.popover-top .popover-arrow,\n.popover.bs-tether-element-attached-bottom .popover-arrow {\n  bottom: -11px;\n  left: 50%;\n  margin-left: -11px;\n  border-top-color: rgba(0, 0, 0, 0.25);\n  border-bottom-width: 0;\n}\n\n.popover.popover-top .popover-arrow::after,\n.popover.bs-tether-element-attached-bottom .popover-arrow::after {\n  bottom: 1px;\n  margin-left: -10px;\n  content: \"\";\n  border-top-color: #fff;\n  border-bottom-width: 0;\n}\n\n.popover.popover-right,\n.popover.bs-tether-element-attached-left {\n  margin-left: 10px;\n}\n\n.popover.popover-right .popover-arrow,\n.popover.bs-tether-element-attached-left .popover-arrow {\n  top: 50%;\n  left: -11px;\n  margin-top: -11px;\n  border-right-color: rgba(0, 0, 0, 0.25);\n  border-left-width: 0;\n}\n\n.popover.popover-right .popover-arrow::after,\n.popover.bs-tether-element-attached-left .popover-arrow::after {\n  bottom: -10px;\n  left: 1px;\n  content: \"\";\n  border-right-color: #fff;\n  border-left-width: 0;\n}\n\n.popover.popover-bottom,\n.popover.bs-tether-element-attached-top {\n  margin-top: 10px;\n}\n\n.popover.popover-bottom .popover-arrow,\n.popover.bs-tether-element-attached-top .popover-arrow {\n  top: -11px;\n  left: 50%;\n  margin-left: -11px;\n  border-top-width: 0;\n  border-bottom-color: rgba(0, 0, 0, 0.25);\n}\n\n.popover.popover-bottom .popover-arrow::after,\n.popover.bs-tether-element-attached-top .popover-arrow::after {\n  top: 1px;\n  margin-left: -10px;\n  content: \"\";\n  border-top-width: 0;\n  border-bottom-color: #fff;\n}\n\n.popover.popover-left,\n.popover.bs-tether-element-attached-right {\n  margin-left: -10px;\n}\n\n.popover.popover-left .popover-arrow,\n.popover.bs-tether-element-attached-right .popover-arrow {\n  top: 50%;\n  right: -11px;\n  margin-top: -11px;\n  border-right-width: 0;\n  border-left-color: rgba(0, 0, 0, 0.25);\n}\n\n.popover.popover-left .popover-arrow::after,\n.popover.bs-tether-element-attached-right .popover-arrow::after {\n  right: 1px;\n  bottom: -10px;\n  content: \"\";\n  border-right-width: 0;\n  border-left-color: #fff;\n}\n\n.popover-title {\n  padding: 8px 14px;\n  margin: 0;\n  font-size: 1rem;\n  background-color: #f7f7f7;\n  border-bottom: 1px solid #ebebeb;\n  border-radius: -0.7rem -0.7rem 0 0;\n}\n\n.popover-content {\n  padding: 9px 14px;\n}\n\n.popover-arrow,\n.popover-arrow::after {\n  position: absolute;\n  display: block;\n  width: 0;\n  height: 0;\n  border-color: transparent;\n  border-style: solid;\n}\n\n.popover-arrow {\n  border-width: 11px;\n}\n\n.popover-arrow::after {\n  content: \"\";\n  border-width: 10px;\n}\n\n.carousel {\n  position: relative;\n}\n\n.carousel-inner {\n  position: relative;\n  width: 100%;\n  overflow: hidden;\n}\n\n.carousel-inner > .carousel-item {\n  position: relative;\n  display: none;\n  transition: .6s ease-in-out left;\n}\n\n.carousel-inner > .carousel-item > img,\n.carousel-inner > .carousel-item > a > img {\n  line-height: 1;\n}\n\n@media all and (transform-3d), (-webkit-transform-3d) {\n  .carousel-inner > .carousel-item {\n    transition: transform .6s ease-in-out;\n    backface-visibility: hidden;\n    perspective: 1000px;\n  }\n\n  .carousel-inner > .carousel-item.next,\n  .carousel-inner > .carousel-item.active.right {\n    left: 0;\n    transform: translate3d(100%, 0, 0);\n  }\n\n  .carousel-inner > .carousel-item.prev,\n  .carousel-inner > .carousel-item.active.left {\n    left: 0;\n    transform: translate3d(-100%, 0, 0);\n  }\n\n  .carousel-inner > .carousel-item.next.left,\n  .carousel-inner > .carousel-item.prev.right,\n  .carousel-inner > .carousel-item.active {\n    left: 0;\n    transform: translate3d(0, 0, 0);\n  }\n}\n\n.carousel-inner > .active,\n.carousel-inner > .next,\n.carousel-inner > .prev {\n  display: block;\n}\n\n.carousel-inner > .active {\n  left: 0;\n}\n\n.carousel-inner > .next,\n.carousel-inner > .prev {\n  position: absolute;\n  top: 0;\n  width: 100%;\n}\n\n.carousel-inner > .next {\n  left: 100%;\n}\n\n.carousel-inner > .prev {\n  left: -100%;\n}\n\n.carousel-inner > .next.left,\n.carousel-inner > .prev.right {\n  left: 0;\n}\n\n.carousel-inner > .active.left {\n  left: -100%;\n}\n\n.carousel-inner > .active.right {\n  left: 100%;\n}\n\n.carousel-control {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  width: 15%;\n  font-size: 20px;\n  color: #fff;\n  text-align: center;\n  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);\n  opacity: 0.5;\n}\n\n.carousel-control.left {\n  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);\n  background-repeat: repeat-x;\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);\n}\n\n.carousel-control.right {\n  right: 0;\n  left: auto;\n  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);\n  background-repeat: repeat-x;\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);\n}\n\n.carousel-control:focus,\n.carousel-control:hover {\n  color: #fff;\n  text-decoration: none;\n  outline: 0;\n  opacity: .9;\n}\n\n.carousel-control .icon-prev,\n.carousel-control .icon-next {\n  position: absolute;\n  top: 50%;\n  z-index: 5;\n  display: inline-block;\n  width: 20px;\n  height: 20px;\n  margin-top: -10px;\n  font-family: serif;\n  line-height: 1;\n}\n\n.carousel-control .icon-prev {\n  left: 50%;\n  margin-left: -10px;\n}\n\n.carousel-control .icon-next {\n  right: 50%;\n  margin-right: -10px;\n}\n\n.carousel-control .icon-prev::before {\n  content: \"\\2039\";\n}\n\n.carousel-control .icon-next::before {\n  content: \"\\203A\";\n}\n\n.carousel-indicators {\n  position: absolute;\n  bottom: 10px;\n  left: 50%;\n  z-index: 15;\n  width: 60%;\n  padding-left: 0;\n  margin-left: -30%;\n  text-align: center;\n  list-style: none;\n}\n\n.carousel-indicators li {\n  display: inline-block;\n  width: 10px;\n  height: 10px;\n  margin: 1px;\n  text-indent: -999px;\n  cursor: pointer;\n  background-color: transparent;\n  border: 1px solid #fff;\n  border-radius: 10px;\n}\n\n.carousel-indicators .active {\n  width: 12px;\n  height: 12px;\n  margin: 0;\n  background-color: #fff;\n}\n\n.carousel-caption {\n  position: absolute;\n  right: 15%;\n  bottom: 20px;\n  left: 15%;\n  z-index: 10;\n  padding-top: 20px;\n  padding-bottom: 20px;\n  color: #fff;\n  text-align: center;\n  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);\n}\n\n.carousel-caption .btn {\n  text-shadow: none;\n}\n\n@media (min-width: 544px) {\n  .carousel-control .icon-prev,\n  .carousel-control .icon-next {\n    width: 30px;\n    height: 30px;\n    margin-top: -15px;\n    font-size: 30px;\n  }\n\n  .carousel-control .icon-prev {\n    margin-left: -15px;\n  }\n\n  .carousel-control .icon-next {\n    margin-right: -15px;\n  }\n\n  .carousel-caption {\n    right: 20%;\n    left: 20%;\n    padding-bottom: 30px;\n  }\n\n  .carousel-indicators {\n    bottom: 20px;\n  }\n}\n\n.clearfix::after {\n  content: \"\";\n  display: table;\n  clear: both;\n}\n\n.center-block {\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n}\n\n.pull-xs-left {\n  float: left !important;\n}\n\n.pull-xs-right {\n  float: right !important;\n}\n\n.pull-xs-none {\n  float: none !important;\n}\n\n@media (min-width: 544px) {\n  .pull-sm-left {\n    float: left !important;\n  }\n\n  .pull-sm-right {\n    float: right !important;\n  }\n\n  .pull-sm-none {\n    float: none !important;\n  }\n}\n\n@media (min-width: 768px) {\n  .pull-md-left {\n    float: left !important;\n  }\n\n  .pull-md-right {\n    float: right !important;\n  }\n\n  .pull-md-none {\n    float: none !important;\n  }\n}\n\n@media (min-width: 992px) {\n  .pull-lg-left {\n    float: left !important;\n  }\n\n  .pull-lg-right {\n    float: right !important;\n  }\n\n  .pull-lg-none {\n    float: none !important;\n  }\n}\n\n@media (min-width: 1200px) {\n  .pull-xl-left {\n    float: left !important;\n  }\n\n  .pull-xl-right {\n    float: right !important;\n  }\n\n  .pull-xl-none {\n    float: none !important;\n  }\n}\n\n.sr-only {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  padding: 0;\n  margin: -1px;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  border: 0;\n}\n\n.sr-only-focusable:active,\n.sr-only-focusable:focus {\n  position: static;\n  width: auto;\n  height: auto;\n  margin: 0;\n  overflow: visible;\n  clip: auto;\n}\n\n.invisible {\n  visibility: hidden !important;\n}\n\n.text-hide {\n  font: \"0/0\" a;\n  color: transparent;\n  text-shadow: none;\n  background-color: transparent;\n  border: 0;\n}\n\n.text-justify {\n  text-align: justify !important;\n}\n\n.text-nowrap {\n  white-space: nowrap !important;\n}\n\n.text-truncate {\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n\n.text-xs-left {\n  text-align: left !important;\n}\n\n.text-xs-right {\n  text-align: right !important;\n}\n\n.text-xs-center {\n  text-align: center !important;\n}\n\n@media (min-width: 544px) {\n  .text-sm-left {\n    text-align: left !important;\n  }\n\n  .text-sm-right {\n    text-align: right !important;\n  }\n\n  .text-sm-center {\n    text-align: center !important;\n  }\n}\n\n@media (min-width: 768px) {\n  .text-md-left {\n    text-align: left !important;\n  }\n\n  .text-md-right {\n    text-align: right !important;\n  }\n\n  .text-md-center {\n    text-align: center !important;\n  }\n}\n\n@media (min-width: 992px) {\n  .text-lg-left {\n    text-align: left !important;\n  }\n\n  .text-lg-right {\n    text-align: right !important;\n  }\n\n  .text-lg-center {\n    text-align: center !important;\n  }\n}\n\n@media (min-width: 1200px) {\n  .text-xl-left {\n    text-align: left !important;\n  }\n\n  .text-xl-right {\n    text-align: right !important;\n  }\n\n  .text-xl-center {\n    text-align: center !important;\n  }\n}\n\n.text-lowercase {\n  text-transform: lowercase !important;\n}\n\n.text-uppercase {\n  text-transform: uppercase !important;\n}\n\n.text-capitalize {\n  text-transform: capitalize !important;\n}\n\n.font-weight-normal {\n  font-weight: normal;\n}\n\n.font-weight-bold {\n  font-weight: bold;\n}\n\n.font-italic {\n  font-style: italic;\n}\n\n.text-muted {\n  color: #818a91;\n}\n\n.text-primary {\n  color: #0275d8 !important;\n}\n\na.text-primary:focus,\na.text-primary:hover {\n  color: #025aa5;\n}\n\n.text-success {\n  color: #5cb85c !important;\n}\n\na.text-success:focus,\na.text-success:hover {\n  color: #449d44;\n}\n\n.text-info {\n  color: #5bc0de !important;\n}\n\na.text-info:focus,\na.text-info:hover {\n  color: #31b0d5;\n}\n\n.text-warning {\n  color: #f0ad4e !important;\n}\n\na.text-warning:focus,\na.text-warning:hover {\n  color: #ec971f;\n}\n\n.text-danger {\n  color: #d9534f !important;\n}\n\na.text-danger:focus,\na.text-danger:hover {\n  color: #c9302c;\n}\n\n.bg-inverse {\n  color: #eceeef;\n  background-color: #373a3c;\n}\n\n.bg-faded {\n  background-color: #f7f7f9;\n}\n\n.bg-primary {\n  color: #fff !important;\n  background-color: #0275d8 !important;\n}\n\na.bg-primary:focus,\na.bg-primary:hover {\n  background-color: #025aa5;\n}\n\n.bg-success {\n  color: #fff !important;\n  background-color: #5cb85c !important;\n}\n\na.bg-success:focus,\na.bg-success:hover {\n  background-color: #449d44;\n}\n\n.bg-info {\n  color: #fff !important;\n  background-color: #5bc0de !important;\n}\n\na.bg-info:focus,\na.bg-info:hover {\n  background-color: #31b0d5;\n}\n\n.bg-warning {\n  color: #fff !important;\n  background-color: #f0ad4e !important;\n}\n\na.bg-warning:focus,\na.bg-warning:hover {\n  background-color: #ec971f;\n}\n\n.bg-danger {\n  color: #fff !important;\n  background-color: #d9534f !important;\n}\n\na.bg-danger:focus,\na.bg-danger:hover {\n  background-color: #c9302c;\n}\n\n.m-x-auto {\n  margin-right: auto !important;\n  margin-left: auto !important;\n}\n\n.m-a-0 {\n  margin: 0 0 !important;\n}\n\n.m-t-0 {\n  margin-top: 0 !important;\n}\n\n.m-r-0 {\n  margin-right: 0 !important;\n}\n\n.m-b-0 {\n  margin-bottom: 0 !important;\n}\n\n.m-l-0 {\n  margin-left: 0 !important;\n}\n\n.m-x-0 {\n  margin-right: 0 !important;\n  margin-left: 0 !important;\n}\n\n.m-y-0 {\n  margin-top: 0 !important;\n  margin-bottom: 0 !important;\n}\n\n.m-a-1 {\n  margin: 1rem 1rem !important;\n}\n\n.m-t-1 {\n  margin-top: 1rem !important;\n}\n\n.m-r-1 {\n  margin-right: 1rem !important;\n}\n\n.m-b-1 {\n  margin-bottom: 1rem !important;\n}\n\n.m-l-1 {\n  margin-left: 1rem !important;\n}\n\n.m-x-1 {\n  margin-right: 1rem !important;\n  margin-left: 1rem !important;\n}\n\n.m-y-1 {\n  margin-top: 1rem !important;\n  margin-bottom: 1rem !important;\n}\n\n.m-a-2 {\n  margin: 1.5rem 1.5rem !important;\n}\n\n.m-t-2 {\n  margin-top: 1.5rem !important;\n}\n\n.m-r-2 {\n  margin-right: 1.5rem !important;\n}\n\n.m-b-2 {\n  margin-bottom: 1.5rem !important;\n}\n\n.m-l-2 {\n  margin-left: 1.5rem !important;\n}\n\n.m-x-2 {\n  margin-right: 1.5rem !important;\n  margin-left: 1.5rem !important;\n}\n\n.m-y-2 {\n  margin-top: 1.5rem !important;\n  margin-bottom: 1.5rem !important;\n}\n\n.m-a-3 {\n  margin: 3rem 3rem !important;\n}\n\n.m-t-3 {\n  margin-top: 3rem !important;\n}\n\n.m-r-3 {\n  margin-right: 3rem !important;\n}\n\n.m-b-3 {\n  margin-bottom: 3rem !important;\n}\n\n.m-l-3 {\n  margin-left: 3rem !important;\n}\n\n.m-x-3 {\n  margin-right: 3rem !important;\n  margin-left: 3rem !important;\n}\n\n.m-y-3 {\n  margin-top: 3rem !important;\n  margin-bottom: 3rem !important;\n}\n\n.p-a-0 {\n  padding: 0 0 !important;\n}\n\n.p-t-0 {\n  padding-top: 0 !important;\n}\n\n.p-r-0 {\n  padding-right: 0 !important;\n}\n\n.p-b-0 {\n  padding-bottom: 0 !important;\n}\n\n.p-l-0 {\n  padding-left: 0 !important;\n}\n\n.p-x-0 {\n  padding-right: 0 !important;\n  padding-left: 0 !important;\n}\n\n.p-y-0 {\n  padding-top: 0 !important;\n  padding-bottom: 0 !important;\n}\n\n.p-a-1 {\n  padding: 1rem 1rem !important;\n}\n\n.p-t-1 {\n  padding-top: 1rem !important;\n}\n\n.p-r-1 {\n  padding-right: 1rem !important;\n}\n\n.p-b-1 {\n  padding-bottom: 1rem !important;\n}\n\n.p-l-1 {\n  padding-left: 1rem !important;\n}\n\n.p-x-1 {\n  padding-right: 1rem !important;\n  padding-left: 1rem !important;\n}\n\n.p-y-1 {\n  padding-top: 1rem !important;\n  padding-bottom: 1rem !important;\n}\n\n.p-a-2 {\n  padding: 1.5rem 1.5rem !important;\n}\n\n.p-t-2 {\n  padding-top: 1.5rem !important;\n}\n\n.p-r-2 {\n  padding-right: 1.5rem !important;\n}\n\n.p-b-2 {\n  padding-bottom: 1.5rem !important;\n}\n\n.p-l-2 {\n  padding-left: 1.5rem !important;\n}\n\n.p-x-2 {\n  padding-right: 1.5rem !important;\n  padding-left: 1.5rem !important;\n}\n\n.p-y-2 {\n  padding-top: 1.5rem !important;\n  padding-bottom: 1.5rem !important;\n}\n\n.p-a-3 {\n  padding: 3rem 3rem !important;\n}\n\n.p-t-3 {\n  padding-top: 3rem !important;\n}\n\n.p-r-3 {\n  padding-right: 3rem !important;\n}\n\n.p-b-3 {\n  padding-bottom: 3rem !important;\n}\n\n.p-l-3 {\n  padding-left: 3rem !important;\n}\n\n.p-x-3 {\n  padding-right: 3rem !important;\n  padding-left: 3rem !important;\n}\n\n.p-y-3 {\n  padding-top: 3rem !important;\n  padding-bottom: 3rem !important;\n}\n\n.pos-f-t {\n  position: fixed;\n  top: 0;\n  right: 0;\n  left: 0;\n  z-index: 1030;\n}\n\n.hidden-xs-up {\n  display: none !important;\n}\n\n@media (max-width: 543px) {\n  .hidden-xs-down {\n    display: none !important;\n  }\n}\n\n@media (min-width: 544px) {\n  .hidden-sm-up {\n    display: none !important;\n  }\n}\n\n@media (max-width: 767px) {\n  .hidden-sm-down {\n    display: none !important;\n  }\n}\n\n@media (min-width: 768px) {\n  .hidden-md-up {\n    display: none !important;\n  }\n}\n\n@media (max-width: 991px) {\n  .hidden-md-down {\n    display: none !important;\n  }\n}\n\n@media (min-width: 992px) {\n  .hidden-lg-up {\n    display: none !important;\n  }\n}\n\n@media (max-width: 1199px) {\n  .hidden-lg-down {\n    display: none !important;\n  }\n}\n\n@media (min-width: 1200px) {\n  .hidden-xl-up {\n    display: none !important;\n  }\n}\n\n.hidden-xl-down {\n  display: none !important;\n}\n\n.visible-print-block {\n  display: none !important;\n}\n\n@media print {\n  .visible-print-block {\n    display: block !important;\n  }\n}\n\n.visible-print-inline {\n  display: none !important;\n}\n\n@media print {\n  .visible-print-inline {\n    display: inline !important;\n  }\n}\n\n.visible-print-inline-block {\n  display: none !important;\n}\n\n@media print {\n  .visible-print-inline-block {\n    display: inline-block !important;\n  }\n}\n\n@media print {\n  .hidden-print {\n    display: none !important;\n  }\n}\n\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 179 */
-/*!**************************************!*\
-  !*** ./~/css-loader/lib/css-base.js ***!
-  \**************************************/
-/***/ function(module, exports) {
-
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	// css base code, injected by the css-loader
-	module.exports = function() {
-		var list = [];
-	
-		// return the list of modules as css string
-		list.toString = function toString() {
-			var result = [];
-			for(var i = 0; i < this.length; i++) {
-				var item = this[i];
-				if(item[2]) {
-					result.push("@media " + item[2] + "{" + item[1] + "}");
-				} else {
-					result.push(item[1]);
-				}
-			}
-			return result.join("");
-		};
-	
-		// import a list of modules into the list
-		list.i = function(modules, mediaQuery) {
-			if(typeof modules === "string")
-				modules = [[null, modules, ""]];
-			var alreadyImportedModules = {};
-			for(var i = 0; i < this.length; i++) {
-				var id = this[i][0];
-				if(typeof id === "number")
-					alreadyImportedModules[id] = true;
-			}
-			for(i = 0; i < modules.length; i++) {
-				var item = modules[i];
-				// skip already imported module
-				// this implementation is not 100% perfect for weird media query combinations
-				//  when a module is imported multiple times with different media queries.
-				//  I hope this will never occur (Hey this way we have smaller bundles)
-				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-					if(mediaQuery && !item[2]) {
-						item[2] = mediaQuery;
-					} else if(mediaQuery) {
-						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-					}
-					list.push(item);
-				}
-			}
-		};
-		return list;
-	};
-
-
-/***/ },
-/* 180 */
-/*!*************************************!*\
-  !*** ./~/style-loader/addStyles.js ***!
-  \*************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	var stylesInDom = {},
-		memoize = function(fn) {
-			var memo;
-			return function () {
-				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
-				return memo;
-			};
-		},
-		isOldIE = memoize(function() {
-			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
-		}),
-		getHeadElement = memoize(function () {
-			return document.head || document.getElementsByTagName("head")[0];
-		}),
-		singletonElement = null,
-		singletonCounter = 0,
-		styleElementsInsertedAtTop = [];
-	
-	module.exports = function(list, options) {
-		if(true) {
-			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
-		}
-	
-		options = options || {};
-		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-		// tags it will allow on a page
-		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
-	
-		// By default, add <style> tags to the bottom of <head>.
-		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
-	
-		var styles = listToStyles(list);
-		addStylesToDom(styles, options);
-	
-		return function update(newList) {
-			var mayRemove = [];
-			for(var i = 0; i < styles.length; i++) {
-				var item = styles[i];
-				var domStyle = stylesInDom[item.id];
-				domStyle.refs--;
-				mayRemove.push(domStyle);
-			}
-			if(newList) {
-				var newStyles = listToStyles(newList);
-				addStylesToDom(newStyles, options);
-			}
-			for(var i = 0; i < mayRemove.length; i++) {
-				var domStyle = mayRemove[i];
-				if(domStyle.refs === 0) {
-					for(var j = 0; j < domStyle.parts.length; j++)
-						domStyle.parts[j]();
-					delete stylesInDom[domStyle.id];
-				}
-			}
-		};
-	}
-	
-	function addStylesToDom(styles, options) {
-		for(var i = 0; i < styles.length; i++) {
-			var item = styles[i];
-			var domStyle = stylesInDom[item.id];
-			if(domStyle) {
-				domStyle.refs++;
-				for(var j = 0; j < domStyle.parts.length; j++) {
-					domStyle.parts[j](item.parts[j]);
-				}
-				for(; j < item.parts.length; j++) {
-					domStyle.parts.push(addStyle(item.parts[j], options));
-				}
-			} else {
-				var parts = [];
-				for(var j = 0; j < item.parts.length; j++) {
-					parts.push(addStyle(item.parts[j], options));
-				}
-				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
-			}
-		}
-	}
-	
-	function listToStyles(list) {
-		var styles = [];
-		var newStyles = {};
-		for(var i = 0; i < list.length; i++) {
-			var item = list[i];
-			var id = item[0];
-			var css = item[1];
-			var media = item[2];
-			var sourceMap = item[3];
-			var part = {css: css, media: media, sourceMap: sourceMap};
-			if(!newStyles[id])
-				styles.push(newStyles[id] = {id: id, parts: [part]});
-			else
-				newStyles[id].parts.push(part);
-		}
-		return styles;
-	}
-	
-	function insertStyleElement(options, styleElement) {
-		var head = getHeadElement();
-		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
-		if (options.insertAt === "top") {
-			if(!lastStyleElementInsertedAtTop) {
-				head.insertBefore(styleElement, head.firstChild);
-			} else if(lastStyleElementInsertedAtTop.nextSibling) {
-				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
-			} else {
-				head.appendChild(styleElement);
-			}
-			styleElementsInsertedAtTop.push(styleElement);
-		} else if (options.insertAt === "bottom") {
-			head.appendChild(styleElement);
-		} else {
-			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
-		}
-	}
-	
-	function removeStyleElement(styleElement) {
-		styleElement.parentNode.removeChild(styleElement);
-		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
-		if(idx >= 0) {
-			styleElementsInsertedAtTop.splice(idx, 1);
-		}
-	}
-	
-	function createStyleElement(options) {
-		var styleElement = document.createElement("style");
-		styleElement.type = "text/css";
-		insertStyleElement(options, styleElement);
-		return styleElement;
-	}
-	
-	function createLinkElement(options) {
-		var linkElement = document.createElement("link");
-		linkElement.rel = "stylesheet";
-		insertStyleElement(options, linkElement);
-		return linkElement;
-	}
-	
-	function addStyle(obj, options) {
-		var styleElement, update, remove;
-	
-		if (options.singleton) {
-			var styleIndex = singletonCounter++;
-			styleElement = singletonElement || (singletonElement = createStyleElement(options));
-			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
-			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
-		} else if(obj.sourceMap &&
-			typeof URL === "function" &&
-			typeof URL.createObjectURL === "function" &&
-			typeof URL.revokeObjectURL === "function" &&
-			typeof Blob === "function" &&
-			typeof btoa === "function") {
-			styleElement = createLinkElement(options);
-			update = updateLink.bind(null, styleElement);
-			remove = function() {
-				removeStyleElement(styleElement);
-				if(styleElement.href)
-					URL.revokeObjectURL(styleElement.href);
-			};
-		} else {
-			styleElement = createStyleElement(options);
-			update = applyToTag.bind(null, styleElement);
-			remove = function() {
-				removeStyleElement(styleElement);
-			};
-		}
-	
-		update(obj);
-	
-		return function updateStyle(newObj) {
-			if(newObj) {
-				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
-					return;
-				update(obj = newObj);
-			} else {
-				remove();
-			}
-		};
-	}
-	
-	var replaceText = (function () {
-		var textStore = [];
-	
-		return function (index, replacement) {
-			textStore[index] = replacement;
-			return textStore.filter(Boolean).join('\n');
-		};
-	})();
-	
-	function applyToSingletonTag(styleElement, index, remove, obj) {
-		var css = remove ? "" : obj.css;
-	
-		if (styleElement.styleSheet) {
-			styleElement.styleSheet.cssText = replaceText(index, css);
-		} else {
-			var cssNode = document.createTextNode(css);
-			var childNodes = styleElement.childNodes;
-			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
-			if (childNodes.length) {
-				styleElement.insertBefore(cssNode, childNodes[index]);
-			} else {
-				styleElement.appendChild(cssNode);
-			}
-		}
-	}
-	
-	function applyToTag(styleElement, obj) {
-		var css = obj.css;
-		var media = obj.media;
-	
-		if(media) {
-			styleElement.setAttribute("media", media)
-		}
-	
-		if(styleElement.styleSheet) {
-			styleElement.styleSheet.cssText = css;
-		} else {
-			while(styleElement.firstChild) {
-				styleElement.removeChild(styleElement.firstChild);
-			}
-			styleElement.appendChild(document.createTextNode(css));
-		}
-	}
-	
-	function updateLink(linkElement, obj) {
-		var css = obj.css;
-		var sourceMap = obj.sourceMap;
-	
-		if(sourceMap) {
-			// http://stackoverflow.com/a/26603875
-			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
-		}
-	
-		var blob = new Blob([css], { type: "text/css" });
-	
-		var oldSrc = linkElement.href;
-	
-		linkElement.href = URL.createObjectURL(blob);
-	
-		if(oldSrc)
-			URL.revokeObjectURL(oldSrc);
-	}
-
-
-/***/ },
-/* 181 */
 /*!*******************************************!*\
   !*** ./develop/components/Timepicker.jsx ***!
   \*******************************************/
@@ -22609,15 +22152,15 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _d = __webpack_require__(/*! d3 */ 182);
+	var _d = __webpack_require__(/*! d3 */ 177);
 	
 	var d3 = _interopRequireWildcard(_d);
 	
-	var _moment = __webpack_require__(/*! moment */ 183);
+	var _moment = __webpack_require__(/*! moment */ 178);
 	
 	var _moment2 = _interopRequireDefault(_moment);
 	
-	__webpack_require__(/*! ./timepicker.css */ 290);
+	__webpack_require__(/*! ./timepicker.css */ 285);
 	
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
@@ -22886,7 +22429,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\Users\\aul.KYIV\\job\\Laboratory\\redux-react-skeleton\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Timepicker.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
-/* 182 */
+/* 177 */
 /*!**************************!*\
   !*** ./~/d3/build/d3.js ***!
   \**************************/
@@ -39179,7 +38722,7 @@
 
 
 /***/ },
-/* 183 */
+/* 178 */
 /*!****************************!*\
   !*** ./~/moment/moment.js ***!
   \****************************/
@@ -40981,7 +40524,7 @@
 	                module && module.exports) {
 	            try {
 	                oldLocale = globalLocale._abbr;
-	                __webpack_require__(/*! ./locale */ 185)("./" + name);
+	                __webpack_require__(/*! ./locale */ 180)("./" + name);
 	                // because defineLocale currently also sets the global locale, we
 	                // want to undo that for lazy loaded locales
 	                locale_locales__getSetGlobalLocale(oldLocale);
@@ -43419,10 +42962,10 @@
 	    return _moment;
 	
 	}));
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../webpack/buildin/module.js */ 184)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../webpack/buildin/module.js */ 179)(module)))
 
 /***/ },
-/* 184 */
+/* 179 */
 /*!***********************************!*\
   !*** (webpack)/buildin/module.js ***!
   \***********************************/
@@ -43441,221 +42984,221 @@
 
 
 /***/ },
-/* 185 */
+/* 180 */
 /*!**********************************!*\
   !*** ./~/moment/locale ^\.\/.*$ ***!
   \**********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./af": 186,
-		"./af.js": 186,
-		"./ar": 187,
-		"./ar-ly": 188,
-		"./ar-ly.js": 188,
-		"./ar-ma": 189,
-		"./ar-ma.js": 189,
-		"./ar-sa": 190,
-		"./ar-sa.js": 190,
-		"./ar-tn": 191,
-		"./ar-tn.js": 191,
-		"./ar.js": 187,
-		"./az": 192,
-		"./az.js": 192,
-		"./be": 193,
-		"./be.js": 193,
-		"./bg": 194,
-		"./bg.js": 194,
-		"./bn": 195,
-		"./bn.js": 195,
-		"./bo": 196,
-		"./bo.js": 196,
-		"./br": 197,
-		"./br.js": 197,
-		"./bs": 198,
-		"./bs.js": 198,
-		"./ca": 199,
-		"./ca.js": 199,
-		"./cs": 200,
-		"./cs.js": 200,
-		"./cv": 201,
-		"./cv.js": 201,
-		"./cy": 202,
-		"./cy.js": 202,
-		"./da": 203,
-		"./da.js": 203,
-		"./de": 204,
-		"./de-at": 205,
-		"./de-at.js": 205,
-		"./de.js": 204,
-		"./dv": 206,
-		"./dv.js": 206,
-		"./el": 207,
-		"./el.js": 207,
-		"./en-au": 208,
-		"./en-au.js": 208,
-		"./en-ca": 209,
-		"./en-ca.js": 209,
-		"./en-gb": 210,
-		"./en-gb.js": 210,
-		"./en-ie": 211,
-		"./en-ie.js": 211,
-		"./en-nz": 212,
-		"./en-nz.js": 212,
-		"./eo": 213,
-		"./eo.js": 213,
-		"./es": 214,
-		"./es-do": 215,
-		"./es-do.js": 215,
-		"./es.js": 214,
-		"./et": 216,
-		"./et.js": 216,
-		"./eu": 217,
-		"./eu.js": 217,
-		"./fa": 218,
-		"./fa.js": 218,
-		"./fi": 219,
-		"./fi.js": 219,
-		"./fo": 220,
-		"./fo.js": 220,
-		"./fr": 221,
-		"./fr-ca": 222,
-		"./fr-ca.js": 222,
-		"./fr-ch": 223,
-		"./fr-ch.js": 223,
-		"./fr.js": 221,
-		"./fy": 224,
-		"./fy.js": 224,
-		"./gd": 225,
-		"./gd.js": 225,
-		"./gl": 226,
-		"./gl.js": 226,
-		"./he": 227,
-		"./he.js": 227,
-		"./hi": 228,
-		"./hi.js": 228,
-		"./hr": 229,
-		"./hr.js": 229,
-		"./hu": 230,
-		"./hu.js": 230,
-		"./hy-am": 231,
-		"./hy-am.js": 231,
-		"./id": 232,
-		"./id.js": 232,
-		"./is": 233,
-		"./is.js": 233,
-		"./it": 234,
-		"./it.js": 234,
-		"./ja": 235,
-		"./ja.js": 235,
-		"./jv": 236,
-		"./jv.js": 236,
-		"./ka": 237,
-		"./ka.js": 237,
-		"./kk": 238,
-		"./kk.js": 238,
-		"./km": 239,
-		"./km.js": 239,
-		"./ko": 240,
-		"./ko.js": 240,
-		"./ky": 241,
-		"./ky.js": 241,
-		"./lb": 242,
-		"./lb.js": 242,
-		"./lo": 243,
-		"./lo.js": 243,
-		"./lt": 244,
-		"./lt.js": 244,
-		"./lv": 245,
-		"./lv.js": 245,
-		"./me": 246,
-		"./me.js": 246,
-		"./mi": 247,
-		"./mi.js": 247,
-		"./mk": 248,
-		"./mk.js": 248,
-		"./ml": 249,
-		"./ml.js": 249,
-		"./mr": 250,
-		"./mr.js": 250,
-		"./ms": 251,
-		"./ms-my": 252,
-		"./ms-my.js": 252,
-		"./ms.js": 251,
-		"./my": 253,
-		"./my.js": 253,
-		"./nb": 254,
-		"./nb.js": 254,
-		"./ne": 255,
-		"./ne.js": 255,
-		"./nl": 256,
-		"./nl.js": 256,
-		"./nn": 257,
-		"./nn.js": 257,
-		"./pa-in": 258,
-		"./pa-in.js": 258,
-		"./pl": 259,
-		"./pl.js": 259,
-		"./pt": 260,
-		"./pt-br": 261,
-		"./pt-br.js": 261,
-		"./pt.js": 260,
-		"./ro": 262,
-		"./ro.js": 262,
-		"./ru": 263,
-		"./ru.js": 263,
-		"./se": 264,
-		"./se.js": 264,
-		"./si": 265,
-		"./si.js": 265,
-		"./sk": 266,
-		"./sk.js": 266,
-		"./sl": 267,
-		"./sl.js": 267,
-		"./sq": 268,
-		"./sq.js": 268,
-		"./sr": 269,
-		"./sr-cyrl": 270,
-		"./sr-cyrl.js": 270,
-		"./sr.js": 269,
-		"./ss": 271,
-		"./ss.js": 271,
-		"./sv": 272,
-		"./sv.js": 272,
-		"./sw": 273,
-		"./sw.js": 273,
-		"./ta": 274,
-		"./ta.js": 274,
-		"./te": 275,
-		"./te.js": 275,
-		"./th": 276,
-		"./th.js": 276,
-		"./tl-ph": 277,
-		"./tl-ph.js": 277,
-		"./tlh": 278,
-		"./tlh.js": 278,
-		"./tr": 279,
-		"./tr.js": 279,
-		"./tzl": 280,
-		"./tzl.js": 280,
-		"./tzm": 281,
-		"./tzm-latn": 282,
-		"./tzm-latn.js": 282,
-		"./tzm.js": 281,
-		"./uk": 283,
-		"./uk.js": 283,
-		"./uz": 284,
-		"./uz.js": 284,
-		"./vi": 285,
-		"./vi.js": 285,
-		"./x-pseudo": 286,
-		"./x-pseudo.js": 286,
-		"./zh-cn": 287,
-		"./zh-cn.js": 287,
-		"./zh-hk": 288,
-		"./zh-hk.js": 288,
-		"./zh-tw": 289,
-		"./zh-tw.js": 289
+		"./af": 181,
+		"./af.js": 181,
+		"./ar": 182,
+		"./ar-ly": 183,
+		"./ar-ly.js": 183,
+		"./ar-ma": 184,
+		"./ar-ma.js": 184,
+		"./ar-sa": 185,
+		"./ar-sa.js": 185,
+		"./ar-tn": 186,
+		"./ar-tn.js": 186,
+		"./ar.js": 182,
+		"./az": 187,
+		"./az.js": 187,
+		"./be": 188,
+		"./be.js": 188,
+		"./bg": 189,
+		"./bg.js": 189,
+		"./bn": 190,
+		"./bn.js": 190,
+		"./bo": 191,
+		"./bo.js": 191,
+		"./br": 192,
+		"./br.js": 192,
+		"./bs": 193,
+		"./bs.js": 193,
+		"./ca": 194,
+		"./ca.js": 194,
+		"./cs": 195,
+		"./cs.js": 195,
+		"./cv": 196,
+		"./cv.js": 196,
+		"./cy": 197,
+		"./cy.js": 197,
+		"./da": 198,
+		"./da.js": 198,
+		"./de": 199,
+		"./de-at": 200,
+		"./de-at.js": 200,
+		"./de.js": 199,
+		"./dv": 201,
+		"./dv.js": 201,
+		"./el": 202,
+		"./el.js": 202,
+		"./en-au": 203,
+		"./en-au.js": 203,
+		"./en-ca": 204,
+		"./en-ca.js": 204,
+		"./en-gb": 205,
+		"./en-gb.js": 205,
+		"./en-ie": 206,
+		"./en-ie.js": 206,
+		"./en-nz": 207,
+		"./en-nz.js": 207,
+		"./eo": 208,
+		"./eo.js": 208,
+		"./es": 209,
+		"./es-do": 210,
+		"./es-do.js": 210,
+		"./es.js": 209,
+		"./et": 211,
+		"./et.js": 211,
+		"./eu": 212,
+		"./eu.js": 212,
+		"./fa": 213,
+		"./fa.js": 213,
+		"./fi": 214,
+		"./fi.js": 214,
+		"./fo": 215,
+		"./fo.js": 215,
+		"./fr": 216,
+		"./fr-ca": 217,
+		"./fr-ca.js": 217,
+		"./fr-ch": 218,
+		"./fr-ch.js": 218,
+		"./fr.js": 216,
+		"./fy": 219,
+		"./fy.js": 219,
+		"./gd": 220,
+		"./gd.js": 220,
+		"./gl": 221,
+		"./gl.js": 221,
+		"./he": 222,
+		"./he.js": 222,
+		"./hi": 223,
+		"./hi.js": 223,
+		"./hr": 224,
+		"./hr.js": 224,
+		"./hu": 225,
+		"./hu.js": 225,
+		"./hy-am": 226,
+		"./hy-am.js": 226,
+		"./id": 227,
+		"./id.js": 227,
+		"./is": 228,
+		"./is.js": 228,
+		"./it": 229,
+		"./it.js": 229,
+		"./ja": 230,
+		"./ja.js": 230,
+		"./jv": 231,
+		"./jv.js": 231,
+		"./ka": 232,
+		"./ka.js": 232,
+		"./kk": 233,
+		"./kk.js": 233,
+		"./km": 234,
+		"./km.js": 234,
+		"./ko": 235,
+		"./ko.js": 235,
+		"./ky": 236,
+		"./ky.js": 236,
+		"./lb": 237,
+		"./lb.js": 237,
+		"./lo": 238,
+		"./lo.js": 238,
+		"./lt": 239,
+		"./lt.js": 239,
+		"./lv": 240,
+		"./lv.js": 240,
+		"./me": 241,
+		"./me.js": 241,
+		"./mi": 242,
+		"./mi.js": 242,
+		"./mk": 243,
+		"./mk.js": 243,
+		"./ml": 244,
+		"./ml.js": 244,
+		"./mr": 245,
+		"./mr.js": 245,
+		"./ms": 246,
+		"./ms-my": 247,
+		"./ms-my.js": 247,
+		"./ms.js": 246,
+		"./my": 248,
+		"./my.js": 248,
+		"./nb": 249,
+		"./nb.js": 249,
+		"./ne": 250,
+		"./ne.js": 250,
+		"./nl": 251,
+		"./nl.js": 251,
+		"./nn": 252,
+		"./nn.js": 252,
+		"./pa-in": 253,
+		"./pa-in.js": 253,
+		"./pl": 254,
+		"./pl.js": 254,
+		"./pt": 255,
+		"./pt-br": 256,
+		"./pt-br.js": 256,
+		"./pt.js": 255,
+		"./ro": 257,
+		"./ro.js": 257,
+		"./ru": 258,
+		"./ru.js": 258,
+		"./se": 259,
+		"./se.js": 259,
+		"./si": 260,
+		"./si.js": 260,
+		"./sk": 261,
+		"./sk.js": 261,
+		"./sl": 262,
+		"./sl.js": 262,
+		"./sq": 263,
+		"./sq.js": 263,
+		"./sr": 264,
+		"./sr-cyrl": 265,
+		"./sr-cyrl.js": 265,
+		"./sr.js": 264,
+		"./ss": 266,
+		"./ss.js": 266,
+		"./sv": 267,
+		"./sv.js": 267,
+		"./sw": 268,
+		"./sw.js": 268,
+		"./ta": 269,
+		"./ta.js": 269,
+		"./te": 270,
+		"./te.js": 270,
+		"./th": 271,
+		"./th.js": 271,
+		"./tl-ph": 272,
+		"./tl-ph.js": 272,
+		"./tlh": 273,
+		"./tlh.js": 273,
+		"./tr": 274,
+		"./tr.js": 274,
+		"./tzl": 275,
+		"./tzl.js": 275,
+		"./tzm": 276,
+		"./tzm-latn": 277,
+		"./tzm-latn.js": 277,
+		"./tzm.js": 276,
+		"./uk": 278,
+		"./uk.js": 278,
+		"./uz": 279,
+		"./uz.js": 279,
+		"./vi": 280,
+		"./vi.js": 280,
+		"./x-pseudo": 281,
+		"./x-pseudo.js": 281,
+		"./zh-cn": 282,
+		"./zh-cn.js": 282,
+		"./zh-hk": 283,
+		"./zh-hk.js": 283,
+		"./zh-tw": 284,
+		"./zh-tw.js": 284
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -43668,11 +43211,11 @@
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 185;
+	webpackContext.id = 180;
 
 
 /***/ },
-/* 186 */
+/* 181 */
 /*!*******************************!*\
   !*** ./~/moment/locale/af.js ***!
   \*******************************/
@@ -43683,7 +43226,7 @@
 	//! author : Werner Mollentze : https://github.com/wernerm
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -43752,7 +43295,7 @@
 	}));
 
 /***/ },
-/* 187 */
+/* 182 */
 /*!*******************************!*\
   !*** ./~/moment/locale/ar.js ***!
   \*******************************/
@@ -43765,7 +43308,7 @@
 	//! author : forabi https://github.com/forabi
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -43896,7 +43439,7 @@
 	}));
 
 /***/ },
-/* 188 */
+/* 183 */
 /*!**********************************!*\
   !*** ./~/moment/locale/ar-ly.js ***!
   \**********************************/
@@ -43907,7 +43450,7 @@
 	//! author : Ali Hmer: https://github.com/kikoanis
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -44025,7 +43568,7 @@
 	}));
 
 /***/ },
-/* 189 */
+/* 184 */
 /*!**********************************!*\
   !*** ./~/moment/locale/ar-ma.js ***!
   \**********************************/
@@ -44037,7 +43580,7 @@
 	//! author : Abdel Said : https://github.com/abdelsaid
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -44092,7 +43635,7 @@
 	}));
 
 /***/ },
-/* 190 */
+/* 185 */
 /*!**********************************!*\
   !*** ./~/moment/locale/ar-sa.js ***!
   \**********************************/
@@ -44103,7 +43646,7 @@
 	//! author : Suhail Alkowaileet : https://github.com/xsoh
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -44203,7 +43746,7 @@
 	}));
 
 /***/ },
-/* 191 */
+/* 186 */
 /*!**********************************!*\
   !*** ./~/moment/locale/ar-tn.js ***!
   \**********************************/
@@ -44214,7 +43757,7 @@
 	//! author : Nader Toukabri : https://github.com/naderio
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -44269,7 +43812,7 @@
 	}));
 
 /***/ },
-/* 192 */
+/* 187 */
 /*!*******************************!*\
   !*** ./~/moment/locale/az.js ***!
   \*******************************/
@@ -44280,7 +43823,7 @@
 	//! author : topchiyev : https://github.com/topchiyev
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -44381,7 +43924,7 @@
 	}));
 
 /***/ },
-/* 193 */
+/* 188 */
 /*!*******************************!*\
   !*** ./~/moment/locale/be.js ***!
   \*******************************/
@@ -44394,7 +43937,7 @@
 	//! Author : Menelion Elensúle : https://github.com/Oire
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -44522,7 +44065,7 @@
 	}));
 
 /***/ },
-/* 194 */
+/* 189 */
 /*!*******************************!*\
   !*** ./~/moment/locale/bg.js ***!
   \*******************************/
@@ -44533,7 +44076,7 @@
 	//! author : Krasen Borisov : https://github.com/kraz
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -44619,7 +44162,7 @@
 	}));
 
 /***/ },
-/* 195 */
+/* 190 */
 /*!*******************************!*\
   !*** ./~/moment/locale/bn.js ***!
   \*******************************/
@@ -44630,7 +44173,7 @@
 	//! author : Kaushik Gandhi : https://github.com/kaushikgandhi
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -44745,7 +44288,7 @@
 	}));
 
 /***/ },
-/* 196 */
+/* 191 */
 /*!*******************************!*\
   !*** ./~/moment/locale/bo.js ***!
   \*******************************/
@@ -44756,7 +44299,7 @@
 	//! author : Thupten N. Chakrishar : https://github.com/vajradog
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -44871,7 +44414,7 @@
 	}));
 
 /***/ },
-/* 197 */
+/* 192 */
 /*!*******************************!*\
   !*** ./~/moment/locale/br.js ***!
   \*******************************/
@@ -44882,7 +44425,7 @@
 	//! author : Jean-Baptiste Le Duigou : https://github.com/jbleduigou
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -44986,7 +44529,7 @@
 	}));
 
 /***/ },
-/* 198 */
+/* 193 */
 /*!*******************************!*\
   !*** ./~/moment/locale/bs.js ***!
   \*******************************/
@@ -44998,7 +44541,7 @@
 	//! based on (hr) translation by Bojan Marković
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -45136,7 +44679,7 @@
 	}));
 
 /***/ },
-/* 199 */
+/* 194 */
 /*!*******************************!*\
   !*** ./~/moment/locale/ca.js ***!
   \*******************************/
@@ -45147,7 +44690,7 @@
 	//! author : Juan G. Hurtado : https://github.com/juanghurtado
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -45224,7 +44767,7 @@
 	}));
 
 /***/ },
-/* 200 */
+/* 195 */
 /*!*******************************!*\
   !*** ./~/moment/locale/cs.js ***!
   \*******************************/
@@ -45235,7 +44778,7 @@
 	//! author : petrbela : https://github.com/petrbela
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -45403,7 +44946,7 @@
 	}));
 
 /***/ },
-/* 201 */
+/* 196 */
 /*!*******************************!*\
   !*** ./~/moment/locale/cv.js ***!
   \*******************************/
@@ -45414,7 +44957,7 @@
 	//! author : Anatoly Mironov : https://github.com/mirontoli
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -45473,7 +45016,7 @@
 	}));
 
 /***/ },
-/* 202 */
+/* 197 */
 /*!*******************************!*\
   !*** ./~/moment/locale/cy.js ***!
   \*******************************/
@@ -45485,7 +45028,7 @@
 	//! author : https://github.com/ryangreaves
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -45561,7 +45104,7 @@
 	}));
 
 /***/ },
-/* 203 */
+/* 198 */
 /*!*******************************!*\
   !*** ./~/moment/locale/da.js ***!
   \*******************************/
@@ -45572,7 +45115,7 @@
 	//! author : Ulrik Nielsen : https://github.com/mrbase
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -45628,7 +45171,7 @@
 	}));
 
 /***/ },
-/* 204 */
+/* 199 */
 /*!*******************************!*\
   !*** ./~/moment/locale/de.js ***!
   \*******************************/
@@ -45641,7 +45184,7 @@
 	//! author : Mikolaj Dadela : https://github.com/mik01aj
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -45713,7 +45256,7 @@
 	}));
 
 /***/ },
-/* 205 */
+/* 200 */
 /*!**********************************!*\
   !*** ./~/moment/locale/de-at.js ***!
   \**********************************/
@@ -45727,7 +45270,7 @@
 	//! author : Mikolaj Dadela : https://github.com/mik01aj
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -45799,7 +45342,7 @@
 	}));
 
 /***/ },
-/* 206 */
+/* 201 */
 /*!*******************************!*\
   !*** ./~/moment/locale/dv.js ***!
   \*******************************/
@@ -45810,7 +45353,7 @@
 	//! author : Jawish Hameed : https://github.com/jawish
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -45905,7 +45448,7 @@
 	}));
 
 /***/ },
-/* 207 */
+/* 202 */
 /*!*******************************!*\
   !*** ./~/moment/locale/el.js ***!
   \*******************************/
@@ -45916,7 +45459,7 @@
 	//! author : Aggelos Karalias : https://github.com/mehiel
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -46010,7 +45553,7 @@
 	}));
 
 /***/ },
-/* 208 */
+/* 203 */
 /*!**********************************!*\
   !*** ./~/moment/locale/en-au.js ***!
   \**********************************/
@@ -46021,7 +45564,7 @@
 	//! author : Jared Morse : https://github.com/jarcoal
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -46084,7 +45627,7 @@
 	}));
 
 /***/ },
-/* 209 */
+/* 204 */
 /*!**********************************!*\
   !*** ./~/moment/locale/en-ca.js ***!
   \**********************************/
@@ -46095,7 +45638,7 @@
 	//! author : Jonathan Abourbih : https://github.com/jonbca
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -46154,7 +45697,7 @@
 	}));
 
 /***/ },
-/* 210 */
+/* 205 */
 /*!**********************************!*\
   !*** ./~/moment/locale/en-gb.js ***!
   \**********************************/
@@ -46165,7 +45708,7 @@
 	//! author : Chris Gedrim : https://github.com/chrisgedrim
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -46228,7 +45771,7 @@
 	}));
 
 /***/ },
-/* 211 */
+/* 206 */
 /*!**********************************!*\
   !*** ./~/moment/locale/en-ie.js ***!
   \**********************************/
@@ -46239,7 +45782,7 @@
 	//! author : Chris Cartlidge : https://github.com/chriscartlidge
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -46302,7 +45845,7 @@
 	}));
 
 /***/ },
-/* 212 */
+/* 207 */
 /*!**********************************!*\
   !*** ./~/moment/locale/en-nz.js ***!
   \**********************************/
@@ -46313,7 +45856,7 @@
 	//! author : Luke McGregor : https://github.com/lukemcgregor
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -46376,7 +45919,7 @@
 	}));
 
 /***/ },
-/* 213 */
+/* 208 */
 /*!*******************************!*\
   !*** ./~/moment/locale/eo.js ***!
   \*******************************/
@@ -46389,7 +45932,7 @@
 	//!          Se ne, bonvolu korekti kaj avizi min por ke mi povas lerni!
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -46456,7 +45999,7 @@
 	}));
 
 /***/ },
-/* 214 */
+/* 209 */
 /*!*******************************!*\
   !*** ./~/moment/locale/es.js ***!
   \*******************************/
@@ -46467,7 +46010,7 @@
 	//! author : Julio Napurí : https://github.com/julionc
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -46544,7 +46087,7 @@
 	}));
 
 /***/ },
-/* 215 */
+/* 210 */
 /*!**********************************!*\
   !*** ./~/moment/locale/es-do.js ***!
   \**********************************/
@@ -46554,7 +46097,7 @@
 	//! locale : Spanish (Dominican Republic) [es-do]
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -46631,7 +46174,7 @@
 	}));
 
 /***/ },
-/* 216 */
+/* 211 */
 /*!*******************************!*\
   !*** ./~/moment/locale/et.js ***!
   \*******************************/
@@ -46643,7 +46186,7 @@
 	//! improvements : Illimar Tambek : https://github.com/ragulka
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -46718,7 +46261,7 @@
 	}));
 
 /***/ },
-/* 217 */
+/* 212 */
 /*!*******************************!*\
   !*** ./~/moment/locale/eu.js ***!
   \*******************************/
@@ -46729,7 +46272,7 @@
 	//! author : Eneko Illarramendi : https://github.com/eillarra
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -46791,7 +46334,7 @@
 	}));
 
 /***/ },
-/* 218 */
+/* 213 */
 /*!*******************************!*\
   !*** ./~/moment/locale/fa.js ***!
   \*******************************/
@@ -46802,7 +46345,7 @@
 	//! author : Ebrahim Byagowi : https://github.com/ebraminio
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -46904,7 +46447,7 @@
 	}));
 
 /***/ },
-/* 219 */
+/* 214 */
 /*!*******************************!*\
   !*** ./~/moment/locale/fi.js ***!
   \*******************************/
@@ -46915,7 +46458,7 @@
 	//! author : Tarmo Aidantausta : https://github.com/bleadof
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -47018,7 +46561,7 @@
 	}));
 
 /***/ },
-/* 220 */
+/* 215 */
 /*!*******************************!*\
   !*** ./~/moment/locale/fo.js ***!
   \*******************************/
@@ -47029,7 +46572,7 @@
 	//! author : Ragnar Johannesen : https://github.com/ragnar123
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -47085,7 +46628,7 @@
 	}));
 
 /***/ },
-/* 221 */
+/* 216 */
 /*!*******************************!*\
   !*** ./~/moment/locale/fr.js ***!
   \*******************************/
@@ -47096,7 +46639,7 @@
 	//! author : John Fischer : https://github.com/jfroffice
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -47156,7 +46699,7 @@
 	}));
 
 /***/ },
-/* 222 */
+/* 217 */
 /*!**********************************!*\
   !*** ./~/moment/locale/fr-ca.js ***!
   \**********************************/
@@ -47167,7 +46710,7 @@
 	//! author : Jonathan Abourbih : https://github.com/jonbca
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -47223,7 +46766,7 @@
 	}));
 
 /***/ },
-/* 223 */
+/* 218 */
 /*!**********************************!*\
   !*** ./~/moment/locale/fr-ch.js ***!
   \**********************************/
@@ -47234,7 +46777,7 @@
 	//! author : Gaspard Bucher : https://github.com/gaspard
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -47294,7 +46837,7 @@
 	}));
 
 /***/ },
-/* 224 */
+/* 219 */
 /*!*******************************!*\
   !*** ./~/moment/locale/fy.js ***!
   \*******************************/
@@ -47305,7 +46848,7 @@
 	//! author : Robin van der Vliet : https://github.com/robin0van0der0v
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -47374,7 +46917,7 @@
 	}));
 
 /***/ },
-/* 225 */
+/* 220 */
 /*!*******************************!*\
   !*** ./~/moment/locale/gd.js ***!
   \*******************************/
@@ -47385,7 +46928,7 @@
 	//! author : Jon Ashdown : https://github.com/jonashdown
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -47457,7 +47000,7 @@
 	}));
 
 /***/ },
-/* 226 */
+/* 221 */
 /*!*******************************!*\
   !*** ./~/moment/locale/gl.js ***!
   \*******************************/
@@ -47468,7 +47011,7 @@
 	//! author : Juan G. Hurtado : https://github.com/juanghurtado
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -47541,7 +47084,7 @@
 	}));
 
 /***/ },
-/* 227 */
+/* 222 */
 /*!*******************************!*\
   !*** ./~/moment/locale/he.js ***!
   \*******************************/
@@ -47554,7 +47097,7 @@
 	//! author : Tal Ater : https://github.com/TalAter
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -47647,7 +47190,7 @@
 	}));
 
 /***/ },
-/* 228 */
+/* 223 */
 /*!*******************************!*\
   !*** ./~/moment/locale/hi.js ***!
   \*******************************/
@@ -47658,7 +47201,7 @@
 	//! author : Mayank Singhal : https://github.com/mayanksinghal
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -47778,7 +47321,7 @@
 	}));
 
 /***/ },
-/* 229 */
+/* 224 */
 /*!*******************************!*\
   !*** ./~/moment/locale/hr.js ***!
   \*******************************/
@@ -47789,7 +47332,7 @@
 	//! author : Bojan Marković : https://github.com/bmarkovic
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -47930,7 +47473,7 @@
 	}));
 
 /***/ },
-/* 230 */
+/* 225 */
 /*!*******************************!*\
   !*** ./~/moment/locale/hu.js ***!
   \*******************************/
@@ -47941,7 +47484,7 @@
 	//! author : Adam Brunner : https://github.com/adambrunner
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -48046,7 +47589,7 @@
 	}));
 
 /***/ },
-/* 231 */
+/* 226 */
 /*!**********************************!*\
   !*** ./~/moment/locale/hy-am.js ***!
   \**********************************/
@@ -48057,7 +47600,7 @@
 	//! author : Armendarabyan : https://github.com/armendarabyan
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -48148,7 +47691,7 @@
 	}));
 
 /***/ },
-/* 232 */
+/* 227 */
 /*!*******************************!*\
   !*** ./~/moment/locale/id.js ***!
   \*******************************/
@@ -48160,7 +47703,7 @@
 	//! reference: http://id.wikisource.org/wiki/Pedoman_Umum_Ejaan_Bahasa_Indonesia_yang_Disempurnakan
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -48238,7 +47781,7 @@
 	}));
 
 /***/ },
-/* 233 */
+/* 228 */
 /*!*******************************!*\
   !*** ./~/moment/locale/is.js ***!
   \*******************************/
@@ -48249,7 +47792,7 @@
 	//! author : Hinrik Örn Sigurðsson : https://github.com/hinrik
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -48372,7 +47915,7 @@
 	}));
 
 /***/ },
-/* 234 */
+/* 229 */
 /*!*******************************!*\
   !*** ./~/moment/locale/it.js ***!
   \*******************************/
@@ -48384,7 +47927,7 @@
 	//! author: Mattia Larentis: https://github.com/nostalgiaz
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -48449,7 +47992,7 @@
 	}));
 
 /***/ },
-/* 235 */
+/* 230 */
 /*!*******************************!*\
   !*** ./~/moment/locale/ja.js ***!
   \*******************************/
@@ -48460,7 +48003,7 @@
 	//! author : LI Long : https://github.com/baryon
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -48532,7 +48075,7 @@
 	}));
 
 /***/ },
-/* 236 */
+/* 231 */
 /*!*******************************!*\
   !*** ./~/moment/locale/jv.js ***!
   \*******************************/
@@ -48544,7 +48087,7 @@
 	//! reference: http://jv.wikipedia.org/wiki/Basa_Jawa
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -48622,7 +48165,7 @@
 	}));
 
 /***/ },
-/* 237 */
+/* 232 */
 /*!*******************************!*\
   !*** ./~/moment/locale/ka.js ***!
   \*******************************/
@@ -48633,7 +48176,7 @@
 	//! author : Irakli Janiashvili : https://github.com/irakli-janiashvili
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -48718,7 +48261,7 @@
 	}));
 
 /***/ },
-/* 238 */
+/* 233 */
 /*!*******************************!*\
   !*** ./~/moment/locale/kk.js ***!
   \*******************************/
@@ -48729,7 +48272,7 @@
 	//! authors : Nurlan Rakhimzhanov : https://github.com/nurlan
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -48812,7 +48355,7 @@
 	}));
 
 /***/ },
-/* 239 */
+/* 234 */
 /*!*******************************!*\
   !*** ./~/moment/locale/km.js ***!
   \*******************************/
@@ -48823,7 +48366,7 @@
 	//! author : Kruy Vanna : https://github.com/kruyvanna
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -48877,7 +48420,7 @@
 	}));
 
 /***/ },
-/* 240 */
+/* 235 */
 /*!*******************************!*\
   !*** ./~/moment/locale/ko.js ***!
   \*******************************/
@@ -48889,7 +48432,7 @@
 	//! author : Jeeeyul Lee <jeeeyul@gmail.com>
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -48949,7 +48492,7 @@
 	}));
 
 /***/ },
-/* 241 */
+/* 236 */
 /*!*******************************!*\
   !*** ./~/moment/locale/ky.js ***!
   \*******************************/
@@ -48960,7 +48503,7 @@
 	//! author : Chyngyz Arystan uulu : https://github.com/chyngyz
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -49044,7 +48587,7 @@
 	}));
 
 /***/ },
-/* 242 */
+/* 237 */
 /*!*******************************!*\
   !*** ./~/moment/locale/lb.js ***!
   \*******************************/
@@ -49056,7 +48599,7 @@
 	//! author : David Raison : https://github.com/kwisatz
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -49188,7 +48731,7 @@
 	}));
 
 /***/ },
-/* 243 */
+/* 238 */
 /*!*******************************!*\
   !*** ./~/moment/locale/lo.js ***!
   \*******************************/
@@ -49199,7 +48742,7 @@
 	//! author : Ryan Hart : https://github.com/ryanhart2
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -49265,7 +48808,7 @@
 	}));
 
 /***/ },
-/* 244 */
+/* 239 */
 /*!*******************************!*\
   !*** ./~/moment/locale/lt.js ***!
   \*******************************/
@@ -49276,7 +48819,7 @@
 	//! author : Mindaugas Mozūras : https://github.com/mmozuras
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -49389,7 +48932,7 @@
 	}));
 
 /***/ },
-/* 245 */
+/* 240 */
 /*!*******************************!*\
   !*** ./~/moment/locale/lv.js ***!
   \*******************************/
@@ -49401,7 +48944,7 @@
 	//! author : Jānis Elmeris : https://github.com/JanisE
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -49493,7 +49036,7 @@
 	}));
 
 /***/ },
-/* 246 */
+/* 241 */
 /*!*******************************!*\
   !*** ./~/moment/locale/me.js ***!
   \*******************************/
@@ -49504,7 +49047,7 @@
 	//! author : Miodrag Nikač <miodrag@restartit.me> : https://github.com/miodragnikac
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -49611,7 +49154,7 @@
 	}));
 
 /***/ },
-/* 247 */
+/* 242 */
 /*!*******************************!*\
   !*** ./~/moment/locale/mi.js ***!
   \*******************************/
@@ -49622,7 +49165,7 @@
 	//! author : John Corrigan <robbiecloset@gmail.com> : https://github.com/johnideal
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -49682,7 +49225,7 @@
 	}));
 
 /***/ },
-/* 248 */
+/* 243 */
 /*!*******************************!*\
   !*** ./~/moment/locale/mk.js ***!
   \*******************************/
@@ -49693,7 +49236,7 @@
 	//! author : Borislav Mickov : https://github.com/B0k0
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -49779,7 +49322,7 @@
 	}));
 
 /***/ },
-/* 249 */
+/* 244 */
 /*!*******************************!*\
   !*** ./~/moment/locale/ml.js ***!
   \*******************************/
@@ -49790,7 +49333,7 @@
 	//! author : Floyd Pink : https://github.com/floydpink
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -49867,7 +49410,7 @@
 	}));
 
 /***/ },
-/* 250 */
+/* 245 */
 /*!*******************************!*\
   !*** ./~/moment/locale/mr.js ***!
   \*******************************/
@@ -49879,7 +49422,7 @@
 	//! author : Vivek Athalye : https://github.com/vnathalye
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -50033,7 +49576,7 @@
 	}));
 
 /***/ },
-/* 251 */
+/* 246 */
 /*!*******************************!*\
   !*** ./~/moment/locale/ms.js ***!
   \*******************************/
@@ -50044,7 +49587,7 @@
 	//! author : Weldan Jamili : https://github.com/weldan
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -50122,7 +49665,7 @@
 	}));
 
 /***/ },
-/* 252 */
+/* 247 */
 /*!**********************************!*\
   !*** ./~/moment/locale/ms-my.js ***!
   \**********************************/
@@ -50134,7 +49677,7 @@
 	//! author : Weldan Jamili : https://github.com/weldan
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -50212,7 +49755,7 @@
 	}));
 
 /***/ },
-/* 253 */
+/* 248 */
 /*!*******************************!*\
   !*** ./~/moment/locale/my.js ***!
   \*******************************/
@@ -50225,7 +49768,7 @@
 	//! author : Tin Aung Lin : https://github.com/thanyawzinmin
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -50314,7 +49857,7 @@
 	}));
 
 /***/ },
-/* 254 */
+/* 249 */
 /*!*******************************!*\
   !*** ./~/moment/locale/nb.js ***!
   \*******************************/
@@ -50326,7 +49869,7 @@
 	//!           Sigurd Gartmann : https://github.com/sigurdga
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -50384,7 +49927,7 @@
 	}));
 
 /***/ },
-/* 255 */
+/* 250 */
 /*!*******************************!*\
   !*** ./~/moment/locale/ne.js ***!
   \*******************************/
@@ -50395,7 +49938,7 @@
 	//! author : suvash : https://github.com/suvash
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -50514,7 +50057,7 @@
 	}));
 
 /***/ },
-/* 256 */
+/* 251 */
 /*!*******************************!*\
   !*** ./~/moment/locale/nl.js ***!
   \*******************************/
@@ -50526,7 +50069,7 @@
 	//! author : Jacob Middag : https://github.com/middagj
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -50607,7 +50150,7 @@
 	}));
 
 /***/ },
-/* 257 */
+/* 252 */
 /*!*******************************!*\
   !*** ./~/moment/locale/nn.js ***!
   \*******************************/
@@ -50618,7 +50161,7 @@
 	//! author : https://github.com/mechuwind
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -50674,7 +50217,7 @@
 	}));
 
 /***/ },
-/* 258 */
+/* 253 */
 /*!**********************************!*\
   !*** ./~/moment/locale/pa-in.js ***!
   \**********************************/
@@ -50685,7 +50228,7 @@
 	//! author : Harpreet Singh : https://github.com/harpreetkhalsagtbit
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -50805,7 +50348,7 @@
 	}));
 
 /***/ },
-/* 259 */
+/* 254 */
 /*!*******************************!*\
   !*** ./~/moment/locale/pl.js ***!
   \*******************************/
@@ -50816,7 +50359,7 @@
 	//! author : Rafal Hirsz : https://github.com/evoL
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -50917,7 +50460,7 @@
 	}));
 
 /***/ },
-/* 260 */
+/* 255 */
 /*!*******************************!*\
   !*** ./~/moment/locale/pt.js ***!
   \*******************************/
@@ -50928,7 +50471,7 @@
 	//! author : Jefferson : https://github.com/jalex79
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -50989,7 +50532,7 @@
 	}));
 
 /***/ },
-/* 261 */
+/* 256 */
 /*!**********************************!*\
   !*** ./~/moment/locale/pt-br.js ***!
   \**********************************/
@@ -51000,7 +50543,7 @@
 	//! author : Caio Ribeiro Pereira : https://github.com/caio-ribeiro-pereira
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -51057,7 +50600,7 @@
 	}));
 
 /***/ },
-/* 262 */
+/* 257 */
 /*!*******************************!*\
   !*** ./~/moment/locale/ro.js ***!
   \*******************************/
@@ -51069,7 +50612,7 @@
 	//! author : Valentin Agachi : https://github.com/avaly
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -51139,7 +50682,7 @@
 	}));
 
 /***/ },
-/* 263 */
+/* 258 */
 /*!*******************************!*\
   !*** ./~/moment/locale/ru.js ***!
   \*******************************/
@@ -51152,7 +50695,7 @@
 	//! author : Коренберг Марк : https://github.com/socketpair
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -51329,7 +50872,7 @@
 	}));
 
 /***/ },
-/* 264 */
+/* 259 */
 /*!*******************************!*\
   !*** ./~/moment/locale/se.js ***!
   \*******************************/
@@ -51340,7 +50883,7 @@
 	//! authors : Bård Rolstad Henriksen : https://github.com/karamell
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -51397,7 +50940,7 @@
 	}));
 
 /***/ },
-/* 265 */
+/* 260 */
 /*!*******************************!*\
   !*** ./~/moment/locale/si.js ***!
   \*******************************/
@@ -51408,7 +50951,7 @@
 	//! author : Sampath Sitinamaluwa : https://github.com/sampathsris
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -51475,7 +51018,7 @@
 	}));
 
 /***/ },
-/* 266 */
+/* 261 */
 /*!*******************************!*\
   !*** ./~/moment/locale/sk.js ***!
   \*******************************/
@@ -51487,7 +51030,7 @@
 	//! based on work of petrbela : https://github.com/petrbela
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -51632,7 +51175,7 @@
 	}));
 
 /***/ },
-/* 267 */
+/* 262 */
 /*!*******************************!*\
   !*** ./~/moment/locale/sl.js ***!
   \*******************************/
@@ -51643,7 +51186,7 @@
 	//! author : Robert Sedovšek : https://github.com/sedovsek
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -51801,7 +51344,7 @@
 	}));
 
 /***/ },
-/* 268 */
+/* 263 */
 /*!*******************************!*\
   !*** ./~/moment/locale/sq.js ***!
   \*******************************/
@@ -51814,7 +51357,7 @@
 	//! author : Oerd Cukalla : https://github.com/oerd
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -51878,7 +51421,7 @@
 	}));
 
 /***/ },
-/* 269 */
+/* 264 */
 /*!*******************************!*\
   !*** ./~/moment/locale/sr.js ***!
   \*******************************/
@@ -51889,7 +51432,7 @@
 	//! author : Milan Janačković<milanjanackovic@gmail.com> : https://github.com/milan-j
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -51995,7 +51538,7 @@
 	}));
 
 /***/ },
-/* 270 */
+/* 265 */
 /*!************************************!*\
   !*** ./~/moment/locale/sr-cyrl.js ***!
   \************************************/
@@ -52006,7 +51549,7 @@
 	//! author : Milan Janačković<milanjanackovic@gmail.com> : https://github.com/milan-j
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -52112,7 +51655,7 @@
 	}));
 
 /***/ },
-/* 271 */
+/* 266 */
 /*!*******************************!*\
   !*** ./~/moment/locale/ss.js ***!
   \*******************************/
@@ -52123,7 +51666,7 @@
 	//! author : Nicolai Davies<mail@nicolai.io> : https://github.com/nicolaidavies
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -52208,7 +51751,7 @@
 	}));
 
 /***/ },
-/* 272 */
+/* 267 */
 /*!*******************************!*\
   !*** ./~/moment/locale/sv.js ***!
   \*******************************/
@@ -52219,7 +51762,7 @@
 	//! author : Jens Alm : https://github.com/ulmus
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -52284,7 +51827,7 @@
 	}));
 
 /***/ },
-/* 273 */
+/* 268 */
 /*!*******************************!*\
   !*** ./~/moment/locale/sw.js ***!
   \*******************************/
@@ -52295,7 +51838,7 @@
 	//! author : Fahad Kassim : https://github.com/fadsel
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -52350,7 +51893,7 @@
 	}));
 
 /***/ },
-/* 274 */
+/* 269 */
 /*!*******************************!*\
   !*** ./~/moment/locale/ta.js ***!
   \*******************************/
@@ -52361,7 +51904,7 @@
 	//! author : Arjunkumar Krishnamoorthy : https://github.com/tk120404
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -52486,7 +52029,7 @@
 	}));
 
 /***/ },
-/* 275 */
+/* 270 */
 /*!*******************************!*\
   !*** ./~/moment/locale/te.js ***!
   \*******************************/
@@ -52497,7 +52040,7 @@
 	//! author : Krishna Chaitanya Thota : https://github.com/kcthota
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -52582,7 +52125,7 @@
 	}));
 
 /***/ },
-/* 276 */
+/* 271 */
 /*!*******************************!*\
   !*** ./~/moment/locale/th.js ***!
   \*******************************/
@@ -52593,7 +52136,7 @@
 	//! author : Kridsada Thanabulpong : https://github.com/sirn
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -52656,7 +52199,7 @@
 	}));
 
 /***/ },
-/* 277 */
+/* 272 */
 /*!**********************************!*\
   !*** ./~/moment/locale/tl-ph.js ***!
   \**********************************/
@@ -52667,7 +52210,7 @@
 	//! author : Dan Hagman : https://github.com/hagmandan
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -52725,7 +52268,7 @@
 	}));
 
 /***/ },
-/* 278 */
+/* 273 */
 /*!********************************!*\
   !*** ./~/moment/locale/tlh.js ***!
   \********************************/
@@ -52736,7 +52279,7 @@
 	//! author : Dominika Kruk : https://github.com/amaranthrose
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -52852,7 +52395,7 @@
 	}));
 
 /***/ },
-/* 279 */
+/* 274 */
 /*!*******************************!*\
   !*** ./~/moment/locale/tr.js ***!
   \*******************************/
@@ -52864,7 +52407,7 @@
 	//!           Burak Yiğit Kaya: https://github.com/BYK
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -52949,7 +52492,7 @@
 	}));
 
 /***/ },
-/* 280 */
+/* 275 */
 /*!********************************!*\
   !*** ./~/moment/locale/tzl.js ***!
   \********************************/
@@ -52961,7 +52504,7 @@
 	//! author : Iustì Canun
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -53047,7 +52590,7 @@
 	}));
 
 /***/ },
-/* 281 */
+/* 276 */
 /*!********************************!*\
   !*** ./~/moment/locale/tzm.js ***!
   \********************************/
@@ -53058,7 +52601,7 @@
 	//! author : Abdel Said : https://github.com/abdelsaid
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -53112,7 +52655,7 @@
 	}));
 
 /***/ },
-/* 282 */
+/* 277 */
 /*!*************************************!*\
   !*** ./~/moment/locale/tzm-latn.js ***!
   \*************************************/
@@ -53123,7 +52666,7 @@
 	//! author : Abdel Said : https://github.com/abdelsaid
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -53177,7 +52720,7 @@
 	}));
 
 /***/ },
-/* 283 */
+/* 278 */
 /*!*******************************!*\
   !*** ./~/moment/locale/uk.js ***!
   \*******************************/
@@ -53189,7 +52732,7 @@
 	//! Author : Menelion Elensúle : https://github.com/Oire
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -53330,7 +52873,7 @@
 	}));
 
 /***/ },
-/* 284 */
+/* 279 */
 /*!*******************************!*\
   !*** ./~/moment/locale/uz.js ***!
   \*******************************/
@@ -53341,7 +52884,7 @@
 	//! author : Sardor Muminov : https://github.com/muminoff
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -53395,7 +52938,7 @@
 	}));
 
 /***/ },
-/* 285 */
+/* 280 */
 /*!*******************************!*\
   !*** ./~/moment/locale/vi.js ***!
   \*******************************/
@@ -53406,7 +52949,7 @@
 	//! author : Bang Nguyen : https://github.com/bangnk
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -53481,7 +53024,7 @@
 	}));
 
 /***/ },
-/* 286 */
+/* 281 */
 /*!*************************************!*\
   !*** ./~/moment/locale/x-pseudo.js ***!
   \*************************************/
@@ -53492,7 +53035,7 @@
 	//! author : Andrew Hood : https://github.com/andrewhood125
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -53556,7 +53099,7 @@
 	}));
 
 /***/ },
-/* 287 */
+/* 282 */
 /*!**********************************!*\
   !*** ./~/moment/locale/zh-cn.js ***!
   \**********************************/
@@ -53568,7 +53111,7 @@
 	//! author : Zeno Zeng : https://github.com/zenozeng
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -53690,7 +53233,7 @@
 	}));
 
 /***/ },
-/* 288 */
+/* 283 */
 /*!**********************************!*\
   !*** ./~/moment/locale/zh-hk.js ***!
   \**********************************/
@@ -53703,7 +53246,7 @@
 	//! author : Konstantin : https://github.com/skfd
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -53802,7 +53345,7 @@
 	}));
 
 /***/ },
-/* 289 */
+/* 284 */
 /*!**********************************!*\
   !*** ./~/moment/locale/zh-tw.js ***!
   \**********************************/
@@ -53814,7 +53357,7 @@
 	//! author : Chris Lam : https://github.com/hehachris
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(/*! ../moment */ 183)) :
+	    true ? factory(__webpack_require__(/*! ../moment */ 178)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -53913,7 +53456,7 @@
 	}));
 
 /***/ },
-/* 290 */
+/* 285 */
 /*!*******************************************!*\
   !*** ./develop/components/timepicker.css ***!
   \*******************************************/
@@ -53922,10 +53465,10 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../~/css-loader!./timepicker.css */ 291);
+	var content = __webpack_require__(/*! !./../../~/css-loader!./timepicker.css */ 286);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../~/style-loader/addStyles.js */ 180)(content, {});
+	var update = __webpack_require__(/*! ./../../~/style-loader/addStyles.js */ 288)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -53942,13 +53485,13 @@
 	}
 
 /***/ },
-/* 291 */
+/* 286 */
 /*!**********************************************************!*\
   !*** ./~/css-loader!./develop/components/timepicker.css ***!
   \**********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(/*! ./../../~/css-loader/lib/css-base.js */ 179)();
+	exports = module.exports = __webpack_require__(/*! ./../../~/css-loader/lib/css-base.js */ 287)();
 	// imports
 	
 	
@@ -53956,6 +53499,320 @@
 	exports.push([module.id, ".timepickerwrapper {\r\n  vertical-align: top;\r\n  display: inline-block;\r\n  margin: 10px;\r\n  border: 1px solid #ddd;\r\n  border-radius: 5px;\r\n  padding: 15px;\r\n  min-height: 355px;\r\n}\r\n.timepickerwrapper .results {\r\n  /*border: 1px solid #ddd;*/\r\n  /*border-radius: 5px;*/\r\n  padding: 5px;\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  font-size: 0.8em;\r\n  border-left: 1px solid #ddd;\r\n}\r\n.results p {\r\n  margin: 5px;\r\n}\r\n.timepickerwrapper svg {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n\r\n}\r\n.segment text {\r\n  font: 10px sans-serif;\r\n  text-anchor: middle;\r\n}\r\n\r\n.segment path {\r\n  stroke: #fff;\r\n  cursor: pointer;\r\n}\r\n .segment.active path {\r\n  cursor: pointer;\r\n  stroke: #fff;\r\n  fill: #ff5070 !important;\r\n}\r\n.segment:hover path {\r\n  opacity: 0.5\r\n}\r\n.segment text {\r\n  cursor: pointer;\r\n}\r\n.hourLabel {\r\n  fill: #ff5070;\r\n  font-size: 1.2em;\r\n}\r\n.hourLabel.boundary {\r\n  //fill: #5a5\r\n}\r\n.minuteLabel {\r\n  fill: grey;\r\n  text-anchor: middle;\r\n  font-size: 0.6em\r\n}\r\n", ""]);
 	
 	// exports
+
+
+/***/ },
+/* 287 */
+/*!**************************************!*\
+  !*** ./~/css-loader/lib/css-base.js ***!
+  \**************************************/
+/***/ function(module, exports) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	// css base code, injected by the css-loader
+	module.exports = function() {
+		var list = [];
+	
+		// return the list of modules as css string
+		list.toString = function toString() {
+			var result = [];
+			for(var i = 0; i < this.length; i++) {
+				var item = this[i];
+				if(item[2]) {
+					result.push("@media " + item[2] + "{" + item[1] + "}");
+				} else {
+					result.push(item[1]);
+				}
+			}
+			return result.join("");
+		};
+	
+		// import a list of modules into the list
+		list.i = function(modules, mediaQuery) {
+			if(typeof modules === "string")
+				modules = [[null, modules, ""]];
+			var alreadyImportedModules = {};
+			for(var i = 0; i < this.length; i++) {
+				var id = this[i][0];
+				if(typeof id === "number")
+					alreadyImportedModules[id] = true;
+			}
+			for(i = 0; i < modules.length; i++) {
+				var item = modules[i];
+				// skip already imported module
+				// this implementation is not 100% perfect for weird media query combinations
+				//  when a module is imported multiple times with different media queries.
+				//  I hope this will never occur (Hey this way we have smaller bundles)
+				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+					if(mediaQuery && !item[2]) {
+						item[2] = mediaQuery;
+					} else if(mediaQuery) {
+						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+					}
+					list.push(item);
+				}
+			}
+		};
+		return list;
+	};
+
+
+/***/ },
+/* 288 */
+/*!*************************************!*\
+  !*** ./~/style-loader/addStyles.js ***!
+  \*************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	var stylesInDom = {},
+		memoize = function(fn) {
+			var memo;
+			return function () {
+				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+				return memo;
+			};
+		},
+		isOldIE = memoize(function() {
+			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+		}),
+		getHeadElement = memoize(function () {
+			return document.head || document.getElementsByTagName("head")[0];
+		}),
+		singletonElement = null,
+		singletonCounter = 0,
+		styleElementsInsertedAtTop = [];
+	
+	module.exports = function(list, options) {
+		if(true) {
+			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+		}
+	
+		options = options || {};
+		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+		// tags it will allow on a page
+		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+	
+		// By default, add <style> tags to the bottom of <head>.
+		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
+	
+		var styles = listToStyles(list);
+		addStylesToDom(styles, options);
+	
+		return function update(newList) {
+			var mayRemove = [];
+			for(var i = 0; i < styles.length; i++) {
+				var item = styles[i];
+				var domStyle = stylesInDom[item.id];
+				domStyle.refs--;
+				mayRemove.push(domStyle);
+			}
+			if(newList) {
+				var newStyles = listToStyles(newList);
+				addStylesToDom(newStyles, options);
+			}
+			for(var i = 0; i < mayRemove.length; i++) {
+				var domStyle = mayRemove[i];
+				if(domStyle.refs === 0) {
+					for(var j = 0; j < domStyle.parts.length; j++)
+						domStyle.parts[j]();
+					delete stylesInDom[domStyle.id];
+				}
+			}
+		};
+	}
+	
+	function addStylesToDom(styles, options) {
+		for(var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+			if(domStyle) {
+				domStyle.refs++;
+				for(var j = 0; j < domStyle.parts.length; j++) {
+					domStyle.parts[j](item.parts[j]);
+				}
+				for(; j < item.parts.length; j++) {
+					domStyle.parts.push(addStyle(item.parts[j], options));
+				}
+			} else {
+				var parts = [];
+				for(var j = 0; j < item.parts.length; j++) {
+					parts.push(addStyle(item.parts[j], options));
+				}
+				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+			}
+		}
+	}
+	
+	function listToStyles(list) {
+		var styles = [];
+		var newStyles = {};
+		for(var i = 0; i < list.length; i++) {
+			var item = list[i];
+			var id = item[0];
+			var css = item[1];
+			var media = item[2];
+			var sourceMap = item[3];
+			var part = {css: css, media: media, sourceMap: sourceMap};
+			if(!newStyles[id])
+				styles.push(newStyles[id] = {id: id, parts: [part]});
+			else
+				newStyles[id].parts.push(part);
+		}
+		return styles;
+	}
+	
+	function insertStyleElement(options, styleElement) {
+		var head = getHeadElement();
+		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
+		if (options.insertAt === "top") {
+			if(!lastStyleElementInsertedAtTop) {
+				head.insertBefore(styleElement, head.firstChild);
+			} else if(lastStyleElementInsertedAtTop.nextSibling) {
+				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
+			} else {
+				head.appendChild(styleElement);
+			}
+			styleElementsInsertedAtTop.push(styleElement);
+		} else if (options.insertAt === "bottom") {
+			head.appendChild(styleElement);
+		} else {
+			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+		}
+	}
+	
+	function removeStyleElement(styleElement) {
+		styleElement.parentNode.removeChild(styleElement);
+		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
+		if(idx >= 0) {
+			styleElementsInsertedAtTop.splice(idx, 1);
+		}
+	}
+	
+	function createStyleElement(options) {
+		var styleElement = document.createElement("style");
+		styleElement.type = "text/css";
+		insertStyleElement(options, styleElement);
+		return styleElement;
+	}
+	
+	function createLinkElement(options) {
+		var linkElement = document.createElement("link");
+		linkElement.rel = "stylesheet";
+		insertStyleElement(options, linkElement);
+		return linkElement;
+	}
+	
+	function addStyle(obj, options) {
+		var styleElement, update, remove;
+	
+		if (options.singleton) {
+			var styleIndex = singletonCounter++;
+			styleElement = singletonElement || (singletonElement = createStyleElement(options));
+			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
+			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+		} else if(obj.sourceMap &&
+			typeof URL === "function" &&
+			typeof URL.createObjectURL === "function" &&
+			typeof URL.revokeObjectURL === "function" &&
+			typeof Blob === "function" &&
+			typeof btoa === "function") {
+			styleElement = createLinkElement(options);
+			update = updateLink.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+				if(styleElement.href)
+					URL.revokeObjectURL(styleElement.href);
+			};
+		} else {
+			styleElement = createStyleElement(options);
+			update = applyToTag.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+			};
+		}
+	
+		update(obj);
+	
+		return function updateStyle(newObj) {
+			if(newObj) {
+				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
+					return;
+				update(obj = newObj);
+			} else {
+				remove();
+			}
+		};
+	}
+	
+	var replaceText = (function () {
+		var textStore = [];
+	
+		return function (index, replacement) {
+			textStore[index] = replacement;
+			return textStore.filter(Boolean).join('\n');
+		};
+	})();
+	
+	function applyToSingletonTag(styleElement, index, remove, obj) {
+		var css = remove ? "" : obj.css;
+	
+		if (styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = replaceText(index, css);
+		} else {
+			var cssNode = document.createTextNode(css);
+			var childNodes = styleElement.childNodes;
+			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+			if (childNodes.length) {
+				styleElement.insertBefore(cssNode, childNodes[index]);
+			} else {
+				styleElement.appendChild(cssNode);
+			}
+		}
+	}
+	
+	function applyToTag(styleElement, obj) {
+		var css = obj.css;
+		var media = obj.media;
+	
+		if(media) {
+			styleElement.setAttribute("media", media)
+		}
+	
+		if(styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = css;
+		} else {
+			while(styleElement.firstChild) {
+				styleElement.removeChild(styleElement.firstChild);
+			}
+			styleElement.appendChild(document.createTextNode(css));
+		}
+	}
+	
+	function updateLink(linkElement, obj) {
+		var css = obj.css;
+		var sourceMap = obj.sourceMap;
+	
+		if(sourceMap) {
+			// http://stackoverflow.com/a/26603875
+			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+		}
+	
+		var blob = new Blob([css], { type: "text/css" });
+	
+		var oldSrc = linkElement.href;
+	
+		linkElement.href = URL.createObjectURL(blob);
+	
+		if(oldSrc)
+			URL.revokeObjectURL(oldSrc);
+	}
 
 
 /***/ }
