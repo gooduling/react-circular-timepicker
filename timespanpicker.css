@@ -1,11 +1,7 @@
 .timepickerwrapper .results {
-  /*border: 1px solid #ddd;*/
-  /*border-radius: 5px;*/
   padding: 5px;
-  display: inline-block;
   vertical-align: middle;
   font-size: 0.8em;
-  border-left: 1px solid #ddd;
 }
 .results p {
   margin: 5px;
@@ -13,7 +9,6 @@
 .timepickerwrapper svg {
   display: inline-block;
   vertical-align: middle;
-
 }
 .segment text {
   font: 10px sans-serif;
