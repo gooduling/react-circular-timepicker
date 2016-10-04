@@ -22063,7 +22063,7 @@
 	                        _react2.default.createElement(
 	                            'h2',
 	                            { style: headerStyle },
-	                            'Circular timespan picker with clear d3/React'
+	                            'Demo of circular timespan picker with clear d3/React'
 	                        )
 	                    )
 	                ),
@@ -22084,6 +22084,21 @@
 	                                'https://github.com/gooduling/react-timespan-picker'
 	                            )
 	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    { className: 'description' },
+	                    'This is a Demo of react-timespan-picker - reusable react component. Convinient UI control to pick up a short time periods during a day. E.g. it can be used to mark a timespans of users or services availability.'
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    { className: 'description' },
+	                    'Example:',
+	                    _react2.default.createElement(
+	                        'code',
+	                        null,
+	                        ' <Timepspanpicker\n                        outerRadius="100"\n                        interval="30"\n                        boundaryHour="20"\n                        onClick={handleResults}\n                        showResults\n                    />'
 	                    )
 	                ),
 	                _react2.default.createElement('hr', null),
@@ -53543,7 +53558,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".timepickerwrapper .results {\r\n  /*border: 1px solid #ddd;*/\r\n  /*border-radius: 5px;*/\r\n  padding: 5px;\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  font-size: 0.8em;\r\n  border-left: 1px solid #ddd;\r\n}\r\n.results p {\r\n  margin: 5px;\r\n}\r\n.timepickerwrapper svg {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n\r\n}\r\n.segment text {\r\n  font: 10px sans-serif;\r\n  text-anchor: middle;\r\n}\r\n\r\n.segment path {\r\n  stroke: #fff;\r\n  cursor: pointer;\r\n}\r\n .segment.active path {\r\n  cursor: pointer;\r\n  stroke: #fff;\r\n  fill: #ff5070 !important;\r\n}\r\n.segment:hover path {\r\n  opacity: 0.5\r\n}\r\n.segment text {\r\n  cursor: pointer;\r\n}\r\n.hourLabel {\r\n  fill: #ff5070;\r\n  font-size: 1.2em;\r\n}\r\n.hourLabel.boundary {\r\n  //fill: #5a5\r\n}\r\n.minuteLabel {\r\n  fill: grey;\r\n  text-anchor: middle;\r\n  font-size: 0.6em\r\n}\r\n", ""]);
+	exports.push([module.id, ".timepickerwrapper .results {\r\n  padding: 5px;\r\n  vertical-align: middle;\r\n  font-size: 0.8em;\r\n}\r\n.results p {\r\n  margin: 5px;\r\n}\r\n.timepickerwrapper svg {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n}\r\n.segment text {\r\n  font: 10px sans-serif;\r\n  text-anchor: middle;\r\n}\r\n\r\n.segment path {\r\n  stroke: #fff;\r\n  cursor: pointer;\r\n}\r\n .segment.active path {\r\n  cursor: pointer;\r\n  stroke: #fff;\r\n  fill: #ff5070 !important;\r\n}\r\n.segment:hover path {\r\n  opacity: 0.5\r\n}\r\n.segment text {\r\n  cursor: pointer;\r\n}\r\n.hourLabel {\r\n  fill: #ff5070;\r\n  font-size: 1.2em;\r\n}\r\n.hourLabel.boundary {\r\n  //fill: #5a5\r\n}\r\n.minuteLabel {\r\n  fill: grey;\r\n  text-anchor: middle;\r\n  font-size: 0.6em\r\n}\r\n", ""]);
 	
 	// exports
 
@@ -53949,7 +53964,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".timespanBlock {\r\n  vertical-align: top;\r\n  display: inline-block;\r\n  margin: 10px;\r\n  border: 1px solid #ddd;\r\n  border-radius: 5px;\r\n  padding: 15px;\r\n  min-height: 355px;\r\n  text-align: center;\r\n}\r\n\r\n.timespanBlock .legend {\r\n  color: grey;\r\n}", ""]);
+	exports.push([module.id, ".timespanBlock {\r\n  vertical-align: top;\r\n  display: inline-block;\r\n  margin: 10px;\r\n  border: 1px solid #ddd;\r\n  border-radius: 5px;\r\n  padding: 15px;\r\n  min-height: 355px;\r\n  text-align: center;\r\n}\r\n\r\n.timespanBlock .legend {\r\n  color: grey;\r\n}\r\n.description {\r\n  color: #333;\r\n  max-width: 1000px;\r\n  margin: 0 auto;\r\n}", ""]);
 	
 	// exports
 
