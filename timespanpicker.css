@@ -34,11 +34,12 @@
   fill: #ff5070;
   font-size: 1.2em;
 }
-.hourLabel.boundary {
-  //fill: #5a5
-}
 .minuteLabel {
   fill: grey;
   text-anchor: middle;
   font-size: 0.6em
+}
+.boundaryLine {
+  stroke: #ff1c64;
+  stroke-width: 3
 }
