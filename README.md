@@ -1,11 +1,11 @@
 # react-timespan-picker
-React component of circular timespan-picker. Convinient UI control to pick up a short time periods during a day.
+React component of circular timespan-picker. New convinient UI control to pick up a short time periods during a day.
+It can replace hundreds of boring checkboxes if you plan to mark any availability during a day (e.g. in cases like this http://www.timebie.com/std/centraleuropeansummer.php)
 
 <img src="Screenshot_2.png"/>
 
 ## Example
 Please see example here https://gooduling.github.io/react-timespan-picker/
-
 ## Use
 ```
 <Timepspanpicker
