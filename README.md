@@ -5,7 +5,7 @@ It can replace hundreds of boring checkboxes if you plan to mark any availabilit
 <img src="Screenshot_2.png"/>
 
 ## Example
-Please see example here https://gooduling.github.io/react-timespan-picker/
+Please see example here https://gooduling.github.io/react-circular-timepicker/
 ## Use
 ```
 <Timepspanpicker
