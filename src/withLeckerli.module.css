@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "Leckerli One";
+  src: url("./LeckerliOne-Regular.ttf") format("truetype");
+}
+
+.timepickerwrapper {
+  font-family: 'Leckerli One', cursive;
+}
